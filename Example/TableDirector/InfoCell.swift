@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TableDirector
 
 final class InfoCell: UITableViewCell {
 	// MARK: - UI
@@ -41,5 +42,16 @@ final class InfoCell: UITableViewCell {
 			_descriptionLabel.rightAnchor.constraint(equalTo: _titleLabel.rightAnchor),
 			_descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
 			].forEach { $0.isActive = true }
+	}
+}
+
+// And every cell that we will use have to conform this
+// MARK: - ConfigurableCell
+extension InfoCell: ConfigurableCell {
+	typealias ViewModel = InfoViewModel
+
+	func configure(_ item: InfoViewModel) {
+		// Fill your cell with data here
+		_titleLabel.text = item.title
 	}
 }

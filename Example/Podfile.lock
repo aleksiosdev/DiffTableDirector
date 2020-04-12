@@ -1,0 +1,16 @@
+PODS:
+  - TableDirector (0.1.0)
+
+DEPENDENCIES:
+  - TableDirector (from `../`)
+
+EXTERNAL SOURCES:
+  TableDirector:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TableDirector: a951f869fe91459310dd7b03a7e12c6cb8f78ef5
+
+PODFILE CHECKSUM: ecd762b1c96ae21e7484b61c0e590ad57beeb1e5
+
+COCOAPODS: 1.9.1

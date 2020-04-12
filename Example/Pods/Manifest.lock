@@ -1,15 +1,22 @@
 PODS:
-  - TableDirector (0.1.0)
+  - SwiftLint (0.37.0)
+  - TableDirector (0.1.0):
+    - SwiftLint
 
 DEPENDENCIES:
   - TableDirector (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftLint
 
 EXTERNAL SOURCES:
   TableDirector:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TableDirector: a951f869fe91459310dd7b03a7e12c6cb8f78ef5
+  SwiftLint: c078a14d7d7ade75e5507795d185e3da41d844d2
+  TableDirector: 7d0b472ee00ad7c10a12edb9475e6b79db1edf3a
 
 PODFILE CHECKSUM: ecd762b1c96ae21e7484b61c0e590ad57beeb1e5
 

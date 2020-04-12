@@ -1,0 +1,65 @@
+disabled_rules: # rule identifiers to exclude from running
+  - colon
+  - comma
+  - control_statement
+  - nesting
+  - unused_setter_value
+opt_in_rules: # some rules are only opt-in
+  - control_statement
+  - empty_count
+  - trailing_newline
+  - colon
+  - comma
+  - missing_docs
+  - closing_brace
+  - convenience_type
+  - cyclomatic_complexity
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - ManyChatTests/Sourcery
+  - ManyChatTests/Mock
+  - ManyChat/Resources/R.generated.swift
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+  - explicit_self
+
+identifier_name:
+  excluded:
+    - ID
+    - in
+    - id
+    - to
+    - up
+
+line_length:
+  warning: 120
+  error: 200
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
+
+type_body_length:
+  - 150 # warning
+  - 200 # error
+
+# or they can set both explicitly
+file_length:
+  warning: 300
+  error: 500
+
+large_tuple: # warn user when using 3 values in tuple, give error if there are 4
+   - 3
+   - 4
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+   
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 2 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 45
+reporter: "xcode"
+
+warning_threshold: 5

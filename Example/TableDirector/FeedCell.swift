@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TableDirector
 
 final class FeedCell: UITableViewCell {
 	// MARK: - UI
@@ -14,4 +15,15 @@ final class FeedCell: UITableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var contentLabel: UILabel!
 
+}
+
+// MARK: - ConfigurableCell
+extension FeedCell: ConfigurableCell {
+	typealias ViewModel = FeedViewModel
+
+	func configure(_ item: FeedViewModel) {
+		contentImageView.image = item.image
+		titleLabel.text = item.title
+		contentLabel.text = item.content
+	}
 }

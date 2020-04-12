@@ -23,13 +23,13 @@
 		0DB1D1C6F1E7B7442BB44EBE211DA2DF /* TableDirector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B86806DFBCC96221F7C19AE0CCB7D /* TableDirector-dummy.m */; };
 		290067FBF5964FC12B8CC63858DED086 /* TableDirector-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61EEA49A30A32AC18D985F35DC0771E8 /* TableDirector-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		59328E0FE330605895E004C61733E3C1 /* Pods-TableDirector_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8EBA922401EE499D47886294CF440A /* Pods-TableDirector_Example-dummy.m */; };
-		6F3F4D10577D4C1AE7D766293CE1FC7B /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABEC6408140E7A2015EB540D017EBB /* ReplaceMe.swift */; };
 		86E3787DBA3CB0923A4CE083A8F3F149 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		AAB30FF0BBBE96531FC3496504B1B4AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		C54EF0D0F12FD8F8B39048EB4ADC4661 /* Pods-TableDirector_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A743A6BD7B2F6B725BC73211251941F1 /* Pods-TableDirector_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAE052E14A9CC589891CA1391B3A0B9A /* Pods-TableDirector_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DFE7C65D85A78AE8BDB194E3B29FBC /* Pods-TableDirector_Tests-dummy.m */; };
 		D5534B0C330D94B7A4C8A6CB85576305 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		DEFCC225E73367DB629A2519776C7C0C /* Pods-TableDirector_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15E7A200A2C76770727BE5ADC9859BAA /* Pods-TableDirector_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E215CA0A24435BBC00FA6617 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CA0924435BBC00FA6617 /* ConfigurableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,6 @@
 		71D85663DF83C245AA82307DEB6626E1 /* Pods-TableDirector_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TableDirector_Example-frameworks.sh"; sourceTree = "<group>"; };
 		77A55F6EA030997D337C1E2883EC2C6A /* Pods-TableDirector_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TableDirector_Tests-Info.plist"; sourceTree = "<group>"; };
 		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
-		92ABEC6408140E7A2015EB540D017EBB /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = TableDirector/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		9324FE3B1772B09F938E54108E3ED612 /* Pods-TableDirector_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TableDirector_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		949B86806DFBCC96221F7C19AE0CCB7D /* TableDirector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TableDirector-dummy.m"; sourceTree = "<group>"; };
 		97E56830FBB6F4C4159559AE16B0ACFD /* TableDirector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TableDirector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +91,7 @@
 		BB8EBA922401EE499D47886294CF440A /* Pods-TableDirector_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TableDirector_Example-dummy.m"; sourceTree = "<group>"; };
 		BBED722E1E387944E2A6AFC11B075C37 /* TableDirector-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TableDirector-prefix.pch"; sourceTree = "<group>"; };
 		C5E232E8A43DD81313B254410231ABD9 /* Pods-TableDirector_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TableDirector_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E215CA0924435BBC00FA6617 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurableCell.swift; path = TableDirector/Classes/ConfigurableCell.swift; sourceTree = "<group>"; };
 		E4DFE7C65D85A78AE8BDB194E3B29FBC /* Pods-TableDirector_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TableDirector_Tests-dummy.m"; sourceTree = "<group>"; };
 		E75C3EDF46988BF7CCEC63E9CB14D8BD /* TableDirector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TableDirector.debug.xcconfig; sourceTree = "<group>"; };
 		E8B81B183A6451B7026E718FFB277946 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 		DC6D11F838FDFAE4DA1E1E8F8076F59A /* TableDirector */ = {
 			isa = PBXGroup;
 			children = (
-				92ABEC6408140E7A2015EB540D017EBB /* ReplaceMe.swift */,
+				E215CA0924435BBC00FA6617 /* ConfigurableCell.swift */,
 				4D98C9DE237DA0A656E81B7BC784C76C /* Pod */,
 				21DD5FEB46708C06B647C4392B1810AA /* Support Files */,
 			);
@@ -379,6 +379,9 @@
 					BE2ACE677D926D652DC740D8738BDFBF = {
 						LastSwiftMigration = 1130;
 					};
+					E7F086E9933796FD283BEFD4337BCF91 = {
+						LastSwiftMigration = 1130;
+					};
 				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
@@ -431,7 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F3F4D10577D4C1AE7D766293CE1FC7B /* ReplaceMe.swift in Sources */,
+				E215CA0A24435BBC00FA6617 /* ConfigurableCell.swift in Sources */,
 				0DB1D1C6F1E7B7442BB44EBE211DA2DF /* TableDirector-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E75C3EDF46988BF7CCEC63E9CB14D8BD /* TableDirector.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -506,6 +510,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -518,6 +523,7 @@
 			baseConfigurationReference = AF1DCBF7256B72F583F92C9941406D7E /* Pods-TableDirector_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -540,6 +546,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -578,6 +586,7 @@
 			baseConfigurationReference = F4BC800BC549E1991CCBDC68B85A6473 /* Pods-TableDirector_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -600,6 +609,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -767,6 +777,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC5F004A95D7C4137C6F2C13EB0F0C6D /* TableDirector.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

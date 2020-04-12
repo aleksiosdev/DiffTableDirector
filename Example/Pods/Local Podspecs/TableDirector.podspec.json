@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "TableDirector/Classes/**/*"
+  "source_files": "TableDirector/Classes/**/*",
+  "dependencies": {
+    "SwiftLint": [
+
+    ]
+  }
 }

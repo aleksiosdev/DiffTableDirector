@@ -40,10 +40,46 @@ class StoryboardViewController: UIViewController {
 
 		let sections = _createSections(feedModels: feedModels, infoModels: infoModels)
 		_tableDirector?.reload(with: sections)
+		let bottomPaginationController = PaginationController(
+			settings: .bottom,
+			loader: .deafult) { (handler) in
+				DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
+					handler.finished(isSuccessfull: false, canLoadNext: true)
+				}
+		}
+		self._tableDirector?.add(paginationController: bottomPaginationController)
+
+		let topPaginationController = PaginationController(
+			settings: .top,
+			loader: .deafult) { (handler) in
+				DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
+					handler.finished(isSuccessfull: false, canLoadNext: false)
+				}
+		}
+		self._tableDirector?.add(paginationController: topPaginationController)
     }
 
 	private func _loadFeed() -> [FeedModel] {
 		return [
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
+			.init(title: "Title", content: "Description", isMine: true),
 			.init(title: "Title", content: "Description", isMine: true),
 			.init(title: "Title", content: "Description", isMine: true),
 			.init(title: "Title", content: "Description", isMine: true),

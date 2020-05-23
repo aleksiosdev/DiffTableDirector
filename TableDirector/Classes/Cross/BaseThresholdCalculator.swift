@@ -13,6 +13,10 @@ struct BaseThresholdCalculator {
 	}
 
 	func calculateBaseBottomThreshold(for scrollView: UIScrollView) -> CGFloat {
-		return  scrollView.contentSize.height - scrollView.frame.height + scrollView.contentInset.bottom
+		let bottomThreshold = scrollView.contentSize.height - scrollView.frame.height + scrollView.contentInset.bottom
+		if bottomThreshold < 0 {
+			return 0
+		}
+		return bottomThreshold
 	}
 }

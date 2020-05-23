@@ -45,7 +45,9 @@ extension ScrollViewBoundsCrossObservable {
 	}
 
 	func checkBottomBound(for newY: CGFloat) {
-		if newY > bottomThreshold && !overBottomBounds {
+		guard scrollView.contentSize.height > scrollView.bounds.height else { return }
+
+		if bottomThreshold > 0 && newY > bottomThreshold && !overBottomBounds {
 			bottomCrossObserver?.scrollViewDidCrossThreshold(scrollView: scrollView, offset: newY)
 			overBottomBounds = true
 		}

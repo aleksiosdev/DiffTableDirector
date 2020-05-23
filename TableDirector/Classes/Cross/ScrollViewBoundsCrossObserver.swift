@@ -54,7 +54,6 @@ final class ScrollViewBoundsCrossObserver {
 	private func _observeContentSizeChanges() {
 		_contentSizeObserver = scrollView.createContentSizeObserver(hanlder: { [unowned self] _ in
 			self._baseBottomThreshold = self._thresholdCalculator.calculateBaseBottomThreshold(for: self.scrollView)
-			print(self._baseBottomThreshold)
 		})
 	}
 
@@ -62,7 +61,6 @@ final class ScrollViewBoundsCrossObserver {
 		_contentInsetsObserver = scrollView.createContentInsetsObserver(hanlder: { [unowned self] _ in
 			self._baseTopThreshold = self._thresholdCalculator.calculateBaseTopThreshold(for: self.scrollView)
 			self._baseBottomThreshold = self._thresholdCalculator.calculateBaseBottomThreshold(for: self.scrollView)
-			print(self._baseBottomThreshold)
 		})
 	}
 }

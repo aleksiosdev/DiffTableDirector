@@ -14,6 +14,11 @@ public protocol TableDirectorInput: class {
 
 	var isSelfRegistrationEnabled: Bool { get set }
 
+	/// Add pagination controller to table view.
+	/// If pagination controller with provided direction already exist - it will be replaced with new one
+	/// - Parameter paginationController: control pagination proccess
+	func add(paginationController: PaginationController)
+
 	/// Reload table view with provided rows
 	/// - Parameter rows: new table sections
 	func reload(with sections: [TableSection])

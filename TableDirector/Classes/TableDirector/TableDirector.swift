@@ -18,8 +18,13 @@ public final class TableDirector: NSObject {
 			_changeCoverViewVisability(isSectionsEmpty: _sections.isEmpty)
 		}
 	}
+
 	private var _defaultCoverViewShowParams: CoverView.ShowParams?
 	private var _canShowEmptyView: Bool = true
+	private lazy var pagination: Pagination? = {
+		guard let tableView = _tableView else { return nil }
+		return Pagination(tableView: tableView)
+	}()
 
 	// We need access to table view to perform some task. Object responsible for UI will retain table view
 	private weak var _tableView: UITableView?
@@ -27,22 +32,8 @@ public final class TableDirector: NSObject {
 	// Give us ability to switch off self registration
 	public var isSelfRegistrationEnabled: Bool
 
-	public var topCrossObserver: ThresholdCrossObserver? {
-		set {
-			_boundsCrossObserver.topCrossObserver = newValue
-		}
-		get {
-			_boundsCrossObserver.topCrossObserver
-		}
-	}
-	public var bottomCrossObserver: ThresholdCrossObserver? {
-		set {
-			_boundsCrossObserver.bottomCrossObserver = newValue
-		}
-		get {
-			_boundsCrossObserver.bottomCrossObserver
-		}
-	}
+	public var topCrossObserver: ThresholdCrossObserver?
+	public var bottomCrossObserver: ThresholdCrossObserver?
 
 	/// Create instance with table view
 	/// - Parameter tableView: table view to controll
@@ -52,6 +43,7 @@ public final class TableDirector: NSObject {
 		self._boundsCrossObserver = ScrollViewBoundsCrossObserver(scrollView: tableView)
 		self._coverController = CoverView.Controller()
 		self.isSelfRegistrationEnabled = isSelfRegistrationEnabled
+
 		super.init()
 
 		tableView.delegate = self
@@ -61,6 +53,9 @@ public final class TableDirector: NSObject {
 		// viewForHeaderInSection/viewForFooterInSection won't trigger
 		tableView.estimatedSectionFooterHeight = 1
 		tableView.estimatedSectionHeaderHeight = 1
+
+		// Providing base extimate height for rows remove lags in scroll indicator and increase performance
+		tableView.estimatedRowHeight = 1
 	}
 
 	private func _createHeaderFooterView(with configurator: HeaderConfigurator, tableView: UITableView) -> UIView? {
@@ -105,6 +100,19 @@ extension TableDirector: TableDirectorInput {
 
 	public func indexPath(for cell: UITableViewCell) -> IndexPath? {
 		return _tableView?.indexPath(for: cell)
+	}
+
+	public func add(paginationController: PaginationController) {
+		switch paginationController.direction {
+		case .up:
+			pagination?.topController = paginationController
+		case .down:
+			pagination?.bottomController = paginationController
+		}
+		guard let tableView = _tableView else { return }
+		paginationController.add(to: tableView)
+		paginationController.output = self
+		tableView.prefetchDataSource = self
 	}
 
 	public func addEmptyStateView(view: UIView, position: TableDirector.CoverView.Position) {
@@ -172,5 +180,34 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 	public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		guard _sections[section].footerView != nil else { return 0 }
 		return UITableView.automaticDimension
+	}
+}
+
+extension TableDirector: UITableViewDataSourcePrefetching {
+	public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+		pagination?.topController?.prefetchIfNeeded(tableView: tableView, indexPaths: indexPaths, sections: _sections)
+		pagination?.bottomController?.prefetchIfNeeded(tableView: tableView, indexPaths: indexPaths, sections: _sections)
+	}
+
+	public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) { }
+}
+
+extension TableDirector: PaginationControllerOutput {
+	func scrollToThreshold(direction: PaginationController.Direction, offset: CGFloat) {
+		guard let tableView = _tableView else { return }
+		let tableHeight = tableView.bounds.height
+		let rectSize = CGSize(width: 1, height: tableHeight)
+		switch direction {
+		case .up:
+			let topPoint = CGPoint(x: 0, y: tableView.contentInset.top + offset)
+			tableView.scrollRectToVisible(.init(origin: topPoint, size: rectSize), animated: true)
+		case .down:
+			let yOrigin = tableView.contentSize.height - tableView.contentInset.bottom - tableHeight + offset
+			_tableView?.scrollRectToVisible(.init(origin: .init(x: 0, y: yOrigin), size: rectSize), animated: true)
+		}
+	}
+
+	func changeTopContentInset(newOffset: CGFloat) {
+		_tableView?.contentInset.top += newOffset
 	}
 }

@@ -60,7 +60,7 @@ public final class TableDirector: NSObject {
 		} else {
 			tableView.dataSource = self
 		}
-//		tableView.delegate = self
+		tableView.delegate = self
 	}
 
 	private func _setupEstimatedHeight(tableView: UITableView) {
@@ -91,7 +91,7 @@ public final class TableDirector: NSObject {
 	private func _reload(with sections: [TableSection]) {
 		if #available(iOS 13.0, *) {
 			let snapshot = _sectionsComporator.calculateUpdate(newSections: sections)
-//			self._sections = sections
+			self._sections = sections
 			_diffableDataSourcce?.apply(snapshot: snapshot)
 			return
 		}

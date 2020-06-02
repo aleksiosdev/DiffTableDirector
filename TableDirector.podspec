@@ -22,7 +22,6 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/aleksiosdev/TableDirector'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'aleksiosdev' => 'aleksios@manychat.com' }
   s.source           = { :git => 'https://github.com/aleksiosdev/TableDirector.git', :tag => s.version.to_s }
@@ -32,13 +31,6 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'TableDirector/Classes/**/*'
 
-	s.dependency 'SwiftLint'
-  
-  # s.resource_bundles = {
-  #   'TableDirector' => ['TableDirector/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'DeepDiff', ~> '2.3.1'
+  s.dependency 'SwiftLint'
+  s.dependency 'DeepDiff', '2.3.1'
 end

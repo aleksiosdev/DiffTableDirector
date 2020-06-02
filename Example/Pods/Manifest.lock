@@ -2,7 +2,7 @@ PODS:
   - DeepDiff (2.3.1)
   - SwiftLint (0.37.0)
   - TableDirector (0.1.0):
-    - DeepDiff
+    - DeepDiff (= 2.3.1)
     - SwiftLint
 
 DEPENDENCIES:
@@ -20,8 +20,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   DeepDiff: e5ae6c50d0321568e4508cec5930b9f10bb293fc
   SwiftLint: c078a14d7d7ade75e5507795d185e3da41d844d2
-  TableDirector: 76ec9684a4b4f9d1274d2f1df561cb01360e65d0
+  TableDirector: df8f2ccaf54239d88d19c3d7c4aa178592eb0127
 
-PODFILE CHECKSUM: 664b09fa7af2e2eecb110422c17c52785aa1a711
+PODFILE CHECKSUM: 59a769796274c5143bc852fc26df23448be1b4e5
 
 COCOAPODS: 1.9.1

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DiffableDataSource {	
+protocol DiffableDataSource {
 	func apply(snapshot: Snapshot)
 }

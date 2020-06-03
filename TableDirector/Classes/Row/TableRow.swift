@@ -12,7 +12,7 @@ import Foundation
 public final class TableRow<CellType: ConfigurableCell>: CellConfigurator where CellType: UITableViewCell {
 	public var cellClass: UITableViewCell.Type { return CellType.self }
 
-	let item: CellType.ViewModel
+	public let item: CellType.ViewModel
 	public private(set) var diffableItem: DiffInformation = .randomItem
 
 	public init(item: CellType.ViewModel) {

@@ -13,7 +13,7 @@ where HeaderType: UITableViewHeaderFooterView {
 	public var viewClass: UITableViewHeaderFooterView.Type { return HeaderType.self }
 
 	public private(set) var diffableItem: DiffInformation = .randomItem
-	let item: HeaderType.ViewModel
+	public let item: HeaderType.ViewModel
 
 	public init(item: HeaderType.ViewModel) {
 		self.item = item

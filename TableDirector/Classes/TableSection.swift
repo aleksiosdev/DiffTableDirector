@@ -9,9 +9,9 @@ import Foundation
 
 /// Store configurators to create single section
 public final class TableSection {
-	let headerView: HeaderConfigurator?
-	let footerView: FooterConfigurator?
-	let rows: [CellConfigurator]
+	public let headerView: HeaderConfigurator?
+	public let footerView: FooterConfigurator?
+	public let rows: [CellConfigurator]
 
 	public init(
 		rows: [CellConfigurator],
@@ -22,7 +22,7 @@ public final class TableSection {
 		self.rows = rows
 	}
 
-	var isEmpty: Bool {
+	public var isEmpty: Bool {
 		return rows.isEmpty
 	}
 }

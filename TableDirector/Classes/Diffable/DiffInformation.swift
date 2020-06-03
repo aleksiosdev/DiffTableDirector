@@ -15,7 +15,7 @@ public struct DiffInformation: DiffableCollection {
 		return left.diffableKeys == right.diffableKeys
 	}
 
-	static var randomItem: DiffInformation {
+	public static var randomItem: DiffInformation {
 		let diffId = UUID().uuidString
 		return DiffInformation(diffId: diffId, diffableKeys: [:])
 	}

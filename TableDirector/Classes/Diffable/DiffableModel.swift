@@ -18,7 +18,7 @@ where CellType: UITableViewCell, CellType.ViewModel: DiffableViewModel {
 		self.viewModel = viewModel
 	}
 
-	var diffableItem: DiffInformation {
+	public var diffableItem: DiffInformation {
 		return DiffInformation(diffId: diffId, diffableKeys: viewModel.diffableKeys)
 	}
 }

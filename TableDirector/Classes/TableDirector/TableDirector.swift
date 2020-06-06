@@ -10,8 +10,6 @@ import UIKit
 // We have to inheritance NSObject - tableView delegates require it
 /// Perform all work with table view
 public final class TableDirector: NSObject {
-	private let _registrator: Registrator
-	private let _boundsCrossObserver: ScrollViewBoundsCrossObserver
 	private let _coverController: CoverView.Controller
 	private let _sectionsComporator: SectionsComporator
 	private var _sections: [TableSection] = [] {
@@ -23,13 +21,21 @@ public final class TableDirector: NSObject {
 	private var _diffableDataSourcce: DiffableDataSource?
 	private var _defaultCoverViewShowParams: CoverView.ShowParams?
 	private var _canShowEmptyView: Bool = true
+	private var _registrator: Registrator?
 	private lazy var pagination: Pagination? = {
 		guard let tableView = _tableView else { return nil }
 		return Pagination(tableView: tableView)
 	}()
 
 	// We need access to table view to perform some task. Object responsible for UI will retain table view
-	private weak var _tableView: UITableView?
+	public weak var _tableView: UITableView? {
+		didSet {
+			guard let tableView = _tableView else {
+				_registrator = nil
+				return
+			}
+		}
+	}
 
 	// Give us ability to switch off self registration
 	public var isSelfRegistrationEnabled: Bool
@@ -39,18 +45,16 @@ public final class TableDirector: NSObject {
 
 	/// Create instance with table view
 	/// - Parameter tableView: table view to controll
-	public init(tableView: UITableView, isSelfRegistrationEnabled: Bool = true) {
+	public init(tableView: UITableView? = nil, isSelfRegistrationEnabled: Bool = true) {
 		self._tableView = tableView
-		self._registrator = Registrator(tableView: tableView)
-		self._boundsCrossObserver = ScrollViewBoundsCrossObserver(scrollView: tableView)
 		self._coverController = CoverView.Controller()
 		self._sectionsComporator = SectionsComporator()
 		self.isSelfRegistrationEnabled = isSelfRegistrationEnabled
 
 		super.init()
 
-		_setDataSourceAndDelegate(for: tableView)
-		_setupEstimatedHeight(tableView: tableView)
+		guard let tableView = tableView else { return }
+		connect(to: tableView)
 	}
 
 	// MARK: - Table view settings
@@ -63,7 +67,7 @@ public final class TableDirector: NSObject {
 		tableView.delegate = self
 	}
 
-	private func _setupEstimatedHeight(tableView: UITableView) {
+	private func _setupEstimatedHeight(for tableView: UITableView) {
 		// We need to provide some height or in case your return automaticDimension height for header/footer
 		// viewForHeaderInSection/viewForFooterInSection won't trigger
 		tableView.estimatedSectionFooterHeight = 1
@@ -88,15 +92,22 @@ public final class TableDirector: NSObject {
 	}
 
 	// MARK: - Reload
-	private func _reload(with sections: [TableSection]) {
+	private func _fullReload(animated: Bool) {
+		if #available(iOS 13.0, *) {
+			return _reload(with: _sections, animated: animated)
+		}
+		_tableView?.reloadData()
+	}
+
+	private func _reload(with sections: [TableSection], animated: Bool) {
 		if #available(iOS 13.0, *) {
 			let snapshot = _sectionsComporator.calculateUpdate(newSections: sections)
 			self._sections = sections
-			_diffableDataSourcce?.apply(snapshot: snapshot)
+			_diffableDataSourcce?.apply(snapshot: snapshot, animated: animated)
 			return
 		}
 		let update = _sectionsComporator.calculateUpdate(oldSections: _sections, newSections: sections)
-		_tableView?.reload(update: update, animated: true, updateSectionsBlock: {
+		_tableView?.reload(update: update, animated: animated, updateSectionsBlock: {
 			self._sections = sections
 		})
 	}
@@ -104,7 +115,7 @@ public final class TableDirector: NSObject {
 	// MARK: - Create reusabel views
 	private func _createHeaderFooterView(with configurator: HeaderConfigurator, tableView: UITableView) -> UIView? {
 		if isSelfRegistrationEnabled {
-			_registrator.registerIfNeeded(headerFooterClass: configurator.viewClass)
+			_registrator?.registerIfNeeded(headerFooterClass: configurator.viewClass)
 		}
 		let reuseId = configurator.viewClass.reuseIdentifier
 		guard let headerFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: reuseId) else {
@@ -129,7 +140,7 @@ public final class TableDirector: NSObject {
 		configurator: CellConfigurator)
 		-> UITableViewCell {
 		if isSelfRegistrationEnabled {
-			_registrator.registerIfNeeded(cellClass: configurator.cellClass)
+			_registrator?.registerIfNeeded(cellClass: configurator.cellClass)
 		}
 		let cell = tableView.dequeueReusableCell(
 			withIdentifier: configurator.cellClass.reuseIdentifier,
@@ -141,25 +152,31 @@ public final class TableDirector: NSObject {
 
 // MARK: - TableDirectorInput
 extension TableDirector: TableDirectorInput {
-	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule) {
+	public func connect(to tableView: UITableView) {
+		_tableView = tableView
+
+		_registrator = Registrator(tableView: tableView)
+		_setDataSourceAndDelegate(for: tableView)
+		_setupEstimatedHeight(for: tableView)
+	}
+
+	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool) {
 		switch reloadRule {
 		case .fullReload:
-			if #available(iOS 13.0, *) {
-				return _reload(with: sections)
-			}
-			_tableView?.reloadData()
+			_sections = sections
+			_fullReload(animated: animated)
 		case .calculateReloadSync:
-			_reload(with: sections)
+			_reload(with: sections, animated: animated)
 		case .calculateReloadAsync(let queue):
 			queue.async {
-				self._reload(with: sections)
+				self._reload(with: sections, animated: animated)
 			}
 		}
 	}
 
-	public func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule) {
+	public func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animated: Bool) {
 		let sections = [TableSection(rows: rows)]
-		reload(with: sections, reloadRule: reloadRule)
+		reload(with: sections, reloadRule: reloadRule, animated: animated)
 	}
 
 	public func indexPath(for cell: UITableViewCell) -> IndexPath? {
@@ -179,21 +196,28 @@ extension TableDirector: TableDirectorInput {
 		tableView.prefetchDataSource = self
 	}
 
-	public func addEmptyStateView(view: UIView, position: TableDirector.CoverView.Position) {
-		_defaultCoverViewShowParams = .init(coverView: view, position: position)
-		if _sections.isEmpty {
-			guard let tableView = _tableView else { return }
-			_coverController.add(view: view, to: tableView, position: position)
+	public func addEmptyStateView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position) {
+		DispatchQueue.main.async {
+			let view = viewFactory()
+
+			self._defaultCoverViewShowParams = .init(coverView: view, position: position)
+			if self._sections.isEmpty {
+				guard let tableView = self._tableView else { return }
+				self._coverController.add(view: view, to: tableView, position: position)
+			}
 		}
 	}
 
-	public func clearAndShowView(view: UIView, position: TableDirector.CoverView.Position) {
-		guard let tableView = _tableView else { return }
-		defer { _canShowEmptyView = true }
-		_canShowEmptyView = false
-		_sections = []
-		_tableView?.reloadData()
-		_coverController.add(view: view, to: tableView, position: position)
+	public func clearAndShowView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position) {
+		DispatchQueue.main.async {
+			let view = viewFactory()
+			guard let tableView = self._tableView else { return }
+			defer { self._canShowEmptyView = true }
+			self._canShowEmptyView = false
+			self._sections = []
+			self._fullReload(animated: true)
+			self._coverController.add(view: view, to: tableView, position: position)
+		}
 	}
 }
 

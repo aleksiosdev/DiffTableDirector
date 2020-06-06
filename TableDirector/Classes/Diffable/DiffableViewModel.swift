@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol DiffableViewModel {
+	var diffId: String { get }
 	var diffableKeys: [String: String] { get }
 }
 

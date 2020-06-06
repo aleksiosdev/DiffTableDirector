@@ -9,11 +9,11 @@ import Foundation
 
 @available(iOS 13.0, *)
 final class DiffableTableViewDataSource:
-UITableViewDiffableDataSource<AnyHeaderConfigurator, AnyCellConfigurator>, DiffableDataSource {
-	func apply(snapshot: Snapshot) {
-		guard let snapshot = snapshot as? NSDiffableDataSourceSnapshot<AnyHeaderConfigurator, AnyCellConfigurator> else {
+UITableViewDiffableDataSource<String, AnyCellConfigurator>, DiffableDataSource {
+	func apply(snapshot: Snapshot, animated: Bool) {
+		guard let snapshot = snapshot as? NSDiffableDataSourceSnapshot<String, AnyCellConfigurator> else {
 			return
 		}
-		apply(snapshot)
+		apply(snapshot, animatingDifferences: animated)
 	}
 }

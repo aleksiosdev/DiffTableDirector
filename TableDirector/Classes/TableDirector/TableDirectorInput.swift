@@ -14,6 +14,10 @@ public protocol TableDirectorInput: class {
 
 	var isSelfRegistrationEnabled: Bool { get set }
 
+	/// Connect table director to specific table view
+	/// - Parameter tableView: table view
+	func connect(to tableView: UITableView)
+
 	/// Add pagination controller to table view.
 	/// If pagination controller with provided direction already exist - it will be replaced with new one
 	/// - Parameter paginationController: control pagination proccess
@@ -29,6 +33,13 @@ public protocol TableDirectorInput: class {
 	///   - reloadRule: update table rule
 	func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule)
 
+	/// Reload table view with provided sections
+	/// - Parameters: -
+	///   - sections: new table sections
+	///   - reloadRule: update table rule
+	///   - animated: should use table view default animation
+	func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool)
+
 	/// Reload table view with single sections containig provider rows
 	/// - Parameter rows: new table view rows
 	func reload(with rows: [CellConfigurator])
@@ -39,6 +50,13 @@ public protocol TableDirectorInput: class {
 	///   - reloadRule: update table rule
 	func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule)
 
+	/// Reload table view with single sections containig provider rows
+	/// - Parameters:
+	///   - rows: new table view rows
+	///   - reloadRule: update table rule
+	///   - animated: should use table view default animation
+	func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animated: Bool)
+
 	/// Got index path of cell if it exist in table view
 	/// - Parameter cell: table cell to find indexPath
 	func indexPath(for cell: UITableViewCell) -> IndexPath?
@@ -46,16 +64,16 @@ public protocol TableDirectorInput: class {
 	/// Add view that weill be shown if table content is empty
 	/// TableDirector will retatin view, so keep it in mind
 	/// - Parameters:
-	///   - view: view to show inside table
+	///   - viewFactory: function that creates view. Called on main thread only
 	///   - position: information how to place view inside table view
-	func addEmptyStateView(view: UIView, position: TableDirector.CoverView.Position)
+	func addEmptyStateView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position)
 
 	/// Clear current table content and show info view with settings
 	/// If will replace empty view if there is any in table
 	/// - Parameters:
-	///   - view: view to show inside table
+	///   - viewFactory: function that creates view. Called on main thread only
 	///   - position: information how to place view inside table view
-	func clearAndShowView(view: UIView, position: TableDirector.CoverView.Position)
+	func clearAndShowView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position)
 }
 
 // MARK: - Default implementation
@@ -66,5 +84,13 @@ extension TableDirectorInput {
 
 	public func reload(with rows: [CellConfigurator]) {
 		reload(with: rows, reloadRule: .fullReload)
+	}
+
+	public func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule) {
+		reload(with: rows, reloadRule: reloadRule, animated: true)
+	}
+
+	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule) {
+		reload(with: sections, reloadRule: reloadRule, animated: true)
 	}
 }

@@ -18,7 +18,11 @@ struct AnyCellConfigurator: Hashable {
 	}
 
 	func hash(into hasher: inout Hasher) {
-		hasher.combine(cellConfigurator.diffableItem.diffableKeys)
+		for (_, value) in cellConfigurator.diffableItem.diffableKeys {
+			hasher.combine(value)
+		}
 		hasher.combine(cellConfigurator.diffableItem.diffId)
 	}
 }
+
+extension AnyCellConfigurator: Equatable { }

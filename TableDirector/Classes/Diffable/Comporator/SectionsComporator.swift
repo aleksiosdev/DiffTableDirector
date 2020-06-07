@@ -10,12 +10,13 @@ import Foundation
 struct SectionsComporator {
 	@available(iOS 13.0, *)
 	func calculateUpdate(newSections: [TableSection]) -> Snapshot {
-		var snapshot = NSDiffableDataSourceSnapshot<AnyHeaderConfigurator, AnyCellConfigurator>()
-		newSections.forEach { section in
-			if let headerConfigurator = section.headerView {
-				snapshot.appendSections([AnyHeaderConfigurator(headerConfigurator: headerConfigurator)])
-			}
-			snapshot.appendItems(section.rows.map { AnyCellConfigurator(cellConfigurator: $0) })
+		var snapshot = NSDiffableDataSourceSnapshot<String, AnyCellConfigurator>()
+		let sectionEnumerated = newSections.enumerated()
+		snapshot.appendSections(sectionEnumerated.map({ $0.element.identifier }))
+		sectionEnumerated.forEach { index, section in
+			guard !section.isEmpty else { return }
+			let identifier = section.identifier
+			snapshot.appendItems(section.rows.map { AnyCellConfigurator(cellConfigurator: $0) }, toSection: identifier)
 		}
 		return snapshot
 	}

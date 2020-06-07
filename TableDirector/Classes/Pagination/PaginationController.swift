@@ -153,7 +153,7 @@ extension PaginationController: LoadOperationHandable {
 	public func finished(isSuccessfull: Bool, canLoadNext: Bool) {
 		DispatchQueue.main.async {
 			self._handleLoaderStateChanges(newState: isSuccessfull ? .success : .failure)
+			self.loadNext = canLoadNext ? .enabled : .disabled
 		}
-		self.loadNext = canLoadNext ? .enabled : .disabled
 	}
 }

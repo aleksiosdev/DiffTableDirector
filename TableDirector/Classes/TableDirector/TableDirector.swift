@@ -18,6 +18,7 @@ public final class TableDirector: NSObject {
 		}
 	}
 
+	private var _updateQueue: [() -> Void] = []
 	private var _diffableDataSourcce: DiffableDataSource?
 	private var _defaultCoverViewShowParams: CoverView.ShowParams?
 	private var _canShowEmptyView: Bool = true
@@ -111,27 +112,29 @@ public final class TableDirector: NSObject {
 	}
 
 	// MARK: - Reload
-	private func _fullReload(with sections: [TableSection], animated: Bool) {
+	private func _fullReload(with sections: [TableSection], animated: Bool, completion: @escaping () -> Void) {
 		if #available(iOS 13.0, *) {
-			return _reload(with: sections, animated: animated)
+			return _reload(with: sections, animated: animated, completion: completion)
 		}
 		DispatchQueue.main.async {
 			self._sections = sections
-			self._tableView?.reloadData()
+			self._tableView?.fullReload(completion: completion)
 		}
 	}
 
-	private func _reload(with sections: [TableSection], animated: Bool) {
+	private func _reload(with sections: [TableSection], animated: Bool, completion: @escaping () -> Void) {
 		if #available(iOS 13.0, *) {
 			let snapshot = _sectionsComporator.calculateUpdate(newSections: sections)
 			self._sections = sections
 			_diffableDataSourcce?.apply(snapshot: snapshot, animated: animated)
 			return
 		}
-		let update = _sectionsComporator.calculateUpdate(oldSections: _sections, newSections: sections)
+		let update = _sectionsComporator.calculateUpdate(
+			oldSections: _sections,
+			newSections: sections.filter({ !$0.isEmpty }))
 		_tableView?.reload(update: update, animated: animated, updateSectionsBlock: {
 			self._sections = sections
-		})
+		}, completion: completion)
 	}
 
 	// MARK: - Create reusabel views
@@ -191,14 +194,41 @@ extension TableDirector: TableDirectorInput {
 	}
 
 	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool) {
+		let sections = sections.filter({ !$0.isEmpty })
+
+		if #available(iOS 13.0, *) {
+			return _reload(with: sections, reloadRule: reloadRule, animated: animated, completion: { })
+		}
+
+		let completion = {
+			guard !self._updateQueue.isEmpty else { return }
+			let lastOperation = self._updateQueue.removeLast()
+			lastOperation()
+		}
+
+		let updateTableBlock = {
+			self._reload(with: sections, reloadRule: reloadRule, animated: animated, completion: completion)
+		}
+
+		_updateQueue.append(updateTableBlock)
+		if _updateQueue.count == 1 {
+			completion()
+		}
+	}
+
+	private func _reload(
+		with sections: [TableSection],
+		reloadRule: TableDirector.ReloadRule,
+		animated: Bool,
+		completion: @escaping () -> Void) {
 		switch reloadRule {
 		case .fullReload:
-			_fullReload(with: sections, animated: animated)
+			self._fullReload(with: sections, animated: animated, completion: completion)
 		case .calculateReloadSync:
-			_reload(with: sections, animated: animated)
+			self._reload(with: sections, animated: animated, completion: completion)
 		case .calculateReloadAsync(let queue):
 			queue.async {
-				self._reload(with: sections, animated: animated)
+				self._reload(with: sections, animated: animated, completion: completion)
 			}
 		}
 	}
@@ -243,7 +273,7 @@ extension TableDirector: TableDirectorInput {
 			guard let tableView = self._tableView else { return }
 			defer { self._canShowEmptyView = true }
 			self._canShowEmptyView = false
-			self._fullReload(with: [], animated: true)
+			self._fullReload(with: [], animated: true, completion: { })
 			self._coverController.add(view: view, to: tableView, position: position)
 		}
 	}

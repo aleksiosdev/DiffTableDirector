@@ -35,7 +35,11 @@ extension UITableView {
 		}
 	}
 
-	func reload(update: CollectionUpdate, animated: Bool, updateSectionsBlock: @escaping () -> Void) {
+	func reload(
+		update: CollectionUpdate,
+		animated: Bool,
+		updateSectionsBlock: @escaping () -> Void,
+		completion: @escaping () -> Void) {
 		DispatchQueue.asyncOnMainIfNeeded { [update] in
 			UIView.setAnimationsEnabled(animated)
 			if #available(iOS 11.0, *) {
@@ -48,12 +52,20 @@ extension UITableView {
 						self._reloadSection(update: update)
 					}, completion: { _ in
 						UIView.setAnimationsEnabled(animated)
+						completion()
 					})
 				})
 			} else {
 				fatalError()
 			}
 		}
+	}
+
+	func fullReload(completion: @escaping () -> Void) {
+		CATransaction.begin()
+		CATransaction.setCompletionBlock(completion)
+		reloadData()
+		CATransaction.commit()
 	}
 }
 

@@ -9,8 +9,14 @@ import Foundation
 
 /// Interface for TableDirector. Provides all nessasry operation for users
 public protocol TableDirectorInput: class {
+	// Observe bounds cross on top
 	var topCrossObserver: ThresholdCrossObserver? { get set }
+
+	// Observe bounds cross on bottom
 	var bottomCrossObserver: ThresholdCrossObserver? { get set }
+
+	/// Recieve didScroll events from scroll view
+	var scrollObserable: ScrollObserverable? { get set }
 
 	var isSelfRegistrationEnabled: Bool { get set }
 

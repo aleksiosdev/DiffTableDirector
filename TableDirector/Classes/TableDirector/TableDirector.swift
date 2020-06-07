@@ -40,8 +40,23 @@ public final class TableDirector: NSObject {
 	// Give us ability to switch off self registration
 	public var isSelfRegistrationEnabled: Bool
 
-	public var topCrossObserver: ThresholdCrossObserver?
-	public var bottomCrossObserver: ThresholdCrossObserver?
+	public var scrollObserable: ScrollObserverable? 
+
+	public var topCrossObserver: ThresholdCrossObserver? {
+		didSet {
+			_boundsCrossObserver?.topCrossObserver = topCrossObserver
+		}
+	}
+	public var bottomCrossObserver: ThresholdCrossObserver? {
+		didSet {
+			_boundsCrossObserver?.bottomCrossObserver = bottomCrossObserver
+		}
+	}
+
+	private lazy var _boundsCrossObserver: ScrollViewBoundsCrossObservable? = {
+		guard let tableView = _tableView else { return nil }
+		return ScrollViewBoundsCrossObserver(scrollView: tableView)
+	}()
 
 	/// Create instance with table view
 	/// - Parameter tableView: table view to controll
@@ -75,6 +90,10 @@ public final class TableDirector: NSObject {
 
 		// Providing base extimate height for rows remove lags in scroll indicator and increase performance
 		tableView.estimatedRowHeight = 1
+	}
+
+	private func createBoundsCroseObserver(for tableView: UITableView) -> ScrollViewBoundsCrossObservable {
+		return ScrollViewBoundsCrossObserver(scrollView: tableView)
 	}
 
 	private func _changeCoverViewVisability(isSectionsEmpty: Bool) {
@@ -158,6 +177,14 @@ extension TableDirector: TableDirectorInput {
 		_registrator = Registrator(tableView: tableView)
 		_setDataSourceAndDelegate(for: tableView)
 		_setupEstimatedHeight(for: tableView)
+
+		if _boundsCrossObserver?.topCrossObserver != nil || _boundsCrossObserver?.bottomCrossObserver != nil {
+			if _boundsCrossObserver == nil {
+				_boundsCrossObserver = createBoundsCroseObserver(for: tableView)
+				_boundsCrossObserver?.topCrossObserver = topCrossObserver
+				_boundsCrossObserver?.bottomCrossObserver = bottomCrossObserver
+			}
+		}
 	}
 
 	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool) {
@@ -261,6 +288,10 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 	public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		guard _sections[section].footerView != nil else { return 0 }
 		return UITableView.automaticDimension
+	}
+
+	public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		scrollObserable?.scrollViewDidScroll(scrollView: scrollView)
 	}
 }
 

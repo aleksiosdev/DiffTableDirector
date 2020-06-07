@@ -34,8 +34,8 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 
 // MARK: - CellType.ViewModel: Equatable
 extension TableActionRow where CellType.ViewModel: DiffableViewModel {
-	public convenience init(item: DiffableViewModel, delegate: CellType.Delegate) {
-		self.init(item: item, delegate: delegate)
-		diffableItem = DiffInformation(diffId: item.diffId, diffableKeys: item.diffableKeys)
+	public convenience init(diffViewModel: CellType.ViewModel, delegate: CellType.Delegate) {
+		self.init(item: diffViewModel, delegate: delegate)
+		diffableItem = DiffInformation(diffId: diffViewModel.diffId, diffableKeys: diffViewModel.diffableKeys)
 	}
 }

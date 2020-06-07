@@ -38,7 +38,9 @@ extension TableDirector.CoverView {
 		}
 
 		func hide() {
-			_activeView?.removeFromSuperview()
+			DispatchQueue.main.async {
+				self._activeView?.removeFromSuperview()
+			}
 		}
 
 		// MARK: - Layout in center

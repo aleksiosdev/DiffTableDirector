@@ -111,11 +111,14 @@ public final class TableDirector: NSObject {
 	}
 
 	// MARK: - Reload
-	private func _fullReload(animated: Bool) {
+	private func _fullReload(with sections: [TableSection], animated: Bool) {
 		if #available(iOS 13.0, *) {
-			return _reload(with: _sections, animated: animated)
+			return _reload(with: sections, animated: animated)
 		}
-		_tableView?.reloadData()
+		DispatchQueue.main.async {
+			self._sections = sections
+			self._tableView?.reloadData()
+		}
 	}
 
 	private func _reload(with sections: [TableSection], animated: Bool) {
@@ -190,8 +193,7 @@ extension TableDirector: TableDirectorInput {
 	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool) {
 		switch reloadRule {
 		case .fullReload:
-			_sections = sections
-			_fullReload(animated: animated)
+			_fullReload(with: sections, animated: animated)
 		case .calculateReloadSync:
 			_reload(with: sections, animated: animated)
 		case .calculateReloadAsync(let queue):
@@ -241,8 +243,7 @@ extension TableDirector: TableDirectorInput {
 			guard let tableView = self._tableView else { return }
 			defer { self._canShowEmptyView = true }
 			self._canShowEmptyView = false
-			self._sections = []
-			self._fullReload(animated: true)
+			self._fullReload(with: [], animated: true)
 			self._coverController.add(view: view, to: tableView, position: position)
 		}
 	}

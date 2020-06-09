@@ -9,7 +9,11 @@ import Foundation
 
 struct AnyCellConfigurator: Hashable {
 	static func == (lhs: AnyCellConfigurator, rhs: AnyCellConfigurator) -> Bool {
-		return lhs.cellConfigurator.diffableItem.diffId == rhs.cellConfigurator.diffableItem.diffId
+		let lhsDict = lhs.cellConfigurator.diffableItem.diffableKeys
+		let rhsDict = rhs.cellConfigurator.diffableItem.diffableKeys
+		let lhsDiffId = lhs.cellConfigurator.diffableItem.diffId
+		let rhsDiffId = rhs.cellConfigurator.diffableItem.diffId
+		return lhsDiffId == rhsDiffId && lhsDict == rhsDict
 	}
 
 	let cellConfigurator: CellConfigurator
@@ -25,4 +29,5 @@ struct AnyCellConfigurator: Hashable {
 	}
 }
 
+// MARK: - Equatable
 extension AnyCellConfigurator: Equatable { }

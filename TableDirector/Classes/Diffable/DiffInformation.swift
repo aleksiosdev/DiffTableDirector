@@ -26,6 +26,4 @@ public struct DiffInformation: DiffableCollection {
 	}
 }
 
-
-
-
+extension DiffInformation: Equatable { }

@@ -14,6 +14,7 @@ UITableViewDiffableDataSource<String, AnyCellConfigurator>, DiffableDataSource {
 		guard let snapshot = snapshot as? NSDiffableDataSourceSnapshot<String, AnyCellConfigurator> else {
 			return
 		}
+
 		apply(snapshot, animatingDifferences: animated)
 	}
 }

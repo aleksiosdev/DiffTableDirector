@@ -116,7 +116,7 @@ public final class TableDirector: NSObject {
 		if #available(iOS 13.0, *) {
 			return _reload(with: sections, animated: animated, completion: completion)
 		}
-		DispatchQueue.main.async {
+		DispatchQueue.asyncOnMainIfNeeded {
 			self._sections = sections
 			self._tableView?.fullReload(completion: completion)
 		}
@@ -196,10 +196,6 @@ extension TableDirector: TableDirectorInput {
 	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool) {
 		let sections = sections.filter({ !$0.isEmpty })
 
-		if #available(iOS 13.0, *) {
-			return _reload(with: sections, reloadRule: reloadRule, animated: animated, completion: { })
-		}
-
 		let completion = {
 			guard !self._updateQueue.isEmpty else { return }
 			let lastOperation = self._updateQueue.removeLast()
@@ -256,7 +252,7 @@ extension TableDirector: TableDirectorInput {
 	}
 
 	public func addEmptyStateView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position) {
-		DispatchQueue.main.async {
+		DispatchQueue.asyncOnMainIfNeeded {
 			let view = viewFactory()
 
 			self._defaultCoverViewShowParams = .init(coverView: view, position: position)
@@ -268,7 +264,7 @@ extension TableDirector: TableDirectorInput {
 	}
 
 	public func clearAndShowView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position) {
-		DispatchQueue.main.async {
+		DispatchQueue.asyncOnMainIfNeeded {
 			let view = viewFactory()
 			guard let tableView = self._tableView else { return }
 			defer { self._canShowEmptyView = true }

@@ -9,9 +9,9 @@ import Foundation
 
 public struct DiffInformation: DiffableCollection {
 	public let diffId: String
-	let diffableKeys: [String: String]
+	let diffableKeys: [String: AnyHashable]
 
-	public init(diffId: String, diffableKeys: [String: String]) {
+	public init(diffId: String, diffableKeys: [String: AnyHashable]) {
 		self.diffId = diffId
 		self.diffableKeys = diffableKeys
 	}
@@ -26,4 +26,8 @@ public struct DiffInformation: DiffableCollection {
 	}
 }
 
+// MARK: - Equatable
 extension DiffInformation: Equatable { }
+
+// MARK: - Hashable
+extension DiffInformation: Hashable { }

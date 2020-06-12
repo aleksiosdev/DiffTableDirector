@@ -14,7 +14,9 @@ open class TableDirector: NSObject {
 	private let _sectionsComporator: SectionsComporator
 	private var _sections: [TableSection] = [] {
 		didSet {
-			_changeCoverViewVisability(isSectionsEmpty: _sections.isEmpty)
+			DispatchQueue.asyncOnMainIfNeeded {
+				self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
+			}
 		}
 	}
 

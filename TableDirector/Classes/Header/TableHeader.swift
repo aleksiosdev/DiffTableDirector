@@ -13,20 +13,21 @@ where HeaderType: UITableViewHeaderFooterView {
 	public var viewClass: UITableViewHeaderFooterView.Type { return HeaderType.self }
 
 	public private(set) var diffableItem: DiffInformation = .randomItem
+	public private(set) var viewHeight: CGFloat?
+
 	public let item: HeaderType.ViewModel
 
-	public private(set) var viewHeight: CGFloat?
 
 	public init(item: HeaderType.ViewModel) {
 		self.item = item
 	}
 
-	convenience init(item: HeaderType.ViewModel, height: CGFloat) {
+	public convenience init(item: HeaderType.ViewModel, height: CGFloat) {
 		self.init(item: item)
 		self.viewHeight = height
 	}
 
-	convenience init(item: HeaderType.ViewModel, heightCalculatable: HeightCalculatable) {
+	public convenience init(item: HeaderType.ViewModel, heightCalculatable: HeightCalculatable) {
 		self.init(item: item)
 		self.viewHeight = heightCalculatable.viewHeight
 	}

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol HeightCalculatable {
+public protocol HeightCalculatable {
 	var viewHeight: CGFloat { get }
 }

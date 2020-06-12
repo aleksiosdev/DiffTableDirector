@@ -298,25 +298,28 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 
 	public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		// Take configurator if threre is any
-		guard let configurator = _sections[section].headerView else { return nil }
+		guard let configurator = _sections[section].headerConfigurator else { return nil }
 		return _createHeaderFooterView(with: configurator, tableView: tableView)
 	}
 
 	public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-		guard let configurator = _sections[section].footerView else { return nil }
+		guard let configurator = _sections[section].footerConfigurator else { return nil }
 		return _createHeaderFooterView(with: configurator, tableView: tableView)
 	}
 
 	public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		guard let headerConfigurator = _sections[section].headerConfigurator else { return 0 }
 		if let viewHeight = headerConfigurator.viewHeight {
-			return height
+			return viewHeight
 		}
 		return UITableView.automaticDimension
 	}
 
 	public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		guard _sections[section].footerView != nil else { return 0 }
+		guard let footerConfigurator = _sections[section].footerConfigurator else { return 0 }
+		if let viewHeight = footerConfigurator.viewHeight {
+			return viewHeight
+		}
 		return UITableView.automaticDimension
 	}
 

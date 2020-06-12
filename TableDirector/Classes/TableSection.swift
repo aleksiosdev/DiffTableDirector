@@ -10,13 +10,13 @@ import Foundation
 /// Store configurators to create single section
 public final class TableSection {
 	public let rows: [CellConfigurator]
-	public let identifier: String
+	public let identifier: String?
 	public let headerConfigurator: HeaderConfigurator?
 	public let footerConfigurator: FooterConfigurator?
 
 	public init(
 		rows: [CellConfigurator],
-		identifier: String = UUID().uuidString,
+		identifier: String? = nil,
 		headerConfigurator: HeaderConfigurator? = nil,
 		footerConfigurator: FooterConfigurator? = nil) {
 		self.rows = rows

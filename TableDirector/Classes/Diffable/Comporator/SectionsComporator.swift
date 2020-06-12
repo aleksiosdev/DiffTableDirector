@@ -12,7 +12,7 @@ struct SectionsComporator {
 	func calculateUpdate(newSections: [TableSection]) -> Snapshot {
 		var snapshot = NSDiffableDataSourceSnapshot<String, AnyCellConfigurator>()
 		let sectionEnumerated = newSections.enumerated()
-		snapshot.appendSections(sectionEnumerated.map({ $0.element.identifier }))
+		snapshot.appendSections(sectionEnumerated.map({ $0.element.identifier ?? "\($0.offset)" }))
 		sectionEnumerated.forEach { index, section in
 			guard !section.isEmpty else { return }
 			let identifier = section.identifier

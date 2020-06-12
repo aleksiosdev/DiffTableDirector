@@ -36,9 +36,9 @@ struct SectionsComporator {
 			guard let oldSection = oldSections[safe: index] else {
 				continue
 			}
-			let comparator = RowsComparator<DiffInformation>(
-				old: oldSection.rows.map({ $0.diffableItem }),
-				new: section.rows.map({ $0.diffableItem }),
+			let comparator = RowsComparator<DiffInfo>(
+				old: oldSection.rows.map({ $0.diffInfo }),
+				new: section.rows.map({ $0.diffInfo }),
 				section: index)
 			insertedIndexes += comparator.inserted
 			deletedIndexes += comparator.deleted

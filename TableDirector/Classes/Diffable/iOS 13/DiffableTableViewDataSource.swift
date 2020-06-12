@@ -8,8 +8,7 @@
 import Foundation
 
 @available(iOS 13.0, *)
-final class DiffableTableViewDataSource:
-UITableViewDiffableDataSource<String, AnyCellConfigurator>, DiffableDataSource {
+final class DiffableTableViewDataSource: UITableViewDiffableDataSource<String, AnyCellConfigurator>, DiffableDataSource {
 	func apply(snapshot: Snapshot, animated: Bool) {
 		guard let snapshot = snapshot as? NSDiffableDataSourceSnapshot<String, AnyCellConfigurator> else {
 			return

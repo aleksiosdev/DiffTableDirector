@@ -9,10 +9,10 @@ import Foundation
 
 struct AnyCellConfigurator: Hashable {
 	static func == (lhs: AnyCellConfigurator, rhs: AnyCellConfigurator) -> Bool {
-		let lhsDict = lhs.cellConfigurator.diffableItem.diffableKeys
-		let rhsDict = rhs.cellConfigurator.diffableItem.diffableKeys
-		let lhsDiffId = lhs.cellConfigurator.diffableItem.diffId
-		let rhsDiffId = rhs.cellConfigurator.diffableItem.diffId
+		let lhsDict = lhs.cellConfigurator.diffInfo.properties
+		let rhsDict = rhs.cellConfigurator.diffInfo.properties
+		let lhsDiffId = lhs.cellConfigurator.diffInfo.diffId
+		let rhsDiffId = rhs.cellConfigurator.diffInfo.diffId
 		return lhsDiffId == rhsDiffId && lhsDict == rhsDict
 	}
 
@@ -22,8 +22,8 @@ struct AnyCellConfigurator: Hashable {
 	}
 
 	func hash(into hasher: inout Hasher) {
-		hasher.combine(cellConfigurator.diffableItem.diffableKeys)
-		hasher.combine(cellConfigurator.diffableItem.diffId)
+		hasher.combine(cellConfigurator.diffInfo.properties)
+		hasher.combine(cellConfigurator.diffInfo.diffId)
 	}
 }
 

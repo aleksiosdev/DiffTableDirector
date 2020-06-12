@@ -12,13 +12,7 @@ import UIKit
 open class TableDirector: NSObject {
 	private let _coverController: CoverView.Controller
 	private let _sectionsComporator: SectionsComporator
-	private var _sections: [TableSection] = [] {
-		didSet {
-			DispatchQueue.asyncOnMainIfNeeded {
-				self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
-			}
-		}
-	}
+	private var _sections: [TableSection] = []
 
 	private var _updateQueue: [() -> Void] = []
 	private var _diffableDataSourcce: DiffableDataSource?
@@ -199,6 +193,8 @@ extension TableDirector: TableDirectorInput {
 		let sections = sections.filter({ !$0.isEmpty })
 
 		let completion = {
+			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
+			
 			guard !self._updateQueue.isEmpty else { return }
 			let lastOperation = self._updateQueue.removeLast()
 			lastOperation()

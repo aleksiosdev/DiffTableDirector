@@ -10,6 +10,8 @@ import Foundation
 public final class TableActionHeader<HeaderType: ActionHeader>: HeaderConfigurator
 where HeaderType: UITableViewHeaderFooterView {
 	public private(set) var diffableItem: DiffInformation = .randomItem
+	public private(set) var viewHeight: CGFloat?
+
 	public var viewClass: UITableViewHeaderFooterView.Type { return HeaderType.self }
 
 	var item: HeaderType.ViewModel
@@ -17,7 +19,7 @@ where HeaderType: UITableViewHeaderFooterView {
 	weak var delegate: AnyObject?
 
 	// Store item and delegate
-	public  init(item: HeaderType.ViewModel, delegate: HeaderType.Delegate) {
+	public init(item: HeaderType.ViewModel, delegate: HeaderType.Delegate) {
 		self.item = item
 		// Here is some hack that I'll expalin under code
 		self.delegate = delegate as AnyObject

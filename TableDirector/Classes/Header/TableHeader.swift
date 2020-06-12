@@ -13,10 +13,23 @@ where HeaderType: UITableViewHeaderFooterView {
 	public var viewClass: UITableViewHeaderFooterView.Type { return HeaderType.self }
 
 	public private(set) var diffableItem: DiffInformation = .randomItem
+	public private(set) var viewHeight: CGFloat?
+
 	public let item: HeaderType.ViewModel
+
 
 	public init(item: HeaderType.ViewModel) {
 		self.item = item
+	}
+
+	public convenience init(item: HeaderType.ViewModel, height: CGFloat) {
+		self.init(item: item)
+		self.viewHeight = height
+	}
+
+	public convenience init(item: HeaderType.ViewModel, heightCalculatable: HeightCalculatable) {
+		self.init(item: item)
+		self.viewHeight = heightCalculatable.viewHeight
 	}
 
 	public func configure(view: UITableViewHeaderFooterView) {

@@ -11,6 +11,7 @@ import Foundation
 public protocol CellConfigurator {
 	var cellClass: UITableViewCell.Type { get }
 	var diffableItem: DiffInformation { get }
+	var viewHeight: CGFloat? { get }
 
 	func configure(cell: UITableViewCell)
 }

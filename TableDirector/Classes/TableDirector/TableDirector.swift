@@ -308,7 +308,10 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 	}
 
 	public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		guard _sections[section].headerView != nil else { return 0 }
+		guard let headerConfigurator = _sections[section].headerConfigurator else { return 0 }
+		if let viewHeight = headerConfigurator.viewHeight {
+			return height
+		}
 		return UITableView.automaticDimension
 	}
 

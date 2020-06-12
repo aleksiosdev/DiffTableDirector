@@ -11,18 +11,18 @@ import Foundation
 public final class TableSection {
 	public let rows: [CellConfigurator]
 	public let identifier: String
-	public let headerView: HeaderConfigurator?
-	public let footerView: FooterConfigurator?
+	public let headerConfigurator: HeaderConfigurator?
+	public let footerConfigurator: FooterConfigurator?
 
 	public init(
 		rows: [CellConfigurator],
 		identifier: String = UUID().uuidString,
-		headerView: HeaderConfigurator? = nil,
-		footerView: FooterConfigurator? = nil) {
+		headerConfigurator: HeaderConfigurator? = nil,
+		footerConfigurator: FooterConfigurator? = nil) {
 		self.rows = rows
 		self.identifier = identifier
-		self.headerView = headerView
-		self.footerView = footerView
+		self.headerConfigurator = headerConfigurator
+		self.footerConfigurator = footerConfigurator
 	}
 
 	public var isEmpty: Bool {

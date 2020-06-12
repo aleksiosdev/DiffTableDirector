@@ -22,9 +22,7 @@ struct AnyCellConfigurator: Hashable {
 	}
 
 	func hash(into hasher: inout Hasher) {
-		for (_, value) in cellConfigurator.diffableItem.diffableKeys {
-			hasher.combine(value)
-		}
+		hasher.combine(cellConfigurator.diffableItem.diffableKeys)
 		hasher.combine(cellConfigurator.diffableItem.diffId)
 	}
 }

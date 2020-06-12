@@ -32,8 +32,8 @@ public final class TableRow<CellType: ConfigurableCell>: CellConfigurator where 
 }
 
 // MARK: - CellType.ViewModel: Equatable
-extension TableRow where CellType.ViewModel: DiffableViewModel {
-	public convenience init(item: DiffableViewModel) {
+extension TableRow where CellType.ViewModel: ViewModelDiffable {
+	public convenience init(item: ViewModelDiffable) {
 		self.init(item: item)
 		diffableItem = DiffInformation(diffId: item.diffId, diffableKeys: item.diffableKeys)
 	}

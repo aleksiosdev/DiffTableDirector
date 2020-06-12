@@ -30,7 +30,15 @@ public final class PaginationController {
 	weak var output: PaginationControllerOutput?
 
 	/// Avilability of next page
-	public var loadNext: Availability
+	public var loadNext: Availability {
+		didSet {
+			if loadNext == .disabled {
+				DispatchQueue.asyncOnMainIfNeeded {
+					self._handleLoaderStateChanges(newState: .success)
+				}
+			}
+		}
+	}
 
 	/// Prefetch algorithm
 	public var prefetch: PrefetchStrategy
@@ -87,7 +95,7 @@ public final class PaginationController {
 		guard let indexPath = _edgeIndexPath(from: indexPaths, direction: direction) else { return }
 		let edgeLinearIndex = _lastRowLiniarIndex(in: Array(sections[0..<indexPath.section])) + indexPath.row
 		let lastRowLineatIndex = _lastRowLiniarIndex(in: sections)
-		guard abs(edgeLinearIndex - lastRowLineatIndex) < 2 else { return }
+		guard abs(edgeLinearIndex - lastRowLineatIndex) < 1 else { return }
 		_startLoading()
 	}
 

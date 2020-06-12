@@ -9,7 +9,7 @@ import Foundation
 import DeepDiff
 
 public struct DiffableModel<CellType: ConfigurableCell>
-where CellType: UITableViewCell, CellType.ViewModel: DiffableViewModel {
+where CellType: UITableViewCell, CellType.ViewModel: ViewModelDiffable {
 	public let diffId: String
 	public let viewModel: CellType.ViewModel
 

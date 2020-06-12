@@ -42,6 +42,7 @@ extension UITableView {
 		completion: @escaping () -> Void) {
 		DispatchQueue.asyncOnMainIfNeeded { [update] in
 			UIView.setAnimationsEnabled(animated)
+			updateSectionsBlock()
 			if #available(iOS 11.0, *) {
 				self.performBatchUpdates({
 					updateSectionsBlock()

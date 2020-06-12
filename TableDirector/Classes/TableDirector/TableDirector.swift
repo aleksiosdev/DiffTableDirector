@@ -194,7 +194,7 @@ extension TableDirector: TableDirectorInput {
 
 		let completion = {
 			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
-			
+
 			guard !self._updateQueue.isEmpty else { return }
 			let lastOperation = self._updateQueue.removeLast()
 			lastOperation()

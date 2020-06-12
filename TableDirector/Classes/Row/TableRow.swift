@@ -12,22 +12,22 @@ import Foundation
 public final class TableRow<CellType: ConfigurableCell>: CellConfigurator where CellType: UITableViewCell {
 	public var cellClass: UITableViewCell.Type { return CellType.self }
 
-	public let item: CellType.ViewModel
+	public let viewModel: CellType.ViewModel
 
 	public private(set) var viewHeight: CGFloat?
 	public private(set) var diffableItem: DiffInformation = .randomItem
 
-	public init(item: CellType.ViewModel) {
-		self.item = item
+	public init(viewModel: CellType.ViewModel) {
+		self.viewModel = viewModel
 	}
 
 	public convenience init(item: CellType.ViewModel, height: CGFloat) {
-		self.init(item: item)
+		self.init(viewModel: item)
 		self.viewHeight = height
 	}
 
 	public convenience init(item: CellType.ViewModel, heightCalculatable: HeightCalculatable) {
-		self.init(item: item)
+		self.init(viewModel: item)
 		self.viewHeight = heightCalculatable.viewHeight
 	}
 
@@ -39,7 +39,7 @@ public final class TableRow<CellType: ConfigurableCell>: CellConfigurator where 
 		guard let cellWithType = cell as? CellType else {
 			fatalError()
 		}
-		cellWithType.configure(item)
+		cellWithType.configure(viewModel)
 	}
 }
 

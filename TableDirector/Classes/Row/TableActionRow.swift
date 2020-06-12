@@ -10,7 +10,7 @@ import Foundation
 public final class TableActionRow<CellType: ActionCell>: CellConfigurator where CellType: UITableViewCell {
 	public var cellClass: UITableViewCell.Type { return CellType.self }
 
-	let item: CellType.ViewModel
+	public let viewModel: CellType.ViewModel
 
 	public private(set) var viewHeight: CGFloat?
 	public private(set) var diffableItem: DiffInformation = .randomItem
@@ -18,8 +18,8 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 	weak var delegate: AnyObject?
 
 	// Store item and delegate
-	public init(item: CellType.ViewModel, delegate: CellType.Delegate) {
-		self.item = item
+	public init(viewModel: CellType.ViewModel, delegate: CellType.Delegate) {
+		self.viewModel = viewModel
 		self.delegate = delegate as AnyObject
 	}
 
@@ -27,7 +27,7 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 		guard let cellWithType = cell as? CellType else {
 			fatalError()
 		}
-		cellWithType.configure(item)
+		cellWithType.configure(viewModel)
 		cellWithType.delegate = delegate as? CellType.Delegate
 	}
 }
@@ -35,18 +35,18 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 // MARK: - CellType.ViewModel: Equatable
 extension TableActionRow where CellType.ViewModel: ViewModelDiffable {
 	public convenience init(diffViewModel: CellType.ViewModel, delegate: CellType.Delegate) {
-		self.init(item: diffViewModel, delegate: delegate)
+		self.init(viewModel: diffViewModel, delegate: delegate)
 		diffableItem = DiffInformation(diffId: diffViewModel.diffId, diffableKeys: diffViewModel.diffableKeys)
 	}
 
 	public convenience init(item: CellType.ViewModel, delegate: CellType.Delegate, height: CGFloat) {
-		self.init(item: item, delegate: delegate)
+		self.init(viewModel: item, delegate: delegate)
 		diffableItem = DiffInformation(diffId: item.diffId, diffableKeys: item.diffableKeys)
 		self.viewHeight = height
 	}
 
 	public convenience init(item: CellType.ViewModel, delegate: CellType.Delegate, heightCalculatable: HeightCalculatable) {
-		self.init(item: item, delegate: delegate)
+		self.init(viewModel: item, delegate: delegate)
 		diffableItem = DiffInformation(diffId: item.diffId, diffableKeys: item.diffableKeys)
 		viewHeight = heightCalculatable.viewHeight
 	}

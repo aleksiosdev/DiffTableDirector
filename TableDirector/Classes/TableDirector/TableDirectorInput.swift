@@ -9,15 +9,16 @@ import Foundation
 
 /// Interface for TableDirector. Provides all nessasry operation for users
 public protocol TableDirectorInput: class {
-	// Observe bounds cross on top
+	/// Observe bounds cross on top
 	var topCrossObserver: ThresholdCrossObserver? { get set }
 
-	// Observe bounds cross on bottom
+	/// Observe bounds cross on bottom
 	var bottomCrossObserver: ThresholdCrossObserver? { get set }
 
 	/// Recieve didScroll events from scroll view
 	var scrollObserable: ScrollObserverable? { get set }
 
+	/// Flat that enables automated registration. True by default
 	var isSelfRegistrationEnabled: Bool { get set }
 
 	/// Connect table director to specific table view
@@ -29,18 +30,18 @@ public protocol TableDirectorInput: class {
 	/// - Parameter paginationController: control pagination proccess
 	func add(paginationController: PaginationController)
 
-	/// Reload table view with provided sections
+	/// Reload table view animated with provided sections
 	/// - Parameter sections: new table sections
 	func reload(with sections: [TableSection])
 
-	/// Reload table view with provided sections
-	/// - Parameters: -
+	/// Reload table view animated with provided sections
+	/// - Parameters:
 	///   - sections: new table sections
 	///   - reloadRule: update table rule
 	func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule)
 
 	/// Reload table view with provided sections
-	/// - Parameters: -
+	/// - Parameters:
 	///   - sections: new table sections
 	///   - reloadRule: update table rule
 	///   - animated: should use table view default animation
@@ -84,18 +85,30 @@ public protocol TableDirectorInput: class {
 
 // MARK: - Default implementation
 extension TableDirectorInput {
+	/// Reload table view animated with provided sections
+	/// - Parameter sections: new table sections
 	public func reload(with sections: [TableSection]) {
 		reload(with: sections, reloadRule: .fullReload)
 	}
 
+	/// Reload table view animated with single section with provided rows
+	/// - Parameter rows: new table rows
 	public func reload(with rows: [CellConfigurator]) {
 		reload(with: rows, reloadRule: .fullReload)
 	}
 
+	/// Reload table view animated with single sections containig provider rows
+	/// - Parameters:
+	///   - rows: new table view rows
+	///   - reloadRule: update table rule
 	public func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule) {
 		reload(with: rows, reloadRule: reloadRule, animated: true)
 	}
 
+	/// Reload table view animated with provided sections
+	/// - Parameters:
+	///   - sections: new table sections
+	///   - reloadRule: update table rule
 	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule) {
 		reload(with: sections, reloadRule: reloadRule, animated: true)
 	}

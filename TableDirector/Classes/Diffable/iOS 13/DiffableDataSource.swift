@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DiffableDataSource {
-	func apply(snapshot: Snapshot, animated: Bool)
+	func apply(snapshot: Snapshot, animated: Bool, completion: @escaping () -> Void)
 }

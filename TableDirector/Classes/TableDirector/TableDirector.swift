@@ -7,18 +7,11 @@
 
 import UIKit
 
-// We have to inheritance NSObject - tableView delegates require it
 /// Perform all work with table view
 open class TableDirector: NSObject {
 	private let _coverController: CoverView.Controller
 	private let _sectionsComporator: SectionsComporator
-	private var _sections: [TableSection] = [] {
-		didSet {
-			DispatchQueue.asyncOnMainIfNeeded {
-				self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
-			}
-		}
-	}
+	private var _sections: [TableSection] = []
 
 	private var _updateQueue: [() -> Void] = []
 	private var _diffableDataSourcce: DiffableDataSource?
@@ -114,6 +107,23 @@ open class TableDirector: NSObject {
 	}
 
 	// MARK: - Reload
+	private func _reload(
+		with sections: [TableSection],
+		reloadRule: TableDirector.ReloadRule,
+		animated: Bool,
+		completion: @escaping () -> Void) {
+		switch reloadRule {
+		case .fullReload:
+			self._fullReload(with: sections, animated: animated, completion: completion)
+		case .calculateReloadSync:
+			self._reload(with: sections, animated: animated, completion: completion)
+		case .calculateReloadAsync(let queue):
+			queue.async {
+				self._reload(with: sections, animated: animated, completion: completion)
+			}
+		}
+	}
+	
 	private func _fullReload(with sections: [TableSection], animated: Bool, completion: @escaping () -> Void) {
 		if #available(iOS 13.0, *) {
 			return _reload(with: sections, animated: animated, completion: completion)
@@ -128,7 +138,7 @@ open class TableDirector: NSObject {
 		if #available(iOS 13.0, *) {
 			let snapshot = _sectionsComporator.calculateUpdate(newSections: sections)
 			self._sections = sections
-			_diffableDataSourcce?.apply(snapshot: snapshot, animated: animated)
+			_diffableDataSourcce?.apply(snapshot: snapshot, animated: animated, completion: completion)
 			return
 		}
 		let update = _sectionsComporator.calculateUpdate(
@@ -198,36 +208,23 @@ extension TableDirector: TableDirectorInput {
 	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool) {
 		let sections = sections.filter({ !$0.isEmpty })
 
-		let completion = {
+		let completion = { [unowned self] in
+			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
 			guard !self._updateQueue.isEmpty else { return }
 			let lastOperation = self._updateQueue.removeLast()
 			lastOperation()
 		}
 
-		let updateTableBlock = {
+		let updateTableBlock = { [unowned self] in
+			if self._sections.isEmpty {
+				self._coverController.hide()
+			}
 			self._reload(with: sections, reloadRule: reloadRule, animated: animated, completion: completion)
 		}
-
 		_updateQueue.append(updateTableBlock)
 		if _updateQueue.count == 1 {
-			completion()
-		}
-	}
-
-	private func _reload(
-		with sections: [TableSection],
-		reloadRule: TableDirector.ReloadRule,
-		animated: Bool,
-		completion: @escaping () -> Void) {
-		switch reloadRule {
-		case .fullReload:
-			self._fullReload(with: sections, animated: animated, completion: completion)
-		case .calculateReloadSync:
-			self._reload(with: sections, animated: animated, completion: completion)
-		case .calculateReloadAsync(let queue):
-			queue.async {
-				self._reload(with: sections, animated: animated, completion: completion)
-			}
+			let lastOperation = self._updateQueue.removeLast()
+			lastOperation()
 		}
 	}
 

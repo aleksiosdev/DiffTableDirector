@@ -7,13 +7,15 @@
 
 import Foundation
 
+/// View model that can be difference with others
 public protocol ViewModelDiffable {
 	var diffId: String { get }
-	var diffableKeys: [String: AnyHashable] { get }
+	var diffProperties: [String: AnyHashable] { get }
 }
 
+/// MARK: - Default implementation for diffProperties
 public extension ViewModelDiffable {
-	var diffableKeys: [String: AnyHashable] {
+	var diffProperties: [String: AnyHashable] {
 		let mirrow = Mirror(reflecting: self)
 		return mirrow.children.reduce([:], { result, property in
 			guard let label = property.label else { return result }

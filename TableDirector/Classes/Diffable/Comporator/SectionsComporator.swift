@@ -12,7 +12,7 @@ struct SectionsComporator {
 	func calculateUpdate(newSections: [TableSection]) -> Snapshot {
 		var snapshot = NSDiffableDataSourceSnapshot<String, AnyCellConfigurator>()
 		let sectionEnumerated = newSections.enumerated()
-		snapshot.appendSections(sectionEnumerated.map({ $0.element.identifier }))
+		snapshot.appendSections(sectionEnumerated.map({ $0.element.identifier ?? "\($0.offset)" }))
 		sectionEnumerated.forEach { index, section in
 			guard !section.isEmpty else { return }
 			let identifier = section.identifier
@@ -36,9 +36,9 @@ struct SectionsComporator {
 			guard let oldSection = oldSections[safe: index] else {
 				continue
 			}
-			let comparator = RowsComparator<DiffInformation>(
-				old: oldSection.rows.map({ $0.diffableItem }),
-				new: section.rows.map({ $0.diffableItem }),
+			let comparator = RowsComparator<DiffInfo>(
+				old: oldSection.rows.map({ $0.diffInfo }),
+				new: section.rows.map({ $0.diffInfo }),
 				section: index)
 			insertedIndexes += comparator.inserted
 			deletedIndexes += comparator.deleted

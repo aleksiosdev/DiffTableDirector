@@ -10,7 +10,7 @@ import Foundation
 extension TableDirector {
 	/// How update table
 	public enum ReloadRule {
-		/// User table view reloadData method. Perfom full reload
+		/// For iOS 12 perform  table view reloadData method. For iOS 13 and higher apply snapshot
 		case fullReload
 		/// Calculate diff on main thread, reload updated cells
 		case calculateReloadSync

@@ -42,6 +42,7 @@ extension UITableView {
 		completion: @escaping () -> Void) {
 		DispatchQueue.asyncOnMainIfNeeded { [update] in
 			UIView.setAnimationsEnabled(animated)
+			updateSectionsBlock()
 			if #available(iOS 11.0, *) {
 				self.performBatchUpdates({
 					updateSectionsBlock()
@@ -66,17 +67,5 @@ extension UITableView {
 		CATransaction.setCompletionBlock(completion)
 		reloadData()
 		CATransaction.commit()
-	}
-}
-
-extension DispatchQueue {
-	static func asyncOnMainIfNeeded(_ callback: @escaping () -> Void) {
-		if Thread.current.isMainThread {
-			callback()
-		} else {
-			DispatchQueue.main.async {
-				callback()
-			}
-		}
 	}
 }

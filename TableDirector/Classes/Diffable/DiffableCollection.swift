@@ -9,7 +9,7 @@ import Foundation
 import DeepDiff
 
 public protocol DiffableCollection: DiffAware {
-	var diffId: String { get }
+	var id: String { get }
 
 	static func compareContent(_ left: Self, _ right: Self) -> Bool
 }

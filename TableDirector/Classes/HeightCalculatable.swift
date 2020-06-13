@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Can calculate height for view
 public protocol HeightCalculatable {
 	var viewHeight: CGFloat { get }
 }

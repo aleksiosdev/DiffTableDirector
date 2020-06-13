@@ -7,20 +7,21 @@
 
 import Foundation
 
+/// Configure header with view model and action delegate
 public final class TableActionHeader<HeaderType: ActionHeader>: HeaderConfigurator
 where HeaderType: UITableViewHeaderFooterView {
-	public private(set) var diffableItem: DiffInformation = .randomItem
+	public private(set) var diffInfo: DiffInfo = .randomItem
 	public private(set) var viewHeight: CGFloat?
 
 	public var viewClass: UITableViewHeaderFooterView.Type { return HeaderType.self }
 
-	var item: HeaderType.ViewModel
+	var viewModel: HeaderType.ViewModel
 	// Delegate must be weak or we gonna have big memory issue
 	weak var delegate: AnyObject?
 
 	// Store item and delegate
-	public init(item: HeaderType.ViewModel, delegate: HeaderType.Delegate) {
-		self.item = item
+	public init(viewModel: HeaderType.ViewModel, delegate: HeaderType.Delegate) {
+		self.viewModel = viewModel
 		// Here is some hack that I'll expalin under code
 		self.delegate = delegate as AnyObject
 	}
@@ -29,7 +30,7 @@ where HeaderType: UITableViewHeaderFooterView {
 		guard let viewWithType = view as? HeaderType else {
 			fatalError()
 		}
-		viewWithType.configure(item)
+		viewWithType.configure(viewModel)
 		// Put Delegate inside
 		viewWithType.delegate = delegate as? HeaderType.Delegate
 	}

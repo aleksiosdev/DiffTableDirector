@@ -7,47 +7,41 @@
 
 import Foundation
 
+/// Configure cell with view model and action delegate
 public final class TableActionRow<CellType: ActionCell>: CellConfigurator where CellType: UITableViewCell {
 	public var cellClass: UITableViewCell.Type { return CellType.self }
 
-	let item: CellType.ViewModel
+	public let viewModel: CellType.ViewModel
 
 	public private(set) var viewHeight: CGFloat?
-	public private(set) var diffableItem: DiffInformation = .randomItem
+	public private(set) var diffInfo: DiffInfo = .randomItem
 
 	weak var delegate: AnyObject?
 
 	// Store item and delegate
-	public init(item: CellType.ViewModel, delegate: CellType.Delegate) {
-		self.item = item
+	public init(viewModel: CellType.ViewModel, delegate: CellType.Delegate) {
+		self.viewModel = viewModel
 		self.delegate = delegate as AnyObject
+		if let viewModel = viewModel as? ViewModelDiffable {
+			diffInfo = DiffInfo(id: viewModel.diffId, properties: viewModel.diffProperties)
+		}
+	}
+
+	public convenience init(viewModel: CellType.ViewModel, delegate: CellType.Delegate, height: CGFloat) {
+		self.init(viewModel: viewModel, delegate: delegate)
+		self.viewHeight = height
+	}
+
+	public convenience init(viewModel: CellType.ViewModel, delegate: CellType.Delegate, heightCalculatable: HeightCalculatable) {
+		self.init(viewModel: viewModel, delegate: delegate)
+		viewHeight = heightCalculatable.viewHeight
 	}
 
 	public func configure(cell: UITableViewCell) {
 		guard let cellWithType = cell as? CellType else {
 			fatalError()
 		}
-		cellWithType.configure(item)
+		cellWithType.configure(viewModel)
 		cellWithType.delegate = delegate as? CellType.Delegate
-	}
-}
-
-// MARK: - CellType.ViewModel: Equatable
-extension TableActionRow where CellType.ViewModel: ViewModelDiffable {
-	public convenience init(diffViewModel: CellType.ViewModel, delegate: CellType.Delegate) {
-		self.init(item: diffViewModel, delegate: delegate)
-		diffableItem = DiffInformation(diffId: diffViewModel.diffId, diffableKeys: diffViewModel.diffableKeys)
-	}
-
-	public convenience init(item: CellType.ViewModel, delegate: CellType.Delegate, height: CGFloat) {
-		self.init(item: item, delegate: delegate)
-		diffableItem = DiffInformation(diffId: item.diffId, diffableKeys: item.diffableKeys)
-		self.viewHeight = height
-	}
-
-	public convenience init(item: CellType.ViewModel, delegate: CellType.Delegate, heightCalculatable: HeightCalculatable) {
-		self.init(item: item, delegate: delegate)
-		diffableItem = DiffInformation(diffId: item.diffId, diffableKeys: item.diffableKeys)
-		viewHeight = heightCalculatable.viewHeight
 	}
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Interface for every 
+/// Configure cell 
 public protocol CellConfigurator {
 	var cellClass: UITableViewCell.Type { get }
 	var diffInfo: DiffInfo { get }

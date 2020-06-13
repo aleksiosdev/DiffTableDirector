@@ -69,15 +69,3 @@ extension UITableView {
 		CATransaction.commit()
 	}
 }
-
-extension DispatchQueue {
-	static func asyncOnMainIfNeeded(_ callback: @escaping () -> Void) {
-		if Thread.current.isMainThread {
-			callback()
-		} else {
-			DispatchQueue.main.async {
-				callback()
-			}
-		}
-	}
-}

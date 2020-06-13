@@ -11,11 +11,9 @@ extension TableDirector {
 	final class Registrator {
 		private weak var _tableView: UITableView?
 
-		// Store ID in set. Garanty uniq storage
 		private var _registredCellID: Set<String> = []
 		private var _registredHeaderFooterID: Set<String> = []
 
-		// Don't make much sence without table
 		init(tableView: UITableView) {
 			_tableView = tableView
 		}

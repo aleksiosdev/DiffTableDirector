@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Configure header with view model and action delegate
 public final class TableActionHeader<HeaderType: ActionHeader>: HeaderConfigurator
 where HeaderType: UITableViewHeaderFooterView {
 	public private(set) var diffInfo: DiffInfo = .randomItem

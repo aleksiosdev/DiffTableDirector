@@ -7,11 +7,13 @@
 
 import Foundation
 
+/// View model that can be difference with others
 public protocol ViewModelDiffable {
 	var diffId: String { get }
 	var diffProperties: [String: AnyHashable] { get }
 }
 
+/// MARK: - Default implementation for diffProperties
 public extension ViewModelDiffable {
 	var diffProperties: [String: AnyHashable] {
 		let mirrow = Mirror(reflecting: self)

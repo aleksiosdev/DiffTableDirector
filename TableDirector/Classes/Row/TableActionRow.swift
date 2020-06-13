@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Configure cell with view model and action delegate
 public final class TableActionRow<CellType: ActionCell>: CellConfigurator where CellType: UITableViewCell {
 	public var cellClass: UITableViewCell.Type { return CellType.self }
 

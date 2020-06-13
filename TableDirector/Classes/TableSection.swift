@@ -9,11 +9,21 @@ import Foundation
 
 /// Store configurators to create single section
 public final class TableSection {
+	/// Cell configurators
 	public let rows: [CellConfigurator]
+	/// Section identifier for diffing between sections. Default value will be section index
 	public let identifier: String?
+	/// Configurator for header
 	public let headerConfigurator: HeaderConfigurator?
+	/// Configurator for footer
 	public let footerConfigurator: FooterConfigurator?
 
+	/// Default constructor
+	/// - Parameters:
+	///   - rows: rows configurators
+	///   - identifier: section identifier
+	///   - headerConfigurator: header configurator
+	///   - footerConfigurator: footer configurator
 	public init(
 		rows: [CellConfigurator],
 		identifier: String? = nil,
@@ -25,6 +35,7 @@ public final class TableSection {
 		self.footerConfigurator = footerConfigurator
 	}
 
+	/// Flag that return true if rows is empty
 	public var isEmpty: Bool {
 		return rows.isEmpty
 	}

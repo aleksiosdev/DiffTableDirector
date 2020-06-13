@@ -7,5 +7,5 @@
 
 import Foundation
 
-// Extend CellConfigurable version buy protocol composition
+/// Cell that can send actions to delegate
 public protocol ActionCell: ConfigurableCell, TableItemActionable { }

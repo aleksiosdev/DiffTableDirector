@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Hold information to diff object
 public struct DiffInfo: DiffableCollection {
 	public let id: String
 	let properties: [String: AnyHashable]

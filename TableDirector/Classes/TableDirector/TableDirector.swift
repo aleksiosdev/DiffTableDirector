@@ -143,7 +143,7 @@ open class TableDirector: NSObject {
 		}
 		let update = _sectionsComporator.calculateUpdate(
 			oldSections: _sections,
-			newSections: sections.filter({ !$0.isEmpty }))
+			newSections: sections)
 		_tableView?.reload(update: update, animated: animated, updateSectionsBlock: {
 			self._sections = sections
 		}, completion: completion)
@@ -210,9 +210,9 @@ extension TableDirector: TableDirectorInput {
 
 		let completion = { [unowned self] in
 			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
+			_ = self._updateQueue.removeFirst()
 			guard !self._updateQueue.isEmpty else { return }
-			let lastOperation = self._updateQueue.removeLast()
-			lastOperation()
+			self._updateQueue.first?()
 		}
 
 		let updateTableBlock = { [unowned self] in
@@ -223,8 +223,7 @@ extension TableDirector: TableDirectorInput {
 		}
 		_updateQueue.append(updateTableBlock)
 		if _updateQueue.count == 1 {
-			let lastOperation = self._updateQueue.removeLast()
-			lastOperation()
+			self._updateQueue.first?()
 		}
 	}
 

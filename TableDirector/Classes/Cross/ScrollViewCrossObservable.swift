@@ -34,11 +34,11 @@ extension ScrollViewBoundsCrossObservable {
 	}
 
 	func checkTopBound(for newY: CGFloat) {
-		if !overTopBounds && newY < topThreshold {
+		if !overTopBounds && newY < topThreshold + (topCrossObserver?.crossBoundOffset.crossOffset ?? 0) {
 			overTopBounds = true
 			topCrossObserver?.scrollViewDidCrossThreshold(scrollView: scrollView, offset: newY)
 		}
-		if overTopBounds && newY >= topThreshold {
+		if overTopBounds && newY >= topThreshold + (topCrossObserver?.crossBoundOffset.returnOffset ?? 0) {
 			overTopBounds = false
 			topCrossObserver?.scrollViewDidReturnUnderThreshold(scrollView: scrollView, offset: newY)
 		}
@@ -47,11 +47,15 @@ extension ScrollViewBoundsCrossObservable {
 	func checkBottomBound(for newY: CGFloat) {
 		guard scrollView.contentSize.height > scrollView.bounds.height else { return }
 
-		if bottomThreshold > 0 && newY > bottomThreshold && !overBottomBounds {
+		if bottomThreshold > 0 &&
+			newY > bottomThreshold + (bottomCrossObserver?.crossBoundOffset.crossOffset ?? 0) &&
+			!overBottomBounds {
 			bottomCrossObserver?.scrollViewDidCrossThreshold(scrollView: scrollView, offset: newY)
 			overBottomBounds = true
 		}
-		if overBottomBounds && newY <= bottomThreshold && newY > topThreshold {
+		if overBottomBounds &&
+			newY <= bottomThreshold + (bottomCrossObserver?.crossBoundOffset.returnOffset ?? 0) &&
+			newY > topThreshold {
 			overBottomBounds = false
 			bottomCrossObserver?.scrollViewDidReturnUnderThreshold(scrollView: scrollView, offset: newY)
 		}

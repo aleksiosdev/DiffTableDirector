@@ -144,7 +144,7 @@ open class TableDirector: NSObject {
 		let update = _sectionsComporator.calculateUpdate(
 			oldSections: _sections,
 			newSections: sections)
-		_tableView?.reload(update: update, animated: animated, updateSectionsBlock: {
+		_tableView?.reload(update: update, animated: animated, updateSectionsBlock: { [unowned self] in
 			self._sections = sections
 		}, completion: completion)
 	}

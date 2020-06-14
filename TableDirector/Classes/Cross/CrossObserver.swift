@@ -11,18 +11,18 @@ import Foundation
 public struct CrossObserver {
 	public let didCross: () -> Void
 	public let didReturn: () -> Void
-	public let additionalOffset: CGFloat
+	public let crossBoundOffset: ThresholdCrossBoundOffset
 
 	/// Default constructor
 	/// - Parameters:
 	///   - didCross: callback for cross bounds events
 	///   - didReturn: baclback for return to bounds event
 	///   - additionalOffset: offset from original bound
-	public init(didCross: @escaping () -> Void, didReturn: @escaping () -> Void, additionalOffset: CGFloat = 0) {
+	public init(didCross: @escaping () -> Void, didReturn: @escaping () -> Void, offset: ThresholdCrossBoundOffset = .value(offset: 0)) {
 		self.didCross = didCross
 		self.didReturn = didReturn
 
-		self.additionalOffset = additionalOffset
+		self.crossBoundOffset = offset
 	}
 }
 

@@ -27,13 +27,11 @@ final class ScrollViewBoundsCrossObserver {
 	var topCrossObserver: ThresholdCrossObserver?
 
 	var bottomThreshold: CGFloat {
-		let additionalOffset = bottomCrossObserver?.additionalOffset ?? 0
-		return _baseBottomThreshold + additionalOffset
+		return _baseBottomThreshold
 	}
 
 	var topThreshold: CGFloat {
-		let additionalOffset = topCrossObserver?.additionalOffset ?? 0
-		return _baseTopThreshold + additionalOffset
+		return _baseTopThreshold
 	}
 
 	// MARK: - Init

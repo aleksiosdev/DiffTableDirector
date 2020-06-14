@@ -108,7 +108,7 @@ public final class PaginationController {
 				output?.changeTopContentInset(newOffset: -_loader.view.bounds.height)
 			}
 			if errorBehavior == .scrollBack && _scrollPosition == .underThreshold {
-				output?.scrollToThreshold(direction: direction, offset: additionalOffset)
+				output?.scrollToThreshold(direction: direction, offset: crossBoundOffset.crossOffset)
 			}
 		case .success:
 			_loader.animator.animate(state: .success)
@@ -141,8 +141,8 @@ public final class PaginationController {
 
 // MARK: - ThresholdCrossObserver
 extension PaginationController: ThresholdCrossObserver {
-	public var additionalOffset: CGFloat {
-		return -_loader.view.frame.height / 2
+	public var crossBoundOffset: ThresholdCrossBoundOffset {
+		return .value(offset: -_loader.view.frame.height / 2)
 	}
 
 	public func scrollViewDidCrossThreshold(scrollView: UIScrollView, offset: CGFloat) {

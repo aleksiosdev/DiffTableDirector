@@ -71,7 +71,11 @@ open class TableDirector: NSObject {
 	// MARK: - Table view settings
 	private func _setDataSourceAndDelegate(for tableView: UITableView) {
 		if #available(iOS 13.0, *) {
-			_diffableDataSourcce = DiffableTableViewDataSource(tableView: tableView, cellProvider: _createCell)
+			_diffableDataSourcce = DiffableTableViewDataSource(
+				tableView: tableView,
+				cellProvider: { [weak self] tableView, indexPath, anyConfigurator in
+				self?._createCell(tableView: tableView, indexPath: indexPath, anyConfigurator: anyConfigurator)
+			})
 		} else {
 			tableView.dataSource = self
 		}
@@ -144,8 +148,8 @@ open class TableDirector: NSObject {
 		let update = _sectionsComporator.calculateUpdate(
 			oldSections: _sections,
 			newSections: sections)
-		_tableView?.reload(update: update, animated: animated, updateSectionsBlock: { [unowned self] in
-			self._sections = sections
+		_tableView?.reload(update: update, animated: animated, updateSectionsBlock: { [weak self] in
+			self?._sections = sections
 		}, completion: completion)
 	}
 
@@ -263,12 +267,13 @@ extension TableDirector: TableDirectorInput {
 
 	public func clearAndShowView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position) {
 		DispatchQueue.asyncOnMainIfNeeded {
-			let view = viewFactory()
-			guard let tableView = self._tableView else { return }
 			defer { self._canShowEmptyView = true }
 			self._canShowEmptyView = false
-			self._fullReload(with: [], animated: true, completion: { })
-			self._coverController.add(view: view, to: tableView, position: position)
+			self._fullReload(with: [], animated: true, completion: { [weak self] in
+				let view = viewFactory()
+				guard let tableView = self?._tableView else { return }
+				self?._coverController.add(view: view, to: tableView, position: position)
+			})
 		}
 	}
 }

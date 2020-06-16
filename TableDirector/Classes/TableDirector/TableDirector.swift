@@ -114,23 +114,23 @@ open class TableDirector: NSObject {
 	private func _reload(
 		with sections: [TableSection],
 		reloadRule: TableDirector.ReloadRule,
-		animated: Bool,
+		animation: UITableView.RowAnimation,
 		completion: @escaping () -> Void) {
 		switch reloadRule {
 		case .fullReload:
-			self._fullReload(with: sections, animated: animated, completion: completion)
+			self._fullReload(with: sections, animation: animation, completion: completion)
 		case .calculateReloadSync:
-			self._reload(with: sections, animated: animated, completion: completion)
+			self._reload(with: sections, animation: animation, completion: completion)
 		case .calculateReloadAsync(let queue):
 			queue.async {
-				self._reload(with: sections, animated: animated, completion: completion)
+				self._reload(with: sections, animation: animation, completion: completion)
 			}
 		}
 	}
 	
-	private func _fullReload(with sections: [TableSection], animated: Bool, completion: @escaping () -> Void) {
+	private func _fullReload(with sections: [TableSection], animation: UITableView.RowAnimation, completion: @escaping () -> Void) {
 		if #available(iOS 13.0, *) {
-			return _reload(with: sections, animated: animated, completion: completion)
+			return _reload(with: sections, animation: animation, completion: completion)
 		}
 		DispatchQueue.asyncOnMainIfNeeded {
 			self._sections = sections
@@ -138,17 +138,17 @@ open class TableDirector: NSObject {
 		}
 	}
 
-	private func _reload(with sections: [TableSection], animated: Bool, completion: @escaping () -> Void) {
+	private func _reload(with sections: [TableSection], animation: UITableView.RowAnimation, completion: @escaping () -> Void) {
 		if #available(iOS 13.0, *) {
 			let snapshot = _sectionsComporator.calculateUpdate(newSections: sections)
 			self._sections = sections
-			_diffableDataSourcce?.apply(snapshot: snapshot, animated: animated, completion: completion)
+			_diffableDataSourcce?.apply(snapshot: snapshot, animation: animation, completion: completion)
 			return
 		}
 		let update = _sectionsComporator.calculateUpdate(
 			oldSections: _sections,
 			newSections: sections)
-		_tableView?.reload(update: update, animated: animated, updateSectionsBlock: { [weak self] in
+		_tableView?.reload(update: update, animation: animation, updateSectionsBlock: { [weak self] in
 			self?._sections = sections
 		}, completion: completion)
 	}
@@ -189,6 +189,23 @@ open class TableDirector: NSObject {
 		configurator.configure(cell: cell)
 		return cell
 	}
+
+	// MARK: - Overridable methods
+	open func reload(with sections: [TableSection]) {
+		reload(with: sections, reloadRule: .fullReload)
+	}
+
+	open func reload(with rows: [CellConfigurator]) {
+		reload(with: rows, reloadRule: .fullReload)
+	}
+
+	open func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule) {
+		reload(with: rows, reloadRule: reloadRule, animation: .automatic)
+	}
+
+	open func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule) {
+		reload(with: sections, reloadRule: reloadRule, animation: .automatic)
+	}
 }
 
 // MARK: - TableDirectorInput
@@ -209,7 +226,7 @@ extension TableDirector: TableDirectorInput {
 		}
 	}
 
-	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool) {
+	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation) {
 		let sections = sections.filter({ !$0.isEmpty })
 
 		let completion = { [unowned self] in
@@ -223,7 +240,7 @@ extension TableDirector: TableDirectorInput {
 			if self._sections.isEmpty {
 				self._coverController.hide()
 			}
-			self._reload(with: sections, reloadRule: reloadRule, animated: animated, completion: completion)
+			self._reload(with: sections, reloadRule: reloadRule, animation: animation, completion: completion)
 		}
 		_updateQueue.append(updateTableBlock)
 		if _updateQueue.count == 1 {
@@ -231,9 +248,9 @@ extension TableDirector: TableDirectorInput {
 		}
 	}
 
-	public func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animated: Bool) {
+	public func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation) {
 		let sections = [TableSection(rows: rows)]
-		reload(with: sections, reloadRule: reloadRule, animated: animated)
+		reload(with: sections, reloadRule: reloadRule, animation: animation)
 	}
 
 	public func indexPath(for cell: UITableViewCell) -> IndexPath? {
@@ -269,7 +286,7 @@ extension TableDirector: TableDirectorInput {
 		DispatchQueue.asyncOnMainIfNeeded {
 			defer { self._canShowEmptyView = true }
 			self._canShowEmptyView = false
-			self._fullReload(with: [], animated: true, completion: { [weak self] in
+			self._fullReload(with: [], animation: .automatic, completion: { [weak self] in
 				let view = viewFactory()
 				guard let tableView = self?._tableView else { return }
 				self?._coverController.add(view: view, to: tableView, position: position)

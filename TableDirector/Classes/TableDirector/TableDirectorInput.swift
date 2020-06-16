@@ -45,7 +45,7 @@ public protocol TableDirectorInput: class {
 	///   - sections: new table sections
 	///   - reloadRule: update table rule
 	///   - animated: should use table view default animation
-	func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animated: Bool)
+	func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation)
 
 	/// Reload table view with single sections containig provider rows
 	/// - Parameter rows: new table view rows
@@ -62,7 +62,7 @@ public protocol TableDirectorInput: class {
 	///   - rows: new table view rows
 	///   - reloadRule: update table rule
 	///   - animated: should use table view default animation
-	func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animated: Bool)
+	func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation)
 
 	/// Got index path of cell if it exist in table view
 	/// - Parameter cell: table cell to find indexPath
@@ -81,35 +81,4 @@ public protocol TableDirectorInput: class {
 	///   - viewFactory: function that creates view. Called on main thread only
 	///   - position: information how to place view inside table view
 	func clearAndShowView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position)
-}
-
-// MARK: - Default implementation
-extension TableDirectorInput {
-	/// Reload table view animated with provided sections
-	/// - Parameter sections: new table sections
-	public func reload(with sections: [TableSection]) {
-		reload(with: sections, reloadRule: .fullReload)
-	}
-
-	/// Reload table view animated with single section with provided rows
-	/// - Parameter rows: new table rows
-	public func reload(with rows: [CellConfigurator]) {
-		reload(with: rows, reloadRule: .fullReload)
-	}
-
-	/// Reload table view animated with single sections containig provider rows
-	/// - Parameters:
-	///   - rows: new table view rows
-	///   - reloadRule: update table rule
-	public func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule) {
-		reload(with: rows, reloadRule: reloadRule, animated: true)
-	}
-
-	/// Reload table view animated with provided sections
-	/// - Parameters:
-	///   - sections: new table sections
-	///   - reloadRule: update table rule
-	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule) {
-		reload(with: sections, reloadRule: reloadRule, animated: true)
-	}
 }

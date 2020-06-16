@@ -18,7 +18,7 @@ final class ScrollViewBoundsCrossObserver {
 	private var _baseTopThreshold: CGFloat
 
 	// MARK: - ScrollViewBoundsCrossObservable
-	let scrollView: UIScrollView
+	private unowned var _scrollView: UIScrollView!
 
 	var overBottomBounds: Bool = false
 	var overTopBounds: Bool = false
@@ -36,7 +36,7 @@ final class ScrollViewBoundsCrossObserver {
 
 	// MARK: - Init
 	init(scrollView: UIScrollView, thresholdCalculator: BaseThresholdCalculator = BaseThresholdCalculator()) {
-		self.scrollView = scrollView
+		self._scrollView = scrollView
 		self._thresholdCalculator = thresholdCalculator
 
 		self._baseBottomThreshold = thresholdCalculator.calculateBaseBottomThreshold(for: scrollView)
@@ -64,7 +64,11 @@ final class ScrollViewBoundsCrossObserver {
 }
 
 // MARK: - ScrollViewBoundsCrossObservable
-extension ScrollViewBoundsCrossObserver: ScrollViewBoundsCrossObservable { }
+extension ScrollViewBoundsCrossObserver: ScrollViewBoundsCrossObservable {
+	var scrollView: UIScrollView {
+		return _scrollView
+	}
+}
 
 // MARK: - Create observers
 extension UIScrollView {

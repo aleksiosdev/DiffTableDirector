@@ -25,7 +25,9 @@ extension TableDirector.CoverView {
 				_layoutInCenter(view: view, to: tableView, params: params, useAutoLayout: useAutoLayout)
 			case .insets(let insets, let useAutoLayout):
 				_layoutWithInsets(view: view, to: tableView, insets: insets, useAutoLayout: useAutoLayout)
-			case .custom(let delegate):
+			case .customLayout(let layoutManager):
+				layoutManager(view, tableView)
+			case .customDelegate(let delegate):
 				_boundsObserver = tableView.observe(
 					\.bounds,
 					options: [.new, .initial],

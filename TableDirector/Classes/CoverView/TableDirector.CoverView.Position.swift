@@ -22,10 +22,15 @@ extension TableDirector.CoverView {
 		///   - useAutolayout: settings to use autoLayout for view position. Default if true
 		case insets(insets: UIEdgeInsets, useAutolayout: Bool = true)
 
+		/// Position of view calculating by closure
+		/// - Parameters:
+		///   - layoutManager: provide layout for cover view
+		case customLayout(layoutManager: (_ view: UIView, _ superview: UIView) -> Void)
+
 		/// Position of view calculating from delegate each time bounds change
 		/// - Parameters:
 		///   - delegate: provides frame for view from current table view bounds
-		case custom(delegate: TableDirectorCoverViewSizeDelegate)
+		case customDelegate(delegate: TableDirectorCoverViewSizeDelegate)
 
 		/// Center position with 16 offset from left and right side
 		public static let `default`: TableDirector.CoverView.Position = .center(params: .init(leftOffset: 16))

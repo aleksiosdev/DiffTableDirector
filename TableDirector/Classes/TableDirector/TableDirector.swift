@@ -206,6 +206,14 @@ open class TableDirector: NSObject {
 	open func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule) {
 		reload(with: sections, reloadRule: reloadRule, animation: .automatic)
 	}
+
+	open func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation) {
+		reload(with: rows, reloadRule: reloadRule, animation: animation, completion: { })
+	}
+
+	open func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation) {
+		reload(with: sections, reloadRule: reloadRule, animation: animation, completion: { })
+	}
 }
 
 // MARK: - TableDirectorInput
@@ -226,10 +234,16 @@ extension TableDirector: TableDirectorInput {
 		}
 	}
 
-	public func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation) {
+	public func reload(
+		with sections: [TableSection],
+		reloadRule: TableDirector.ReloadRule,
+		animation: UITableView.RowAnimation,
+		completion: @escaping () -> Void) {
 		let sections = sections.filter({ !$0.isEmpty })
 
-		let completion = { [unowned self] in
+		let internalCompletion = { [unowned self] in
+			completion()
+
 			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
 			_ = self._updateQueue.removeFirst()
 			guard !self._updateQueue.isEmpty else { return }
@@ -240,7 +254,7 @@ extension TableDirector: TableDirectorInput {
 			if self._sections.isEmpty {
 				self._coverController.hide()
 			}
-			self._reload(with: sections, reloadRule: reloadRule, animation: animation, completion: completion)
+			self._reload(with: sections, reloadRule: reloadRule, animation: animation, completion: internalCompletion)
 		}
 		_updateQueue.append(updateTableBlock)
 		if _updateQueue.count == 1 {
@@ -248,7 +262,11 @@ extension TableDirector: TableDirectorInput {
 		}
 	}
 
-	public func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation) {
+	public func reload(
+		with rows: [CellConfigurator],
+		reloadRule: TableDirector.ReloadRule,
+		animation: UITableView.RowAnimation,
+		completion: @escaping () -> Void) {
 		let sections = [TableSection(rows: rows)]
 		reload(with: sections, reloadRule: reloadRule, animation: animation)
 	}

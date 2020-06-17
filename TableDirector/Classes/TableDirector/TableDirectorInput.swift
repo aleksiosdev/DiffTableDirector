@@ -47,6 +47,18 @@ public protocol TableDirectorInput: class {
 	///   - animated: should use table view default animation
 	func reload(with sections: [TableSection], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation)
 
+	/// Reload table view with provided sections
+	/// - Parameters:
+	///   - sections: new table sections
+	///   - reloadRule: update table rule
+	///   - animated: should use table view default animation
+	///   - completion: should use table view default animation
+	func reload(
+		with sections: [TableSection],
+		reloadRule: TableDirector.ReloadRule,
+		animation: UITableView.RowAnimation,
+		completion: @escaping () -> Void)
+
 	/// Reload table view with single sections containig provider rows
 	/// - Parameter rows: new table view rows
 	func reload(with rows: [CellConfigurator])
@@ -63,6 +75,17 @@ public protocol TableDirectorInput: class {
 	///   - reloadRule: update table rule
 	///   - animated: should use table view default animation
 	func reload(with rows: [CellConfigurator], reloadRule: TableDirector.ReloadRule, animation: UITableView.RowAnimation)
+
+	/// Reload table view with single sections containig provider rows
+	/// - Parameters:
+	///   - rows: new table view rows
+	///   - reloadRule: update table rule
+	///   - animated: should use table view default animation
+	func reload(
+		with rows: [CellConfigurator],
+		reloadRule: TableDirector.ReloadRule,
+		animation: UITableView.RowAnimation,
+		completion: @escaping () -> Void)
 
 	/// Got index path of cell if it exist in table view
 	/// - Parameter cell: table cell to find indexPath

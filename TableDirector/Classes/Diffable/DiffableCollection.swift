@@ -8,6 +8,7 @@
 import Foundation
 import DeepDiff
 
+/// Object must confirm protocol to be diffable
 public protocol DiffableCollection: DiffAware {
 	var id: String { get }
 

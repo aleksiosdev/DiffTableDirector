@@ -13,7 +13,7 @@ public protocol ViewModelDiffable {
 	var diffProperties: [String: AnyHashable] { get }
 }
 
-/// MARK: - Default implementation for diffProperties
+// MARK: - Default implementation for diffProperties
 public extension ViewModelDiffable {
 	var diffProperties: [String: AnyHashable] {
 		let mirrow = Mirror(reflecting: self)

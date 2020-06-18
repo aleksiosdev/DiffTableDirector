@@ -251,7 +251,7 @@ extension TableDirector: TableDirectorInput {
 		}
 
 		let updateTableBlock = { [unowned self] in
-			if self._sections.isEmpty {
+			if !sections.isEmpty {
 				self._coverController.hide()
 			}
 			self._reload(with: sections, reloadRule: reloadRule, animation: animation, completion: internalCompletion)
@@ -293,7 +293,7 @@ extension TableDirector: TableDirectorInput {
 			let view = viewFactory()
 
 			self._defaultCoverViewShowParams = .init(coverView: view, position: position)
-			if self._sections.isEmpty {
+			if self._sections.isEmpty && self._updateQueue.isEmpty {
 				guard let tableView = self._tableView else { return }
 				self._coverController.add(view: view, to: tableView, position: position)
 			}

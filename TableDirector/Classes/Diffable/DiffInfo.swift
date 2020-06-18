@@ -10,9 +10,9 @@ import Foundation
 /// Hold information to diff object
 public struct DiffInfo: DiffableCollection {
 	public let id: String
-	let properties: [String: AnyHashable]
+	let properties: [AnyHashable]
 
-	public init(id: String, properties: [String: AnyHashable]) {
+	public init(id: String, properties: [AnyHashable]) {
 		self.id = id
 		self.properties = properties
 	}
@@ -22,7 +22,7 @@ public struct DiffInfo: DiffableCollection {
 	}
 
 	public static var randomItem: DiffInfo {
-		return DiffInfo(id: UUID().uuidString, properties: [:])
+		return DiffInfo(id: UUID().uuidString, properties: [])
 	}
 }
 

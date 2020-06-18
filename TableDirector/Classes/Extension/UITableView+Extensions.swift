@@ -43,13 +43,13 @@ extension UITableView {
 		DispatchQueue.asyncOnMainIfNeeded { [update] in
 			UIView.setAnimationsEnabled(animation.enabled)
 			if #available(iOS 11.0, *) {
-				self.performBatchUpdates({
+				self.performBatchUpdates({ [weak self] in
 					updateSectionsBlock()
-					self._insertSection(update: update, animation: animation)
-					self._deleteSection(update: update, animation: animation)
+					self?._insertSection(update: update, animation: animation)
+					self?._deleteSection(update: update, animation: animation)
 				}, completion: { _ in
-					self.performBatchUpdates({
-						self._reloadSection(update: update, animation: animation)
+					self.performBatchUpdates({  [weak self] in
+						self?._reloadSection(update: update, animation: animation)
 					}, completion: { _ in
 						UIView.setAnimationsEnabled(true)
 						completion()

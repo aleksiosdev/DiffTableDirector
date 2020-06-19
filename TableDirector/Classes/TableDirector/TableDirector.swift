@@ -83,8 +83,6 @@ open class TableDirector: NSObject {
 	}
 
 	private func _setupEstimatedHeight(for tableView: UITableView) {
-		// We need to provide some height or in case your return automaticDimension height for header/footer
-		// viewForHeaderInSection/viewForFooterInSection won't trigger
 		tableView.estimatedSectionFooterHeight = 1
 		tableView.estimatedSectionHeaderHeight = 1
 
@@ -242,16 +240,18 @@ extension TableDirector: TableDirectorInput {
 		completion: @escaping () -> Void) {
 		let sections = sections.filter({ !$0.isEmpty })
 
-		let internalCompletion = { [unowned self] in
+		let internalCompletion = { [weak self] in
 			completion()
 
+			guard let self = self else { return }
 			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
 			_ = self._updateQueue.removeFirst()
 			guard !self._updateQueue.isEmpty else { return }
 			self._updateQueue.first?()
 		}
 
-		let updateTableBlock = { [unowned self] in
+		let updateTableBlock = { [weak self] in
+			guard let self = self else { return }
 			if !sections.isEmpty {
 				self._coverController.hide()
 			}
@@ -330,8 +330,9 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 	}
 
 	public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		// Let's build our cells usining AutoLayout.
-		// As alternative it you use frame or smth different - you can store height information inside TableRow
+		if let viewHeight = _sections[indexPath.section].rows[indexPath.row].viewHeight {
+			return viewHeight
+		}
 		return UITableView.automaticDimension
 	}
 
@@ -364,6 +365,13 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 
 	public func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		scrollObserable?.scrollViewDidScroll(scrollView: scrollView)
+	}
+
+	public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+		if let viewHeight = _sections[indexPath.section].rows[indexPath.row].viewHeight {
+			return viewHeight
+		}
+		return UITableView.automaticDimension
 	}
 }
 

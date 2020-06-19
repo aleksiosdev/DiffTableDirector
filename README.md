@@ -1,9 +1,9 @@
-# TableDirector
+# DiffTableDirector
 
-[![CI Status](https://img.shields.io/travis/aleksiosdev/TableDirector.svg?style=flat)](https://travis-ci.org/aleksiosdev/TableDirector)
-[![Version](https://img.shields.io/cocoapods/v/TableDirector.svg?style=flat)](https://cocoapods.org/pods/TableDirector)
-[![License](https://img.shields.io/cocoapods/l/TableDirector.svg?style=flat)](https://cocoapods.org/pods/TableDirector)
-[![Platform](https://img.shields.io/cocoapods/p/TableDirector.svg?style=flat)](https://cocoapods.org/pods/TableDirector)
+[![CI Status](https://img.shields.io/travis/aleksiosdev/DiffTableDirector.svg?style=flat)](https://travis-ci.org/aleksiosdev/DiffTableDirector)
+[![Version](https://img.shields.io/cocoapods/v/DiffTableDirector.svg?style=flat)](https://cocoapods.org/pods/DiffTableDirector)
+[![License](https://img.shields.io/cocoapods/l/DiffTableDirector.svg?style=flat)](https://cocoapods.org/pods/DiffTableDirector)
+[![Platform](https://img.shields.io/cocoapods/p/DiffTableDirector.svg?style=flat)](https://cocoapods.org/pods/DiffTableDirector)
 
 ## Example
 
@@ -13,11 +13,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-TableDirector is available through [CocoaPods](https://cocoapods.org). To install
+DiffTableDirector is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'TableDirector'
+pod 'DiffTableDirector'
 ```
 
 ## Author
@@ -26,4 +26,4 @@ aleksiosdev, aleksios@manychat.com
 
 ## License
 
-TableDirector is available under the MIT license. See the LICENSE file for more info.
+DiffTableDirector is available under the MIT license. See the LICENSE file for more info.

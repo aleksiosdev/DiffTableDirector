@@ -3,252 +3,251 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
 		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildConfigurationList = 086FB2AD522D3E0E645A467F7806F2FD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
 			buildPhases = (
 			);
 			dependencies = (
 			);
 			name = SwiftLint;
-			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		02649B367F3FB6CFB999929A8D4C8629 /* ThresholdCrossObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA536CE8736700B0D02CEF2634A87C /* ThresholdCrossObserver.swift */; };
-		07043CD4B1C0E7AD5CE5984FE63AEC93 /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A647FCA53DB1FF484D86FEF4FE116DD6 /* DeepDiff.framework */; };
-		07D7072BDF8CAB3190E05FEB3AFBF1C0 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA96F7BF5A708E08BB1A3EC3F2FBADC /* Collection+Extensions.swift */; };
-		115E350DFACEC087301EDF7081AABBBA /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB58BA5A645970352E19787A9740129 /* TableSection.swift */; };
+		08572BB4AC0A476E2540F9F75A5E98C0 /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A647FCA53DB1FF484D86FEF4FE116DD6 /* DeepDiff.framework */; };
+		0BA02D49457228C5371DFD754CDE4162 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF0C6FBA72CFFEEFF843F93A3A63FED /* Foundation.framework */; };
+		0D578D8488BD5DC3E2C213714895E8EB /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66C27BA42CDC9236CCDC196D8D8622 /* TableHeader.swift */; };
+		11A0CD624606CD941C8CA3715D09DD8E /* TableActionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27719DEEE49BEFDAA66C8FCF7EE9C234 /* TableActionRow.swift */; };
 		13457ED9DA9A92F415CB8493D1B84E6D /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FB158434E9CBA09B5A2ABEC5A6E934 /* MoveReducer.swift */; };
-		1491A7B288B88A2A1C1CC4F3B64F87A0 /* ScrollViewBoundsCrossObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B8EB53EE8C0E807832D398B601B3C7 /* ScrollViewBoundsCrossObserver.swift */; };
-		1561AA3FFF06B4A0CEC3618A4DBF040B /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176F582308AFEC06C5DAFDD3BBCF268 /* TableHeader.swift */; };
-		15FB13DECBF7BF36E474AD37CE48A185 /* TableDirector.CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01256FAADBC0A068072BD8B7A7CC45D5 /* TableDirector.CoverView.swift */; };
-		188BB71BA95EB60BF6EDEE5F0F423929 /* PaginationController.Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE482C961CFDAE2E0867D668B63CB6F0 /* PaginationController.Direction.swift */; };
-		1B52A5B59778A0C83D0AD14C28CF7D0E /* CollectionUpdate.Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BCD6329194FA17A49E38FFE65871D /* CollectionUpdate.Update.swift */; };
-		23B6C66BE8503D219EEC85B166BFE95C /* TableDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224472A1F9898A95D2D62D1F12DABDF /* TableDirector.swift */; };
-		254153FB64E790294E2186BB3D6BB7AA /* PaginationController.LoadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED4652966FBC5840FD0EAC0F6A5E742 /* PaginationController.LoadResult.swift */; };
-		262E5FB0F74135A64522F3328CE60F67 /* TableItemActionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED0FD1A4747446877B6FED304C48D3 /* TableItemActionable.swift */; };
-		2662B9B8E5E972E24991161BCA88ECB3 /* DiffableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7EE0D4BF2618DA2BB597371247C338 /* DiffableViewModel.swift */; };
+		147681A192CE13A658A0FA84C65E262F /* DiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5F92E083C2D5DE8DD4C479AAB7442D /* DiffableDataSource.swift */; };
+		1AE02D2184021DAAD80732574D10A076 /* LoadOperationHandable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76EFE61A3CEAB52164D73C628E7F4DC /* LoadOperationHandable.swift */; };
+		1BA7F24F07312DCDA9004F9DD4DC8020 /* RowsComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699D5AFC478C90E671BFD5B38339D7AD /* RowsComparator.swift */; };
+		1C42A942D1B54251F2CD79916E32652E /* ConfigurableHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9EADF4388C160F8BE5661FC867B8 /* ConfigurableHeaderFooter.swift */; };
+		1DD4DF54E39BBE4A8D2A6284C5941F1E /* TableDirector.CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1E3B179240D74148347EBE41F3D0B3 /* TableDirector.CoverView.swift */; };
+		1E0AE249BD35578709695471B6FE61A2 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281F93AE039F45544A581977AB0A58F /* TableSection.swift */; };
+		233AEACE7A7ADAFF6949E01776FB19EB /* PaginationController.Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52901706EF254C2C8216CC80FD0DE7E4 /* PaginationController.Settings.swift */; };
+		23811A49A0740FEC8103FFCF2E43999C /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C0F3D673AFC56D8F00330280F0C12 /* UITableView+Extensions.swift */; };
+		24C1397C6E80C648E2CE3F88FF786AA6 /* FromNibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199448E3D3F61271C0E3DAE98FCD86E8 /* FromNibLoadable.swift */; };
 		26E0BD39CEF919594C22D982E761F12A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3458EBA3A9392D5AFABE50B8CEDA5B6E /* UIKit.framework */; };
-		26EE1C46ED1D345BDC7A34A1652471C5 /* TableActionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA10BA19B4738614D82E4D4F511DF72 /* TableActionRow.swift */; };
-		29806E3464147DF740EEB08024E86363 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB505E12DCEAC71D8AD2D485A699CD9 /* Snapshot.swift */; };
 		29FC5736F12BA208BA6F6BD7700C8AB8 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1073781321C609B5029F46A4F9DECAF /* Array+Extensions.swift */; };
-		2FE122D53CF44DD6E2D3B84B34036AF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF0C6FBA72CFFEEFF843F93A3A63FED /* Foundation.framework */; };
-		38F9381E78BF3A4AD7DF7B12FE470826 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181430AB28E194409B79D87C18B23332 /* TableRow.swift */; };
-		3C2500F5EC49E4281BE98029F5E8DECD /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64E7B63B71B3D89F8A02616AA3EDAD2 /* UITableView+Extensions.swift */; };
-		3ED3A1EC2FFF12C9BF192B2CDFB18907 /* DiffableTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D21D638340985523DDCC8C1D200E2 /* DiffableTableViewDataSource.swift */; };
-		43F714E7C352B04137C5773C6614F7D0 /* CollectionUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9953E232937301B9B05708E58BC8A0D /* CollectionUpdate.swift */; };
-		441038F29AECE789EEBB9C3CAAA9B645 /* PaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7611699D236E6C7E441E8DCC0AD942 /* PaginationController.swift */; };
-		45270D9898BFA0DA0D4FF9841039B8D4 /* CrossObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989B9ED8BC1887998441A1D91E1E2F3 /* CrossObserver.swift */; };
-		47C530D0C849EEF6C96CE121835FEE84 /* TableDirectorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C99D61DCD3C1CC8A3EF8936D71539 /* TableDirectorInput.swift */; };
-		4941A033EB677F8A25CF062CAC155783 /* PaginationController.Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326FA8C5BA3F68C40A70A0EE8837F489 /* PaginationController.Settings.swift */; };
-		4D128DA2641C4A9A43C53F162A9C4298 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B44A0BF0C453FD7D04E9E071F95859 /* ConfigurableCell.swift */; };
-		4F82C554FE038046FA61D1475F5776C2 /* PaginationController.Loader.DefaultAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D960522457B011E6B6D1F348B4EF887 /* PaginationController.Loader.DefaultAnimator.swift */; };
-		50D905E899540485699ECFB2E93D8A33 /* TableDirector.CoverView.ShowParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C815500A84E0E7E8562FF3F976E66C /* TableDirector.CoverView.ShowParams.swift */; };
+		2F4F89C3857875DA4498D71278D746AC /* DiffTableDirector-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEC5AD875BE716D98E2565B612B08DC /* DiffTableDirector-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3022EF2C23F6A11D066BBF39150E0B92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF0C6FBA72CFFEEFF843F93A3A63FED /* Foundation.framework */; };
+		334C291191A3689CEFC45768526A293E /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58B034FE09BBC28F4DA8038D4130AC /* ActionCell.swift */; };
+		36F0835164CED81D10E0B67BA7E0DF65 /* TableDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857DD220981AFE383E12ED9DFDAE7BE /* TableDirector.swift */; };
+		3A87C4795E223B92654CD92CD9D70B6D /* ActionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1D75B020516581428D52C2C0460CF /* ActionHeader.swift */; };
+		3D05C74886B890E7761C3D0D5F8BF145 /* CollectionUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F20E4393217573F0B5297A88FA49B1 /* CollectionUpdate.swift */; };
+		3DB2D8C024393EABEA76B9DB3964942C /* PaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FBEEC9FA76D9F710355EC5C359790 /* PaginationController.swift */; };
+		3FAB88E3E5810F04A11C0FA3026B57FB /* SectionsComporator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD654083DE23B2D8C5FDDD64DC4F9D52 /* SectionsComporator.swift */; };
+		4B26242E0EDF1128A23C6B06EBE1DFFC /* PaginationController.ErrorBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ACB2829BE204FB7B72B9E6BEBB1FD3 /* PaginationController.ErrorBehavior.swift */; };
 		50E84115FA3D111FF4F382ABDBD38BA9 /* IndexPathConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760304F5D78E4F2887AC7687818E72B /* IndexPathConverter.swift */; };
+		5180DEB2815C16AD19A659EB56417C6D /* TableDirector.Registrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96AEF7C0E81FB17EC2F32C17CDDD5BD /* TableDirector.Registrator.swift */; };
+		51BB8A3857D6C4B0AADDEBD91E63D759 /* ThresholdCrossObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E035472F593E2B7E9DC8AA8EB9696D /* ThresholdCrossObserver.swift */; };
 		538E580370D30E53387433B2FB4791BD /* Heckel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C54B8929593B298933587EFC99F05 /* Heckel.swift */; };
 		54A85D8BA74A26EB8ECD1046CF74BA39 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A13E92A938E9B80F3E6503988115F4 /* DeepDiff.swift */; };
-		553ACC1A94C3707688478B933D1324A9 /* LoadOperationHandable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB2BB9DAF86807BD3B5E1B82AB6D7F4 /* LoadOperationHandable.swift */; };
-		571AD6BF710C93741F096D7716331BA8 /* TableDirector.Registrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB52405257779D9CC5EAC38BBA7899 /* TableDirector.Registrator.swift */; };
-		571ADDA925077601076645B30D4BBB0F /* HeaderConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2480C6BE5FFA909CFAF37283F84F33F9 /* HeaderConfigurator.swift */; };
-		60CFD63EC831E293F354134ADCCDFB33 /* PaginationController.ScrollPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0CF659DC908EEBCC6A5093178DCB6B /* PaginationController.ScrollPosition.swift */; };
-		6388AADB04CAA63F073790A4AFC5817E /* Pods-TableDirector_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F76F6136C79915D1F5F8432681D336 /* Pods-TableDirector_Example-dummy.m */; };
-		664D00CEC2E6ACBD207EF0AFA31A70B9 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7586ADAE7689EF201D65835E066F0F /* UITableViewCell+Extension.swift */; };
-		6AAE8FAFC31CEF788E3260F4D236A3F4 /* TableDirector.CoverView.Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF4196EF5CC9AB4832F691C6CABB77B /* TableDirector.CoverView.Controller.swift */; };
+		62719BB6ECBFD750A93F36C62091BC25 /* TableItemActionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85EBCF1649DB3BE9BC080130DEDDC0E /* TableItemActionable.swift */; };
+		6580799B26DF368604A5F3537F9FF244 /* DiffInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279EF32C83C3B4DF644F1726651ED190 /* DiffInfo.swift */; };
+		65C965B1DFFE39A22419611CC42953A0 /* HeightCalculatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08331685A5F632F88E02291DF7AE229A /* HeightCalculatable.swift */; };
+		676845733808D4B744A69D570C98728C /* Pods-DiffTableDirector_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8064C2386B1B08A150DF20E17E1762BD /* Pods-DiffTableDirector_Example-dummy.m */; };
+		6B24D31D986F01400E0FBECD989719BC /* AnyCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DC7AED2DD5B21B9DCE1AF13D312524 /* AnyCellConfigurator.swift */; };
+		6D63D69C3BF1F47C6F4A2362C413AC86 /* DiffTableDirector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDC985A40D8812D020ED14C5ED1A981 /* DiffTableDirector-dummy.m */; };
+		6EC3CED0FAF58C9898460D63CD81A2A0 /* UITableViewHeaderFooterView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392D1028F208C4CE640FB5BB2CE47327 /* UITableViewHeaderFooterView+Extensions.swift */; };
+		70B59FEEB81C33177F762A8EA9CCEFA8 /* PaginationController.Loader.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A64EF8DDA32265F6A0EAFF0A449A7 /* PaginationController.Loader.State.swift */; };
 		72AC6DBE10717ECE0AC6B717A6DB0BE7 /* DeepDiff-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5517F0E7220B4937468419DAD8C00332 /* DeepDiff-dummy.m */; };
-		75E19AF94DD57009161ABF85C26902F5 /* PaginationController.Loader.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EC416183F0E83D825215DA4B54B00 /* PaginationController.Loader.State.swift */; };
+		74FFF0824C95489544CD2C7EF47BA2F5 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99B4E3FDBF2E8E0089580A80E9AEA07 /* Snapshot.swift */; };
 		76578E39A12705AED24B8DDE69F0F277 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634B9CD83F0732C53CCE8C0FCEDFE25 /* UICollectionView+Extensions.swift */; };
-		769BDD230946E08C69422FFCACEF105E /* PaginationController.ErrorBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C158F0641B8599B91EB3C7C710A639 /* PaginationController.ErrorBehavior.swift */; };
-		826E2D9E3599FB0655DAD5BB856ADF0F /* ConfigurableHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA15F60CE784271F23BA5BC9141CF73 /* ConfigurableHeaderFooter.swift */; };
-		83A41DFFCB6C5B9F047D6250B0376A7B /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D78481B2C31E5A1749C68C97ECD3EA9 /* CellConfigurator.swift */; };
-		90A8634BE8143AF0069AAD501A14B190 /* PaginationController.Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14F5AF59FA120473EF05F2B3DC9507D /* PaginationController.Loader.swift */; };
-		92FA00CA0566317C327F3FD87F804D3A /* TableDirectorCoverViewSizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DE882F26B76E9207A41AC6880B854 /* TableDirectorCoverViewSizeDelegate.swift */; };
-		9356FB9F900CCE2F05009EC61185BE7E /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A71828A07DF0A4C97B9E1B77FEF69 /* ReusableView.swift */; };
-		9636771F9DC991034A4BEE6B809D9E8F /* Pods-TableDirector_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2EA7EB1F0FBA6B7A8708F6B64D5F65 /* Pods-TableDirector_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C3FAEC5B0813A3F12AF8418CDB60217 /* BaseThresholdCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37750C1B4F5E93A6F50F1BE95777919E /* BaseThresholdCalculator.swift */; };
-		9E49F1D1877F740D78B86D97227A3D59 /* AnyCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ACDF1C8B2B33674FF91BEE92A243FC /* AnyCellConfigurator.swift */; };
+		7803D9470BE98ECE1DE0FA5FC645B6CA /* CollectionUpdate.Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40371F04B94BB51AC65A4BEBC9CB95DD /* CollectionUpdate.Update.swift */; };
+		7A4F2FA42256BDB1904BB490C5EDA432 /* TableActionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE7785E2F86BADF0F5C8F15A37E71B /* TableActionHeader.swift */; };
+		7ABBEBC2E4854832EF2E3229D281380B /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05D2C289D8CCA9F59C116E44493450 /* ReusableView.swift */; };
+		810F1BED5B3434205C4023DF46668BB2 /* PaginationController.Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A821AD8C346B924FCDBF640D60BD52 /* PaginationController.Availability.swift */; };
+		815FF9CF99217E94E3F171308E883AC3 /* Pods-DiffTableDirector_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A82E7D896EA8172C88ACE87FA4377564 /* Pods-DiffTableDirector_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89458AA07CE8B7F4434CA9F35D96B2F5 /* BaseThresholdCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFD30A7654A0476D92A1E3D2E54365 /* BaseThresholdCalculator.swift */; };
+		8C5EB266BDD48D8BBF595CEA0715D633 /* TableDirectorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610E1C74A750E3D161B5E64BC6DB3920 /* TableDirectorInput.swift */; };
+		8CB00CF3DFDE52BA18A249D56E56A3A8 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998B08C1A2ADC8557DDDEFD2C15161C3 /* TableRow.swift */; };
+		92950C6E23204E31B2CD949041BEC8D6 /* TableDirector.ReloadRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CC6CD070D5BB63697A7944F9A3059 /* TableDirector.ReloadRule.swift */; };
+		965127D8911D5526847D1E879ACF3826 /* PaginationController.LoadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F817C7914D3964ECF3512BB476EE2 /* PaginationController.LoadResult.swift */; };
+		9DEC5AE37AEA31D214A462C3B0B2829D /* PaginationControllerLoaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AD051282EFFA9291366881CACC8BB6 /* PaginationControllerLoaderAnimator.swift */; };
+		9FFF74CBC8E4C64FA5957DEFCC94BA3A /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E11F22B11DA3EB347B16DABA5CEF94 /* ConfigurableCell.swift */; };
 		A17C9FC58EC33A033CC75791CE751258 /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80E9A1126D97CBB0721C326F2E2066 /* DiffAware.swift */; };
 		A2C5DF40E3A7BE66BDFC65881023E188 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CB6CCC1C87A883FA1113DE24905CF3 /* Change.swift */; };
-		A4023EB02C3045390B4071A8E8F69EF2 /* PaginationControllerLoaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26AB0C290E224B3CC57978BD287E699 /* PaginationControllerLoaderAnimator.swift */; };
-		A799F46DD3959348B05B405D208A16D5 /* TableDirector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B53F51358F01328728343172D7A72 /* TableDirector-dummy.m */; };
+		A3A9F7CCA7BC6955A1DC440E56B4BB59 /* PaginationController.Loader.DefaultAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625E0847BF75504A26C256393EB2999 /* PaginationController.Loader.DefaultAnimator.swift */; };
+		A5F9A97BC6AA92CC697E0B6EA5E9AB9E /* HeaderConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975FFBFABDE7BFFFD25FDACD3AC82FDF /* HeaderConfigurator.swift */; };
 		A821A1E52C1A1B18A9F6D034C691080D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF0C6FBA72CFFEEFF843F93A3A63FED /* Foundation.framework */; };
-		AEF88BDE52F4E264B636574D891ABFA3 /* TableDirector-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F13595CDC3A57EC5DA365236CDB97AFE /* TableDirector-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2898314A14B127B89E0A0BF8B8586BF /* TableDirector.Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733AD25CB7502DFA58414BA69F070186 /* TableDirector.Pagination.swift */; };
-		B555F102299C7F5B8E70060050BA550C /* TableDirector.CoverView.Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208A7172A135F0FC0BE65D98E04D82B /* TableDirector.CoverView.Position.swift */; };
-		B5C057DBC1167BDE864898502E418FE4 /* UITableViewHeaderFooterView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A86BAC50326603F33DA446B980318E /* UITableViewHeaderFooterView+Extensions.swift */; };
-		B6621116B3102F9217AE9D777F0FA012 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0E8E3A844899C118A9EB5DEE7D2EA /* ActionCell.swift */; };
+		AA1D40B7CF66A1E774FF52044DBDC9F5 /* UITableView.RowAnimation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA48BD071DEBA17CD6FB3191C2D337 /* UITableView.RowAnimation+Extensions.swift */; };
+		B43728F975ABC0FE84CB943891320D04 /* PaginationController.Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E36E28E05FBE0EE90101F5C0B01DB5 /* PaginationController.Loader.swift */; };
+		BAE307CA563D4D09AA35BE6AC3CEB85B /* TableDirector.CoverView.ShowParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58557A73F00BD01A9CE91116FD4EF514 /* TableDirector.CoverView.ShowParams.swift */; };
+		BE484F060FE926470948E8FA05C351A2 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8CC6145028274C3095A247E0EEA45 /* CellConfigurator.swift */; };
+		C13E9DDC82B38663649563442F90609E /* TableDirector.CoverView.Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7842C9505B2104F174A4E118C8791CCD /* TableDirector.CoverView.Position.swift */; };
+		C1B82DF67CFD94B63BF737AC08CF9DC2 /* DiffableTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF783521A70FAC0D3C6568D18D5B03F /* DiffableTableViewDataSource.swift */; };
+		C48A4BA41032F3B037BD1001E04DC3EA /* DiffableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE23555F4A2D63AC3A23003F67A1FD2 /* DiffableCollection.swift */; };
 		C6B4EB3968533FF053710C18700EC1D2 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6925BD0B2CF252448CF1FA378A916 /* WagnerFischer.swift */; };
-		CD87F5266401374D0259BAB1F6B76DF9 /* DiffableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18EA250946A992B5EF842D629CBB8E7 /* DiffableCollection.swift */; };
-		D83771186FB9AC5FCB6C11DE9205C503 /* TableDirector.ReloadRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3E70E8C4D045BEE35C99EC761C0F1 /* TableDirector.ReloadRule.swift */; };
+		D1439473DCC1709B392B68A62BDC678E /* PaginationController.PrefetchStraregy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0976F494DBAD7C585B5C00C73FF67D3 /* PaginationController.PrefetchStraregy.swift */; };
+		D9C61705B2C50887D042539DD9CD0CF6 /* CrossObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59A9C58CEC2785009B61CC64FE755CF /* CrossObserver.swift */; };
 		DA5B543B20189A5A2AD35FE79C25873A /* DeepDiff-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BBE7D23612151F3F97C849F5D1BEC1BB /* DeepDiff-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA859008C00E1487A17DBE71EB144AB4 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3EE89B2B7F4AAFCB3A91C36DC5C3E /* DispatchQueue+Extensions.swift */; };
 		DB7C44216E84CBCEDA50693569F4EBCB /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7D6184EB699118248F760B39256EA /* UITableView+Extensions.swift */; };
-		E12F36599D0C7897AAF0E008EF045D80 /* TableActionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C1A0E36ACA22BDD1385D6484807B37 /* TableActionHeader.swift */; };
-		E25DFDC8249A14AB0039A096 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DFDC6249A14AB0039A096 /* DispatchQueue+Extensions.swift */; };
-		E25DFDC9249A14AB0039A096 /* UITableView.RowAnimation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DFDC7249A14AB0039A096 /* UITableView.RowAnimation+Extensions.swift */; };
-		E25DFDCB249A178B0039A096 /* DiffInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DFDCA249A178B0039A096 /* DiffInfo.swift */; };
-		E25DFDCD249A179F0039A096 /* HeightCalculatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DFDCC249A179F0039A096 /* HeightCalculatable.swift */; };
-		E25DFDCF249A17AB0039A096 /* ScrollObserverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DFDCE249A17AB0039A096 /* ScrollObserverable.swift */; };
-		E2BEA383EE86AE7793D2D938096EBD3E /* FromNibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391CE711753BC8DB8F31C72CB6C1E8E /* FromNibLoadable.swift */; };
-		E637035288DF3B969841E629E1DEE601 /* PaginationController.PrefetchStraregy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E2B96FAC334159D0EEEBD02F11EA2 /* PaginationController.PrefetchStraregy.swift */; };
-		E65CEABB72EDF1ED25812B78126EC517 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF0C6FBA72CFFEEFF843F93A3A63FED /* Foundation.framework */; };
-		E93B310CB83D6EE495A443B27C00B107 /* DiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C59E203B08075E7A21C4EECC578D4 /* DiffableDataSource.swift */; };
-		F0E35802EE7C72A4861F1E329308632B /* SectionsComporator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFE1750BCED94C31D4829388C2C8C /* SectionsComporator.swift */; };
-		F376CF7A649E5FE5784548EC697E7E87 /* ActionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7686200338A81F1D579BB88FE0BC69C3 /* ActionHeader.swift */; };
-		F476E19AA407D07806157F7105788B6A /* RowsComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1CAA611ECB595DCCFC98D5EDF8F21D /* RowsComparator.swift */; };
-		F4C2C80489F7CB8E37535DFF9A02EC72 /* PaginationController.Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448BBFF5BD20EC7185C4C2BE874490D6 /* PaginationController.Availability.swift */; };
-		F5886AE2F3CA0999FE9278359B35D111 /* ScrollViewCrossObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA983B69F68CAC6E6734026AC1C1F7 /* ScrollViewCrossObservable.swift */; };
+		DBBA114436617DAE5872CEA2EB36DBAB /* PaginationController.ScrollPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAAB39551D05C8835B17502C1814DC5 /* PaginationController.ScrollPosition.swift */; };
+		DE29B393BAC747D74C5AD30F58384EC0 /* TableDirectorCoverViewSizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD7AE7A53DA197BD9761ADF48E49B0 /* TableDirectorCoverViewSizeDelegate.swift */; };
+		E0C939A057CC19FC43F07799F5F24FBD /* ScrollObserverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B9A2EF2FBE61516680FB1871F782B /* ScrollObserverable.swift */; };
+		E2BD152BE0DD02629E8F4EE888058D48 /* DiffableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F80BDE690542449520837B4B9F26B2 /* DiffableViewModel.swift */; };
+		EA762013013B60BD55E37348E94F96C2 /* TableDirector.Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4285C9B642CBD5E38A0DAEFEE0EA107E /* TableDirector.Pagination.swift */; };
+		F4B768B16DD112E9B709B27243DF4136 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9809F479515D674590D47AEF93E5E80F /* Collection+Extensions.swift */; };
+		F4F4DB2F97C8EDDCA73E96A61EE7A59F /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28085A9370EEF76832591A514E13D3 /* UITableViewCell+Extension.swift */; };
+		F5620B5FDC84645A9D6F511982785BB6 /* TableDirector.CoverView.Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413FD5CB050CF275AB99494052060DC /* TableDirector.CoverView.Controller.swift */; };
+		FADF0CD238D06CD2A65981151A9E49B3 /* PaginationController.Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F4E1165A1A194FDECEFFF30A6031D /* PaginationController.Direction.swift */; };
+		FCE97B2FACCA53E760E16B345C4E6B3F /* ScrollViewCrossObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B46CC0FCE67726AD2D7609C654C74 /* ScrollViewCrossObservable.swift */; };
+		FE92C3279CF23ACF16847B797DC685F1 /* ScrollViewBoundsCrossObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA4CBD87F916B48125F57372ED47E /* ScrollViewBoundsCrossObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		26B37D8719097DDB9E725D00E4353340 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B798275031D11315684486DC2E2B6FCA;
-			remoteInfo = DeepDiff;
-		};
-		74C3C09AB2BEA1C2094B532083453E33 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B798275031D11315684486DC2E2B6FCA;
-			remoteInfo = DeepDiff;
-		};
-		98612C10AD60EF383276514E9D21EC80 /* PBXContainerItemProxy */ = {
+		02F92D15E5D2124B59B1C0F0205EBD39 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
-		D58EAE8F744664D7930CE5E79BB9304F /* PBXContainerItemProxy */ = {
+		1F5A375701F7273F57EF3DD5833F99A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B798275031D11315684486DC2E2B6FCA;
+			remoteInfo = DeepDiff;
+		};
+		B2F4E7F52A11A997C77030D2E5E51C6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B798275031D11315684486DC2E2B6FCA;
+			remoteInfo = DeepDiff;
+		};
+		B6BB4E22466629EE083280FA39991AB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
-		DC5299193C1640B5F3374B74E24DADC0 /* PBXContainerItemProxy */ = {
+		EE0CBC6DAECB3FB4C99AD141A0910FF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BE2ACE677D926D652DC740D8738BDFBF;
-			remoteInfo = TableDirector;
+			remoteGlobalIDString = 94E88A69D48031B86C95FADC7B3B237F;
+			remoteInfo = DiffTableDirector;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01256FAADBC0A068072BD8B7A7CC45D5 /* TableDirector.CoverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.swift; sourceTree = "<group>"; };
-		03DE42E3B6A653DC13C260E9BA624E9A /* Pods-TableDirector_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TableDirector_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		06C158F0641B8599B91EB3C7C710A639 /* PaginationController.ErrorBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.ErrorBehavior.swift; sourceTree = "<group>"; };
-		0BEA536CE8736700B0D02CEF2634A87C /* ThresholdCrossObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThresholdCrossObserver.swift; sourceTree = "<group>"; };
-		0D7EE0D4BF2618DA2BB597371247C338 /* DiffableViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableViewModel.swift; sourceTree = "<group>"; };
-		0E688B8F88EA227D154450CC6C328F5C /* TableDirector.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TableDirector.modulemap; sourceTree = "<group>"; };
-		12C0767B8325B7F7B26B7B9DC11EAE7C /* TableDirector.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TableDirector.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		00D3EE89B2B7F4AAFCB3A91C36DC5C3E /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
+		02ACB2829BE204FB7B72B9E6BEBB1FD3 /* PaginationController.ErrorBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.ErrorBehavior.swift; sourceTree = "<group>"; };
+		047DA9C0B483A598BAA9BE760DA1B426 /* Pods-DiffTableDirector_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DiffTableDirector_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		04B9800B51D15D20EDCE18E4EDE54650 /* DiffTableDirector.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DiffTableDirector.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		057B46CC0FCE67726AD2D7609C654C74 /* ScrollViewCrossObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollViewCrossObservable.swift; sourceTree = "<group>"; };
+		08331685A5F632F88E02291DF7AE229A /* HeightCalculatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeightCalculatable.swift; path = DiffTableDirector/Classes/HeightCalculatable.swift; sourceTree = "<group>"; };
+		0A28085A9370EEF76832591A514E13D3 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		0C648DE83D344A7010023C9D9061A5E0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0DE23555F4A2D63AC3A23003F67A1FD2 /* DiffableCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableCollection.swift; sourceTree = "<group>"; };
+		108023DE64108CF756C066425E820A3D /* Pods-DiffTableDirector_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DiffTableDirector_Example.modulemap"; sourceTree = "<group>"; };
 		12E6925BD0B2CF252448CF1FA378A916 /* WagnerFischer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WagnerFischer.swift; path = Sources/Shared/Algorithms/WagnerFischer.swift; sourceTree = "<group>"; };
-		13C1A0E36ACA22BDD1385D6484807B37 /* TableActionHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableActionHeader.swift; sourceTree = "<group>"; };
-		181430AB28E194409B79D87C18B23332 /* TableRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
-		2480C6BE5FFA909CFAF37283F84F33F9 /* HeaderConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HeaderConfigurator.swift; sourceTree = "<group>"; };
-		2693FD8E8DDF9A2DB9CAF768A8B72382 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		26C815500A84E0E7E8562FF3F976E66C /* TableDirector.CoverView.ShowParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.ShowParams.swift; sourceTree = "<group>"; };
+		16A1D75B020516581428D52C2C0460CF /* ActionHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionHeader.swift; path = DiffTableDirector/Classes/ActionHeader.swift; sourceTree = "<group>"; };
+		199448E3D3F61271C0E3DAE98FCD86E8 /* FromNibLoadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromNibLoadable.swift; path = DiffTableDirector/Classes/FromNibLoadable.swift; sourceTree = "<group>"; };
+		1A5CC6CD070D5BB63697A7944F9A3059 /* TableDirector.ReloadRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.ReloadRule.swift; sourceTree = "<group>"; };
+		1B5F92E083C2D5DE8DD4C479AAB7442D /* DiffableDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableDataSource.swift; sourceTree = "<group>"; };
+		1EDC985A40D8812D020ED14C5ED1A981 /* DiffTableDirector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DiffTableDirector-dummy.m"; sourceTree = "<group>"; };
+		1FF4284DB6E68345A99D8AABD791BC3B /* DiffTableDirector-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DiffTableDirector-prefix.pch"; sourceTree = "<group>"; };
+		20E035472F593E2B7E9DC8AA8EB9696D /* ThresholdCrossObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThresholdCrossObserver.swift; sourceTree = "<group>"; };
+		27719DEEE49BEFDAA66C8FCF7EE9C234 /* TableActionRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableActionRow.swift; sourceTree = "<group>"; };
+		279EF32C83C3B4DF644F1726651ED190 /* DiffInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffInfo.swift; sourceTree = "<group>"; };
 		2A80E9A1126D97CBB0721C326F2E2066 /* DiffAware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiffAware.swift; path = Sources/Shared/DiffAware.swift; sourceTree = "<group>"; };
-		2E7586ADAE7689EF201D65835E066F0F /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
-		2EB58BA5A645970352E19787A9740129 /* TableSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableSection.swift; path = TableDirector/Classes/TableSection.swift; sourceTree = "<group>"; };
 		30A13E92A938E9B80F3E6503988115F4 /* DeepDiff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeepDiff.swift; path = Sources/Shared/DeepDiff.swift; sourceTree = "<group>"; };
-		315C99D61DCD3C1CC8A3EF8936D71539 /* TableDirectorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirectorInput.swift; sourceTree = "<group>"; };
-		3229527B7E4AA2E23F6C37F82A3522A6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		326FA8C5BA3F68C40A70A0EE8837F489 /* PaginationController.Settings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Settings.swift; sourceTree = "<group>"; };
+		310C0F3D673AFC56D8F00330280F0C12 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		32F80BDE690542449520837B4B9F26B2 /* DiffableViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableViewModel.swift; sourceTree = "<group>"; };
 		3458EBA3A9392D5AFABE50B8CEDA5B6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		37750C1B4F5E93A6F50F1BE95777919E /* BaseThresholdCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseThresholdCalculator.swift; sourceTree = "<group>"; };
-		387D21D638340985523DDCC8C1D200E2 /* DiffableTableViewDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableTableViewDataSource.swift; sourceTree = "<group>"; };
-		39ED0FD1A4747446877B6FED304C48D3 /* TableItemActionable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableItemActionable.swift; path = TableDirector/Classes/TableItemActionable.swift; sourceTree = "<group>"; };
+		350A845CAC40C7F32637CED6D88EFDDD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		37BD7CF4E38FC3272E5F84ADF955DF47 /* DiffTableDirector.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DiffTableDirector.modulemap; sourceTree = "<group>"; };
+		392D1028F208C4CE640FB5BB2CE47327 /* UITableViewHeaderFooterView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Extensions.swift"; sourceTree = "<group>"; };
 		3D43FEAB488B85DF9B9E5FB6A740C32A /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
-		3E2EA7EB1F0FBA6B7A8708F6B64D5F65 /* Pods-TableDirector_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TableDirector_Example-umbrella.h"; sourceTree = "<group>"; };
-		448BBFF5BD20EC7185C4C2BE874490D6 /* PaginationController.Availability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Availability.swift; sourceTree = "<group>"; };
-		45A3EC98311F8B1478AC57244B4570CC /* DeepDiff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F66C27BA42CDC9236CCDC196D8D8622 /* TableHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
+		40371F04B94BB51AC65A4BEBC9CB95DD /* CollectionUpdate.Update.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionUpdate.Update.swift; sourceTree = "<group>"; };
+		40F20E4393217573F0B5297A88FA49B1 /* CollectionUpdate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionUpdate.swift; sourceTree = "<group>"; };
+		4285C9B642CBD5E38A0DAEFEE0EA107E /* TableDirector.Pagination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.Pagination.swift; sourceTree = "<group>"; };
+		42AD051282EFFA9291366881CACC8BB6 /* PaginationControllerLoaderAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationControllerLoaderAnimator.swift; sourceTree = "<group>"; };
+		45A3EC98311F8B1478AC57244B4570CC /* DeepDiff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DeepDiff.framework; path = DeepDiff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46CB6CCC1C87A883FA1113DE24905CF3 /* Change.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Change.swift; path = Sources/Shared/Change.swift; sourceTree = "<group>"; };
-		4A2993ADB234DC36D6B52DF6509D3637 /* TableDirector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TableDirector.release.xcconfig; sourceTree = "<group>"; };
-		4AEB52405257779D9CC5EAC38BBA7899 /* TableDirector.Registrator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.Registrator.swift; sourceTree = "<group>"; };
-		4B1EC416183F0E83D825215DA4B54B00 /* PaginationController.Loader.State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Loader.State.swift; sourceTree = "<group>"; };
-		4FA0E8E3A844899C118A9EB5DEE7D2EA /* ActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
-		5176F582308AFEC06C5DAFDD3BBCF268 /* TableHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
-		54B31BD9C5545E994799E321C95EB15A /* Pods-TableDirector_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TableDirector_Example-frameworks.sh"; sourceTree = "<group>"; };
-		54FA983B69F68CAC6E6734026AC1C1F7 /* ScrollViewCrossObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollViewCrossObservable.swift; sourceTree = "<group>"; };
+		498D7D9590AC47A707CCB2539C18E6B7 /* Pods-DiffTableDirector_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DiffTableDirector_Example-Info.plist"; sourceTree = "<group>"; };
+		4B58B034FE09BBC28F4DA8038D4130AC /* ActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
+		4E9E3073205A9C22BA241429758B86E3 /* DiffTableDirector-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DiffTableDirector-Info.plist"; sourceTree = "<group>"; };
+		52901706EF254C2C8216CC80FD0DE7E4 /* PaginationController.Settings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Settings.swift; sourceTree = "<group>"; };
 		5517F0E7220B4937468419DAD8C00332 /* DeepDiff-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DeepDiff-dummy.m"; sourceTree = "<group>"; };
-		599D3FAA655F0C2DCDD589FCD0384CBA /* Pods-TableDirector_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TableDirector_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		61B44A0BF0C453FD7D04E9E071F95859 /* ConfigurableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
-		66F76F6136C79915D1F5F8432681D336 /* Pods-TableDirector_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TableDirector_Example-dummy.m"; sourceTree = "<group>"; };
+		58557A73F00BD01A9CE91116FD4EF514 /* TableDirector.CoverView.ShowParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.ShowParams.swift; sourceTree = "<group>"; };
+		5C22D74D05EB1AFD044EDD0E76EE3523 /* DiffTableDirector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DiffTableDirector.release.xcconfig; sourceTree = "<group>"; };
+		610E1C74A750E3D161B5E64BC6DB3920 /* TableDirectorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirectorInput.swift; sourceTree = "<group>"; };
 		6760304F5D78E4F2887AC7687818E72B /* IndexPathConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IndexPathConverter.swift; path = Sources/iOS/IndexPathConverter.swift; sourceTree = "<group>"; };
 		69413554AF8DF87935B715876B88CF8B /* DeepDiff-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DeepDiff-Info.plist"; sourceTree = "<group>"; };
-		6C1C59E203B08075E7A21C4EECC578D4 /* DiffableDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableDataSource.swift; sourceTree = "<group>"; };
-		733AD25CB7502DFA58414BA69F070186 /* TableDirector.Pagination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.Pagination.swift; sourceTree = "<group>"; };
-		733B53F51358F01328728343172D7A72 /* TableDirector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TableDirector-dummy.m"; sourceTree = "<group>"; };
-		7686200338A81F1D579BB88FE0BC69C3 /* ActionHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionHeader.swift; path = TableDirector/Classes/ActionHeader.swift; sourceTree = "<group>"; };
+		699D5AFC478C90E671BFD5B38339D7AD /* RowsComparator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RowsComparator.swift; sourceTree = "<group>"; };
+		7281F93AE039F45544A581977AB0A58F /* TableSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableSection.swift; path = DiffTableDirector/Classes/TableSection.swift; sourceTree = "<group>"; };
 		77D7D6184EB699118248F760B39256EA /* UITableView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Extensions.swift"; path = "Sources/iOS/UITableView+Extensions.swift"; sourceTree = "<group>"; };
-		7B0CF659DC908EEBCC6A5093178DCB6B /* PaginationController.ScrollPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.ScrollPosition.swift; sourceTree = "<group>"; };
-		7D960522457B011E6B6D1F348B4EF887 /* PaginationController.Loader.DefaultAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Loader.DefaultAnimator.swift; sourceTree = "<group>"; };
+		7842C9505B2104F174A4E118C8791CCD /* TableDirector.CoverView.Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.Position.swift; sourceTree = "<group>"; };
+		7857DD220981AFE383E12ED9DFDAE7BE /* TableDirector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.swift; sourceTree = "<group>"; };
+		78A821AD8C346B924FCDBF640D60BD52 /* PaginationController.Availability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Availability.swift; sourceTree = "<group>"; };
 		7EC4F9160C18BACC7367A5C18C9A013C /* DeepDiff-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DeepDiff-prefix.pch"; sourceTree = "<group>"; };
+		8064C2386B1B08A150DF20E17E1762BD /* Pods-DiffTableDirector_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DiffTableDirector_Example-dummy.m"; sourceTree = "<group>"; };
+		80FDA4CBD87F916B48125F57372ED47E /* ScrollViewBoundsCrossObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollViewBoundsCrossObserver.swift; sourceTree = "<group>"; };
+		8413FD5CB050CF275AB99494052060DC /* TableDirector.CoverView.Controller.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.Controller.swift; sourceTree = "<group>"; };
 		8634B9CD83F0732C53CCE8C0FCEDFE25 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Extensions.swift"; path = "Sources/iOS/UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
-		873BCD6329194FA17A49E38FFE65871D /* CollectionUpdate.Update.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionUpdate.Update.swift; sourceTree = "<group>"; };
-		87D3E70E8C4D045BEE35C99EC761C0F1 /* TableDirector.ReloadRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.ReloadRule.swift; sourceTree = "<group>"; };
-		8A2E2B96FAC334159D0EEEBD02F11EA2 /* PaginationController.PrefetchStraregy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.PrefetchStraregy.swift; sourceTree = "<group>"; };
-		8AFE1D79D8E4D69D484051A185833E2C /* TableDirector-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TableDirector-Info.plist"; sourceTree = "<group>"; };
-		8FF4196EF5CC9AB4832F691C6CABB77B /* TableDirector.CoverView.Controller.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.Controller.swift; sourceTree = "<group>"; };
-		9208A7172A135F0FC0BE65D98E04D82B /* TableDirector.CoverView.Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.Position.swift; sourceTree = "<group>"; };
-		9391CE711753BC8DB8F31C72CB6C1E8E /* FromNibLoadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromNibLoadable.swift; path = TableDirector/Classes/FromNibLoadable.swift; sourceTree = "<group>"; };
-		947ED66E12E95ACCC62CC7AB353BEAD0 /* Pods-TableDirector_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TableDirector_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		97E56830FBB6F4C4159559AE16B0ACFD /* TableDirector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TableDirector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9909EB8CE09BA05445CC51DDF21A0C64 /* Pods_TableDirector_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableDirector_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9989B9ED8BC1887998441A1D91E1E2F3 /* CrossObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CrossObserver.swift; sourceTree = "<group>"; };
-		9D78481B2C31E5A1749C68C97ECD3EA9 /* CellConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E1CAA611ECB595DCCFC98D5EDF8F21D /* RowsComparator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RowsComparator.swift; sourceTree = "<group>"; };
+		888F817C7914D3964ECF3512BB476EE2 /* PaginationController.LoadResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.LoadResult.swift; sourceTree = "<group>"; };
+		89BD7AE7A53DA197BD9761ADF48E49B0 /* TableDirectorCoverViewSizeDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirectorCoverViewSizeDelegate.swift; sourceTree = "<group>"; };
+		9625E0847BF75504A26C256393EB2999 /* PaginationController.Loader.DefaultAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Loader.DefaultAnimator.swift; sourceTree = "<group>"; };
+		975FFBFABDE7BFFFD25FDACD3AC82FDF /* HeaderConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HeaderConfigurator.swift; sourceTree = "<group>"; };
+		9809F479515D674590D47AEF93E5E80F /* Collection+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		998B08C1A2ADC8557DDDEFD2C15161C3 /* TableRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
+		9B05D2C289D8CCA9F59C116E44493450 /* ReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = DiffTableDirector/Classes/ReusableView.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F663689BDA70AF90D5B75E1B759F8A4 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
 		9FEDBBBD6CA0084E5022DA9D78A6BB38 /* DeepDiff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DeepDiff.debug.xcconfig; sourceTree = "<group>"; };
-		A61CFE1750BCED94C31D4829388C2C8C /* SectionsComporator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionsComporator.swift; sourceTree = "<group>"; };
 		A647FCA53DB1FF484D86FEF4FE116DD6 /* DeepDiff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6ACDF1C8B2B33674FF91BEE92A243FC /* AnyCellConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnyCellConfigurator.swift; sourceTree = "<group>"; };
 		A7FB158434E9CBA09B5A2ABEC5A6E934 /* MoveReducer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoveReducer.swift; path = Sources/Shared/MoveReducer.swift; sourceTree = "<group>"; };
-		ADFA7B740C828A210B4316D2EAA19310 /* Pods-TableDirector_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TableDirector_Example.modulemap"; sourceTree = "<group>"; };
-		B224472A1F9898A95D2D62D1F12DABDF /* TableDirector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.swift; sourceTree = "<group>"; };
-		B77310B0BEE2D3DF26A208B2596E641C /* Pods-TableDirector_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TableDirector_Example-Info.plist"; sourceTree = "<group>"; };
-		B7AD859ED8AA79E66E80E4A074681DED /* TableDirector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TableDirector.debug.xcconfig; sourceTree = "<group>"; };
+		A82E7D896EA8172C88ACE87FA4377564 /* Pods-DiffTableDirector_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DiffTableDirector_Example-umbrella.h"; sourceTree = "<group>"; };
+		ABAAB39551D05C8835B17502C1814DC5 /* PaginationController.ScrollPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.ScrollPosition.swift; sourceTree = "<group>"; };
+		B27FD5826261898835848B01008E9E22 /* Pods-DiffTableDirector_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DiffTableDirector_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B59A9C58CEC2785009B61CC64FE755CF /* CrossObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CrossObserver.swift; sourceTree = "<group>"; };
+		B5E36E28E05FBE0EE90101F5C0B01DB5 /* PaginationController.Loader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Loader.swift; sourceTree = "<group>"; };
+		B5FE7785E2F86BADF0F5C8F15A37E71B /* TableActionHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableActionHeader.swift; sourceTree = "<group>"; };
 		B7D62A84FF235262163BA8FC1A3252D7 /* DeepDiff.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DeepDiff.modulemap; sourceTree = "<group>"; };
 		BBE7D23612151F3F97C849F5D1BEC1BB /* DeepDiff-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DeepDiff-umbrella.h"; sourceTree = "<group>"; };
-		BC0DE882F26B76E9207A41AC6880B854 /* TableDirectorCoverViewSizeDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirectorCoverViewSizeDelegate.swift; sourceTree = "<group>"; };
-		BC7611699D236E6C7E441E8DCC0AD942 /* PaginationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.swift; sourceTree = "<group>"; };
-		BDA10BA19B4738614D82E4D4F511DF72 /* TableActionRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableActionRow.swift; sourceTree = "<group>"; };
-		BE482C961CFDAE2E0867D668B63CB6F0 /* PaginationController.Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Direction.swift; sourceTree = "<group>"; };
-		C3B8EB53EE8C0E807832D398B601B3C7 /* ScrollViewBoundsCrossObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollViewBoundsCrossObserver.swift; sourceTree = "<group>"; };
-		C64E7B63B71B3D89F8A02616AA3EDAD2 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
-		CBB505E12DCEAC71D8AD2D485A699CD9 /* Snapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
-		CDB2BB9DAF86807BD3B5E1B82AB6D7F4 /* LoadOperationHandable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoadOperationHandable.swift; sourceTree = "<group>"; };
-		D18EA250946A992B5EF842D629CBB8E7 /* DiffableCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableCollection.swift; sourceTree = "<group>"; };
-		D3B4E99446AF61D37E65294FBE1C4FBB /* Pods-TableDirector_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TableDirector_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D50A71828A07DF0A4C97B9E1B77FEF69 /* ReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = TableDirector/Classes/ReusableView.swift; sourceTree = "<group>"; };
-		D5A86BAC50326603F33DA446B980318E /* UITableViewHeaderFooterView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Extensions.swift"; sourceTree = "<group>"; };
-		D93651D4FCA95A897EE2894E440A5642 /* TableDirector-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TableDirector-prefix.pch"; sourceTree = "<group>"; };
+		BD540347D5CCAF7AEADE4F36CEDA7059 /* DiffTableDirector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DiffTableDirector.framework; path = DiffTableDirector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7F9EADF4388C160F8BE5661FC867B8 /* ConfigurableHeaderFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfigurableHeaderFooter.swift; sourceTree = "<group>"; };
+		C0DC7AED2DD5B21B9DCE1AF13D312524 /* AnyCellConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnyCellConfigurator.swift; sourceTree = "<group>"; };
+		C47FBEEC9FA76D9F710355EC5C359790 /* PaginationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.swift; sourceTree = "<group>"; };
+		C75E66C434D420E9DCEB006EABBF2DB9 /* DiffTableDirector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DiffTableDirector.debug.xcconfig; sourceTree = "<group>"; };
+		C85EBCF1649DB3BE9BC080130DEDDC0E /* TableItemActionable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableItemActionable.swift; path = DiffTableDirector/Classes/TableItemActionable.swift; sourceTree = "<group>"; };
+		CD654083DE23B2D8C5FDDD64DC4F9D52 /* SectionsComporator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionsComporator.swift; sourceTree = "<group>"; };
+		CD7B9A2EF2FBE61516680FB1871F782B /* ScrollObserverable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollObserverable.swift; sourceTree = "<group>"; };
+		D1E11F22B11DA3EB347B16DABA5CEF94 /* ConfigurableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		D1E8CC6145028274C3095A247E0EEA45 /* CellConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
+		D6FE536D64041D2FE246EEAF82F88140 /* Pods-DiffTableDirector_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DiffTableDirector_Example-frameworks.sh"; sourceTree = "<group>"; };
+		D76EFE61A3CEAB52164D73C628E7F4DC /* LoadOperationHandable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoadOperationHandable.swift; sourceTree = "<group>"; };
+		D7C2281BDC18EE757B5C5F1D3163EF63 /* Pods_DiffTableDirector_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DiffTableDirector_Example.framework; path = "Pods-DiffTableDirector_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D96AEF7C0E81FB17EC2F32C17CDDD5BD /* TableDirector.Registrator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.Registrator.swift; sourceTree = "<group>"; };
+		DA1E3B179240D74148347EBE41F3D0B3 /* TableDirector.CoverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.swift; sourceTree = "<group>"; };
+		DD49773AD950736244B0FA7893235F3D /* Pods-DiffTableDirector_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DiffTableDirector_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DDB98CE5136CB37ACFE65DC510A97E91 /* Pods-DiffTableDirector_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DiffTableDirector_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E1073781321C609B5029F46A4F9DECAF /* Array+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Extensions.swift"; path = "Sources/Shared/Array+Extensions.swift"; sourceTree = "<group>"; };
-		E14F5AF59FA120473EF05F2B3DC9507D /* PaginationController.Loader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Loader.swift; sourceTree = "<group>"; };
-		E25DFDC6249A14AB0039A096 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
-		E25DFDC7249A14AB0039A096 /* UITableView.RowAnimation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView.RowAnimation+Extensions.swift"; sourceTree = "<group>"; };
-		E25DFDCA249A178B0039A096 /* DiffInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffInfo.swift; sourceTree = "<group>"; };
-		E25DFDCC249A179F0039A096 /* HeightCalculatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeightCalculatable.swift; path = TableDirector/Classes/HeightCalculatable.swift; sourceTree = "<group>"; };
-		E25DFDCE249A17AB0039A096 /* ScrollObserverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollObserverable.swift; sourceTree = "<group>"; };
-		E26AB0C290E224B3CC57978BD287E699 /* PaginationControllerLoaderAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationControllerLoaderAnimator.swift; sourceTree = "<group>"; };
-		EAA96F7BF5A708E08BB1A3EC3F2FBADC /* Collection+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		EBF783521A70FAC0D3C6568D18D5B03F /* DiffableTableViewDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableTableViewDataSource.swift; sourceTree = "<group>"; };
+		F0976F494DBAD7C585B5C00C73FF67D3 /* PaginationController.PrefetchStraregy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.PrefetchStraregy.swift; sourceTree = "<group>"; };
 		F09CD9B1B7395FC98F22C211899F219A /* DeepDiff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DeepDiff.release.xcconfig; sourceTree = "<group>"; };
-		F13595CDC3A57EC5DA365236CDB97AFE /* TableDirector-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TableDirector-umbrella.h"; sourceTree = "<group>"; };
+		F1CFD30A7654A0476D92A1E3D2E54365 /* BaseThresholdCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseThresholdCalculator.swift; sourceTree = "<group>"; };
+		F45F4E1165A1A194FDECEFFF30A6031D /* PaginationController.Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Direction.swift; sourceTree = "<group>"; };
+		F81A64EF8DDA32265F6A0EAFF0A449A7 /* PaginationController.Loader.State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.Loader.State.swift; sourceTree = "<group>"; };
 		F95C54B8929593B298933587EFC99F05 /* Heckel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Heckel.swift; path = Sources/Shared/Algorithms/Heckel.swift; sourceTree = "<group>"; };
-		F9953E232937301B9B05708E58BC8A0D /* CollectionUpdate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionUpdate.swift; sourceTree = "<group>"; };
+		F99B4E3FDBF2E8E0089580A80E9AEA07 /* Snapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
+		FAEC5AD875BE716D98E2565B612B08DC /* DiffTableDirector-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DiffTableDirector-umbrella.h"; sourceTree = "<group>"; };
 		FBF0C6FBA72CFFEEFF843F93A3A63FED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FDA15F60CE784271F23BA5BC9141CF73 /* ConfigurableHeaderFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfigurableHeaderFooter.swift; sourceTree = "<group>"; };
-		FED4652966FBC5840FD0EAC0F6A5E742 /* PaginationController.LoadResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.LoadResult.swift; sourceTree = "<group>"; };
+		FDDA48BD071DEBA17CD6FB3191C2D337 /* UITableView.RowAnimation+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView.RowAnimation+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,20 +260,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FD727258D94AA5CBE409D6D0B619364 /* Frameworks */ = {
+		D165B840E18023E3C8B5A75F621157A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E65CEABB72EDF1ED25812B78126EC517 /* Foundation.framework in Frameworks */,
+				08572BB4AC0A476E2540F9F75A5E98C0 /* DeepDiff.framework in Frameworks */,
+				0BA02D49457228C5371DFD754CDE4162 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACACB56C1A41134D0648B67CBB496C07 /* Frameworks */ = {
+		E4628387D58A939D475C94CD71681D4D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07043CD4B1C0E7AD5CE5984FE63AEC93 /* DeepDiff.framework in Frameworks */,
-				2FE122D53CF44DD6E2D3B84B34036AF6 /* Foundation.framework in Frameworks */,
+				3022EF2C23F6A11D066BBF39150E0B92 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,33 +289,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		0B406E1A67C4104AA9C18B9372AD619D /* Pods-TableDirector_Example */ = {
+		04C97FA69548129B0D8F1AAEA0D72B81 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				ADFA7B740C828A210B4316D2EAA19310 /* Pods-TableDirector_Example.modulemap */,
-				03DE42E3B6A653DC13C260E9BA624E9A /* Pods-TableDirector_Example-acknowledgements.markdown */,
-				947ED66E12E95ACCC62CC7AB353BEAD0 /* Pods-TableDirector_Example-acknowledgements.plist */,
-				66F76F6136C79915D1F5F8432681D336 /* Pods-TableDirector_Example-dummy.m */,
-				54B31BD9C5545E994799E321C95EB15A /* Pods-TableDirector_Example-frameworks.sh */,
-				B77310B0BEE2D3DF26A208B2596E641C /* Pods-TableDirector_Example-Info.plist */,
-				3E2EA7EB1F0FBA6B7A8708F6B64D5F65 /* Pods-TableDirector_Example-umbrella.h */,
-				599D3FAA655F0C2DCDD589FCD0384CBA /* Pods-TableDirector_Example.debug.xcconfig */,
-				D3B4E99446AF61D37E65294FBE1C4FBB /* Pods-TableDirector_Example.release.xcconfig */,
+				04B9800B51D15D20EDCE18E4EDE54650 /* DiffTableDirector.podspec */,
+				0C648DE83D344A7010023C9D9061A5E0 /* LICENSE */,
+				350A845CAC40C7F32637CED6D88EFDDD /* README.md */,
 			);
-			name = "Pods-TableDirector_Example";
-			path = "Target Support Files/Pods-TableDirector_Example";
-			sourceTree = "<group>";
-		};
-		0CE9BE164C47C8121C6BD5A0B3492832 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				FDA15F60CE784271F23BA5BC9141CF73 /* ConfigurableHeaderFooter.swift */,
-				2480C6BE5FFA909CFAF37283F84F33F9 /* HeaderConfigurator.swift */,
-				13C1A0E36ACA22BDD1385D6484807B37 /* TableActionHeader.swift */,
-				5176F582308AFEC06C5DAFDD3BBCF268 /* TableHeader.swift */,
-			);
-			name = Header;
-			path = TableDirector/Classes/Header;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		127809871369268D765418C83EA99A90 /* SwiftLint */ = {
@@ -324,21 +304,16 @@
 			children = (
 				466018504D6400CDB9284C59478D66FF /* Support Files */,
 			);
+			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
-		135F9A1EE781FEC46CB54101261BBA15 /* Cross */ = {
+		1562F7E5FC2B7C33D131ABE2ACEDF5F1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E25DFDCE249A17AB0039A096 /* ScrollObserverable.swift */,
-				37750C1B4F5E93A6F50F1BE95777919E /* BaseThresholdCalculator.swift */,
-				9989B9ED8BC1887998441A1D91E1E2F3 /* CrossObserver.swift */,
-				C3B8EB53EE8C0E807832D398B601B3C7 /* ScrollViewBoundsCrossObserver.swift */,
-				54FA983B69F68CAC6E6734026AC1C1F7 /* ScrollViewCrossObservable.swift */,
-				0BEA536CE8736700B0D02CEF2634A87C /* ThresholdCrossObserver.swift */,
+				797F9DBED0EA00874DA64C73D0FDA83C /* Pods-DiffTableDirector_Example */,
 			);
-			name = Cross;
-			path = TableDirector/Classes/Cross;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		1DDB3A50119DEA9A274B11AE1ACA8374 /* DeepDiff */ = {
@@ -356,35 +331,20 @@
 				12E6925BD0B2CF252448CF1FA378A916 /* WagnerFischer.swift */,
 				68409B18D3C003C4B0E7D40BF982F816 /* Support Files */,
 			);
+			name = DeepDiff;
 			path = DeepDiff;
 			sourceTree = "<group>";
 		};
-		29ECAE232F5435F1693F986DC0C67371 /* Support Files */ = {
+		1E09F8634C7CCFDC824AE34E6301E684 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
-				0E688B8F88EA227D154450CC6C328F5C /* TableDirector.modulemap */,
-				733B53F51358F01328728343172D7A72 /* TableDirector-dummy.m */,
-				8AFE1D79D8E4D69D484051A185833E2C /* TableDirector-Info.plist */,
-				D93651D4FCA95A897EE2894E440A5642 /* TableDirector-prefix.pch */,
-				F13595CDC3A57EC5DA365236CDB97AFE /* TableDirector-umbrella.h */,
-				B7AD859ED8AA79E66E80E4A074681DED /* TableDirector.debug.xcconfig */,
-				4A2993ADB234DC36D6B52DF6509D3637 /* TableDirector.release.xcconfig */,
+				B5E36E28E05FBE0EE90101F5C0B01DB5 /* PaginationController.Loader.swift */,
+				9625E0847BF75504A26C256393EB2999 /* PaginationController.Loader.DefaultAnimator.swift */,
+				F81A64EF8DDA32265F6A0EAFF0A449A7 /* PaginationController.Loader.State.swift */,
+				42AD051282EFFA9291366881CACC8BB6 /* PaginationControllerLoaderAnimator.swift */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TableDirector";
-			sourceTree = "<group>";
-		};
-		43C0FB609D1BE5EB354C0F1062AA85A9 /* Row */ = {
-			isa = PBXGroup;
-			children = (
-				4FA0E8E3A844899C118A9EB5DEE7D2EA /* ActionCell.swift */,
-				9D78481B2C31E5A1749C68C97ECD3EA9 /* CellConfigurator.swift */,
-				61B44A0BF0C453FD7D04E9E071F95859 /* ConfigurableCell.swift */,
-				BDA10BA19B4738614D82E4D4F511DF72 /* TableActionRow.swift */,
-				181430AB28E194409B79D87C18B23332 /* TableRow.swift */,
-			);
-			name = Row;
-			path = TableDirector/Classes/Row;
+			name = Loader;
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		466018504D6400CDB9284C59478D66FF /* Support Files */ = {
@@ -397,35 +357,42 @@
 			path = "../Target Support Files/SwiftLint";
 			sourceTree = "<group>";
 		};
-		4C3CF3774EB3341875490827CD29B7F8 /* CoverView */ = {
+		5134DD58751AD2F02852BF3DA3C27210 /* TableDirector */ = {
 			isa = PBXGroup;
 			children = (
-				01256FAADBC0A068072BD8B7A7CC45D5 /* TableDirector.CoverView.swift */,
-				8FF4196EF5CC9AB4832F691C6CABB77B /* TableDirector.CoverView.Controller.swift */,
-				9208A7172A135F0FC0BE65D98E04D82B /* TableDirector.CoverView.Position.swift */,
-				26C815500A84E0E7E8562FF3F976E66C /* TableDirector.CoverView.ShowParams.swift */,
-				BC0DE882F26B76E9207A41AC6880B854 /* TableDirectorCoverViewSizeDelegate.swift */,
+				7857DD220981AFE383E12ED9DFDAE7BE /* TableDirector.swift */,
+				4285C9B642CBD5E38A0DAEFEE0EA107E /* TableDirector.Pagination.swift */,
+				D96AEF7C0E81FB17EC2F32C17CDDD5BD /* TableDirector.Registrator.swift */,
+				1A5CC6CD070D5BB63697A7944F9A3059 /* TableDirector.ReloadRule.swift */,
+				610E1C74A750E3D161B5E64BC6DB3920 /* TableDirectorInput.swift */,
 			);
-			name = CoverView;
-			path = TableDirector/Classes/CoverView;
+			name = TableDirector;
+			path = DiffTableDirector/Classes/TableDirector;
 			sourceTree = "<group>";
 		};
-		6224B2AAC897BA50E073636A02EA156C /* Pagination */ = {
+		5171ADB58F28D50D70FD99A64091B3A1 /* CoverView */ = {
 			isa = PBXGroup;
 			children = (
-				CDB2BB9DAF86807BD3B5E1B82AB6D7F4 /* LoadOperationHandable.swift */,
-				BC7611699D236E6C7E441E8DCC0AD942 /* PaginationController.swift */,
-				448BBFF5BD20EC7185C4C2BE874490D6 /* PaginationController.Availability.swift */,
-				BE482C961CFDAE2E0867D668B63CB6F0 /* PaginationController.Direction.swift */,
-				06C158F0641B8599B91EB3C7C710A639 /* PaginationController.ErrorBehavior.swift */,
-				FED4652966FBC5840FD0EAC0F6A5E742 /* PaginationController.LoadResult.swift */,
-				8A2E2B96FAC334159D0EEEBD02F11EA2 /* PaginationController.PrefetchStraregy.swift */,
-				7B0CF659DC908EEBCC6A5093178DCB6B /* PaginationController.ScrollPosition.swift */,
-				326FA8C5BA3F68C40A70A0EE8837F489 /* PaginationController.Settings.swift */,
-				FF35328AF85F89317D22491F4076BE99 /* Loader */,
+				DA1E3B179240D74148347EBE41F3D0B3 /* TableDirector.CoverView.swift */,
+				8413FD5CB050CF275AB99494052060DC /* TableDirector.CoverView.Controller.swift */,
+				7842C9505B2104F174A4E118C8791CCD /* TableDirector.CoverView.Position.swift */,
+				58557A73F00BD01A9CE91116FD4EF514 /* TableDirector.CoverView.ShowParams.swift */,
+				89BD7AE7A53DA197BD9761ADF48E49B0 /* TableDirectorCoverViewSizeDelegate.swift */,
 			);
-			name = Pagination;
-			path = TableDirector/Classes/Pagination;
+			name = CoverView;
+			path = DiffTableDirector/Classes/CoverView;
+			sourceTree = "<group>";
+		};
+		5FAE9C34D2F48BC83CF0DB29A90AA547 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				BF7F9EADF4388C160F8BE5661FC867B8 /* ConfigurableHeaderFooter.swift */,
+				975FFBFABDE7BFFFD25FDACD3AC82FDF /* HeaderConfigurator.swift */,
+				B5FE7785E2F86BADF0F5C8F15A37E71B /* TableActionHeader.swift */,
+				3F66C27BA42CDC9236CCDC196D8D8622 /* TableHeader.swift */,
+			);
+			name = Header;
+			path = DiffTableDirector/Classes/Header;
 			sourceTree = "<group>";
 		};
 		68409B18D3C003C4B0E7D40BF982F816 /* Support Files */ = {
@@ -443,66 +410,78 @@
 			path = "../Target Support Files/DeepDiff";
 			sourceTree = "<group>";
 		};
-		79BB7827DD1077984F0D8A065727C268 /* Extension */ = {
+		797F9DBED0EA00874DA64C73D0FDA83C /* Pods-DiffTableDirector_Example */ = {
 			isa = PBXGroup;
 			children = (
-				EAA96F7BF5A708E08BB1A3EC3F2FBADC /* Collection+Extensions.swift */,
-				E25DFDC6249A14AB0039A096 /* DispatchQueue+Extensions.swift */,
-				E25DFDC7249A14AB0039A096 /* UITableView.RowAnimation+Extensions.swift */,
-				C64E7B63B71B3D89F8A02616AA3EDAD2 /* UITableView+Extensions.swift */,
-				2E7586ADAE7689EF201D65835E066F0F /* UITableViewCell+Extension.swift */,
-				D5A86BAC50326603F33DA446B980318E /* UITableViewHeaderFooterView+Extensions.swift */,
+				108023DE64108CF756C066425E820A3D /* Pods-DiffTableDirector_Example.modulemap */,
+				DD49773AD950736244B0FA7893235F3D /* Pods-DiffTableDirector_Example-acknowledgements.markdown */,
+				047DA9C0B483A598BAA9BE760DA1B426 /* Pods-DiffTableDirector_Example-acknowledgements.plist */,
+				8064C2386B1B08A150DF20E17E1762BD /* Pods-DiffTableDirector_Example-dummy.m */,
+				D6FE536D64041D2FE246EEAF82F88140 /* Pods-DiffTableDirector_Example-frameworks.sh */,
+				498D7D9590AC47A707CCB2539C18E6B7 /* Pods-DiffTableDirector_Example-Info.plist */,
+				A82E7D896EA8172C88ACE87FA4377564 /* Pods-DiffTableDirector_Example-umbrella.h */,
+				B27FD5826261898835848B01008E9E22 /* Pods-DiffTableDirector_Example.debug.xcconfig */,
+				DDB98CE5136CB37ACFE65DC510A97E91 /* Pods-DiffTableDirector_Example.release.xcconfig */,
 			);
-			name = Extension;
-			path = TableDirector/Classes/Extension;
+			name = "Pods-DiffTableDirector_Example";
+			path = "Target Support Files/Pods-DiffTableDirector_Example";
 			sourceTree = "<group>";
 		};
-		7E6DE28652313D33EA188BC8EF399BEA /* TableDirector */ = {
+		8110752725EFEE9DAE62AA39412ECBCA /* Pagination */ = {
 			isa = PBXGroup;
 			children = (
-				7686200338A81F1D579BB88FE0BC69C3 /* ActionHeader.swift */,
-				9391CE711753BC8DB8F31C72CB6C1E8E /* FromNibLoadable.swift */,
-				D50A71828A07DF0A4C97B9E1B77FEF69 /* ReusableView.swift */,
-				E25DFDCC249A179F0039A096 /* HeightCalculatable.swift */,
-				39ED0FD1A4747446877B6FED304C48D3 /* TableItemActionable.swift */,
-				2EB58BA5A645970352E19787A9740129 /* TableSection.swift */,
-				4C3CF3774EB3341875490827CD29B7F8 /* CoverView */,
-				135F9A1EE781FEC46CB54101261BBA15 /* Cross */,
-				FAE7562E88741B83C01ADA657D421DCD /* Diffable */,
-				79BB7827DD1077984F0D8A065727C268 /* Extension */,
-				0CE9BE164C47C8121C6BD5A0B3492832 /* Header */,
-				6224B2AAC897BA50E073636A02EA156C /* Pagination */,
-				C88DF16C19E8E038B6C988266DB069F8 /* Pod */,
-				43C0FB609D1BE5EB354C0F1062AA85A9 /* Row */,
-				29ECAE232F5435F1693F986DC0C67371 /* Support Files */,
-				934E0C52AA06C87C284B38D362EA54DE /* TableDirector */,
+				D76EFE61A3CEAB52164D73C628E7F4DC /* LoadOperationHandable.swift */,
+				C47FBEEC9FA76D9F710355EC5C359790 /* PaginationController.swift */,
+				78A821AD8C346B924FCDBF640D60BD52 /* PaginationController.Availability.swift */,
+				F45F4E1165A1A194FDECEFFF30A6031D /* PaginationController.Direction.swift */,
+				02ACB2829BE204FB7B72B9E6BEBB1FD3 /* PaginationController.ErrorBehavior.swift */,
+				888F817C7914D3964ECF3512BB476EE2 /* PaginationController.LoadResult.swift */,
+				F0976F494DBAD7C585B5C00C73FF67D3 /* PaginationController.PrefetchStraregy.swift */,
+				ABAAB39551D05C8835B17502C1814DC5 /* PaginationController.ScrollPosition.swift */,
+				52901706EF254C2C8216CC80FD0DE7E4 /* PaginationController.Settings.swift */,
+				1E09F8634C7CCFDC824AE34E6301E684 /* Loader */,
 			);
-			name = TableDirector;
+			name = Pagination;
+			path = DiffTableDirector/Classes/Pagination;
+			sourceTree = "<group>";
+		};
+		8410381A194310B688F93991AEB50754 /* Diffable */ = {
+			isa = PBXGroup;
+			children = (
+				40F20E4393217573F0B5297A88FA49B1 /* CollectionUpdate.swift */,
+				40371F04B94BB51AC65A4BEBC9CB95DD /* CollectionUpdate.Update.swift */,
+				0DE23555F4A2D63AC3A23003F67A1FD2 /* DiffableCollection.swift */,
+				32F80BDE690542449520837B4B9F26B2 /* DiffableViewModel.swift */,
+				279EF32C83C3B4DF644F1726651ED190 /* DiffInfo.swift */,
+				C1E48A92090EF2BF37BA177DFDC07989 /* Comporator */,
+				F73BA6D11CEF1CF3F7DAFDCB025FFBDD /* iOS 13 */,
+			);
+			name = Diffable;
+			path = DiffTableDirector/Classes/Diffable;
+			sourceTree = "<group>";
+		};
+		9A373E6EE9C75C47275602BCBCCF766A /* DiffTableDirector */ = {
+			isa = PBXGroup;
+			children = (
+				16A1D75B020516581428D52C2C0460CF /* ActionHeader.swift */,
+				199448E3D3F61271C0E3DAE98FCD86E8 /* FromNibLoadable.swift */,
+				08331685A5F632F88E02291DF7AE229A /* HeightCalculatable.swift */,
+				9B05D2C289D8CCA9F59C116E44493450 /* ReusableView.swift */,
+				C85EBCF1649DB3BE9BC080130DEDDC0E /* TableItemActionable.swift */,
+				7281F93AE039F45544A581977AB0A58F /* TableSection.swift */,
+				5171ADB58F28D50D70FD99A64091B3A1 /* CoverView */,
+				EFACEDA84867B5BA045CCA4452094A6D /* Cross */,
+				8410381A194310B688F93991AEB50754 /* Diffable */,
+				CD4EC1286C547E27EB6B6785D63A10DF /* Extension */,
+				5FAE9C34D2F48BC83CF0DB29A90AA547 /* Header */,
+				8110752725EFEE9DAE62AA39412ECBCA /* Pagination */,
+				04C97FA69548129B0D8F1AAEA0D72B81 /* Pod */,
+				DF40A5A650F8941502F4EC82DC1F6CB5 /* Row */,
+				CD194AF151C5074648374A52FDF7E81A /* Support Files */,
+				5134DD58751AD2F02852BF3DA3C27210 /* TableDirector */,
+			);
+			name = DiffTableDirector;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		934E0C52AA06C87C284B38D362EA54DE /* TableDirector */ = {
-			isa = PBXGroup;
-			children = (
-				B224472A1F9898A95D2D62D1F12DABDF /* TableDirector.swift */,
-				733AD25CB7502DFA58414BA69F070186 /* TableDirector.Pagination.swift */,
-				4AEB52405257779D9CC5EAC38BBA7899 /* TableDirector.Registrator.swift */,
-				87D3E70E8C4D045BEE35C99EC761C0F1 /* TableDirector.ReloadRule.swift */,
-				315C99D61DCD3C1CC8A3EF8936D71539 /* TableDirectorInput.swift */,
-			);
-			name = TableDirector;
-			path = TableDirector/Classes/TableDirector;
-			sourceTree = "<group>";
-		};
-		98AF7388187BCEA4B52806ABE0F25CDB /* iOS 13 */ = {
-			isa = PBXGroup;
-			children = (
-				A6ACDF1C8B2B33674FF91BEE92A243FC /* AnyCellConfigurator.swift */,
-				6C1C59E203B08075E7A21C4EECC578D4 /* DiffableDataSource.swift */,
-				387D21D638340985523DDCC8C1D200E2 /* DiffableTableViewDataSource.swift */,
-				CBB505E12DCEAC71D8AD2D485A699CD9 /* Snapshot.swift */,
-			);
-			path = "iOS 13";
 			sourceTree = "<group>";
 		};
 		A630D91D05ED095D2CCD269E51C9F783 /* iOS */ = {
@@ -514,53 +493,86 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A8B432A729726DC486973ECF9E9CC7EC /* Products */ = {
+		BC1477DEA1B8E03583EBAA9C6ECBA660 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				45A3EC98311F8B1478AC57244B4570CC /* DeepDiff.framework */,
-				9909EB8CE09BA05445CC51DDF21A0C64 /* Pods_TableDirector_Example.framework */,
-				97E56830FBB6F4C4159559AE16B0ACFD /* TableDirector.framework */,
+				9A373E6EE9C75C47275602BCBCCF766A /* DiffTableDirector */,
 			);
-			name = Products;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		AA1544D02B266B4CE2729B05281F2250 /* Comporator */ = {
+		C1E48A92090EF2BF37BA177DFDC07989 /* Comporator */ = {
 			isa = PBXGroup;
 			children = (
-				9E1CAA611ECB595DCCFC98D5EDF8F21D /* RowsComparator.swift */,
-				A61CFE1750BCED94C31D4829388C2C8C /* SectionsComporator.swift */,
+				699D5AFC478C90E671BFD5B38339D7AD /* RowsComparator.swift */,
+				CD654083DE23B2D8C5FDDD64DC4F9D52 /* SectionsComporator.swift */,
 			);
+			name = Comporator;
 			path = Comporator;
 			sourceTree = "<group>";
 		};
-		C88DF16C19E8E038B6C988266DB069F8 /* Pod */ = {
+		CD194AF151C5074648374A52FDF7E81A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3229527B7E4AA2E23F6C37F82A3522A6 /* LICENSE */,
-				2693FD8E8DDF9A2DB9CAF768A8B72382 /* README.md */,
-				12C0767B8325B7F7B26B7B9DC11EAE7C /* TableDirector.podspec */,
+				37BD7CF4E38FC3272E5F84ADF955DF47 /* DiffTableDirector.modulemap */,
+				1EDC985A40D8812D020ED14C5ED1A981 /* DiffTableDirector-dummy.m */,
+				4E9E3073205A9C22BA241429758B86E3 /* DiffTableDirector-Info.plist */,
+				1FF4284DB6E68345A99D8AABD791BC3B /* DiffTableDirector-prefix.pch */,
+				FAEC5AD875BE716D98E2565B612B08DC /* DiffTableDirector-umbrella.h */,
+				C75E66C434D420E9DCEB006EABBF2DB9 /* DiffTableDirector.debug.xcconfig */,
+				5C22D74D05EB1AFD044EDD0E76EE3523 /* DiffTableDirector.release.xcconfig */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/DiffTableDirector";
+			sourceTree = "<group>";
+		};
+		CD4EC1286C547E27EB6B6785D63A10DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9809F479515D674590D47AEF93E5E80F /* Collection+Extensions.swift */,
+				00D3EE89B2B7F4AAFCB3A91C36DC5C3E /* DispatchQueue+Extensions.swift */,
+				310C0F3D673AFC56D8F00330280F0C12 /* UITableView+Extensions.swift */,
+				FDDA48BD071DEBA17CD6FB3191C2D337 /* UITableView.RowAnimation+Extensions.swift */,
+				0A28085A9370EEF76832591A514E13D3 /* UITableViewCell+Extension.swift */,
+				392D1028F208C4CE640FB5BB2CE47327 /* UITableViewHeaderFooterView+Extensions.swift */,
+			);
+			name = Extension;
+			path = DiffTableDirector/Classes/Extension;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				F35696A22BA98154DB2DCE760ADEE781 /* Development Pods */,
+				BC1477DEA1B8E03583EBAA9C6ECBA660 /* Development Pods */,
 				EF5B2BF8733B40FD4AE0D5A601DF9FA8 /* Frameworks */,
 				0003EE74D26275A45D6F3120CEA4D2AD /* Pods */,
-				A8B432A729726DC486973ECF9E9CC7EC /* Products */,
-				D983C5C2FFD6C06CE0C0FD56070F37F5 /* Targets Support Files */,
+				DD03D6B8385957B4441583E982F6CF9B /* Products */,
+				1562F7E5FC2B7C33D131ABE2ACEDF5F1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D983C5C2FFD6C06CE0C0FD56070F37F5 /* Targets Support Files */ = {
+		DD03D6B8385957B4441583E982F6CF9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B406E1A67C4104AA9C18B9372AD619D /* Pods-TableDirector_Example */,
+				45A3EC98311F8B1478AC57244B4570CC /* DeepDiff.framework */,
+				BD540347D5CCAF7AEADE4F36CEDA7059 /* DiffTableDirector.framework */,
+				D7C2281BDC18EE757B5C5F1D3163EF63 /* Pods_DiffTableDirector_Example.framework */,
 			);
-			name = "Targets Support Files";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF40A5A650F8941502F4EC82DC1F6CB5 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				4B58B034FE09BBC28F4DA8038D4130AC /* ActionCell.swift */,
+				D1E8CC6145028274C3095A247E0EEA45 /* CellConfigurator.swift */,
+				D1E11F22B11DA3EB347B16DABA5CEF94 /* ConfigurableCell.swift */,
+				27719DEEE49BEFDAA66C8FCF7EE9C234 /* TableActionRow.swift */,
+				998B08C1A2ADC8557DDDEFD2C15161C3 /* TableRow.swift */,
+			);
+			name = Row;
+			path = DiffTableDirector/Classes/Row;
 			sourceTree = "<group>";
 		};
 		EF5B2BF8733B40FD4AE0D5A601DF9FA8 /* Frameworks */ = {
@@ -572,56 +584,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F35696A22BA98154DB2DCE760ADEE781 /* Development Pods */ = {
+		EFACEDA84867B5BA045CCA4452094A6D /* Cross */ = {
 			isa = PBXGroup;
 			children = (
-				7E6DE28652313D33EA188BC8EF399BEA /* TableDirector */,
+				F1CFD30A7654A0476D92A1E3D2E54365 /* BaseThresholdCalculator.swift */,
+				B59A9C58CEC2785009B61CC64FE755CF /* CrossObserver.swift */,
+				CD7B9A2EF2FBE61516680FB1871F782B /* ScrollObserverable.swift */,
+				80FDA4CBD87F916B48125F57372ED47E /* ScrollViewBoundsCrossObserver.swift */,
+				057B46CC0FCE67726AD2D7609C654C74 /* ScrollViewCrossObservable.swift */,
+				20E035472F593E2B7E9DC8AA8EB9696D /* ThresholdCrossObserver.swift */,
 			);
-			name = "Development Pods";
+			name = Cross;
+			path = DiffTableDirector/Classes/Cross;
 			sourceTree = "<group>";
 		};
-		FAE7562E88741B83C01ADA657D421DCD /* Diffable */ = {
+		F73BA6D11CEF1CF3F7DAFDCB025FFBDD /* iOS 13 */ = {
 			isa = PBXGroup;
 			children = (
-				E25DFDCA249A178B0039A096 /* DiffInfo.swift */,
-				F9953E232937301B9B05708E58BC8A0D /* CollectionUpdate.swift */,
-				873BCD6329194FA17A49E38FFE65871D /* CollectionUpdate.Update.swift */,
-				D18EA250946A992B5EF842D629CBB8E7 /* DiffableCollection.swift */,
-				0D7EE0D4BF2618DA2BB597371247C338 /* DiffableViewModel.swift */,
-				AA1544D02B266B4CE2729B05281F2250 /* Comporator */,
-				98AF7388187BCEA4B52806ABE0F25CDB /* iOS 13 */,
+				C0DC7AED2DD5B21B9DCE1AF13D312524 /* AnyCellConfigurator.swift */,
+				1B5F92E083C2D5DE8DD4C479AAB7442D /* DiffableDataSource.swift */,
+				EBF783521A70FAC0D3C6568D18D5B03F /* DiffableTableViewDataSource.swift */,
+				F99B4E3FDBF2E8E0089580A80E9AEA07 /* Snapshot.swift */,
 			);
-			name = Diffable;
-			path = TableDirector/Classes/Diffable;
-			sourceTree = "<group>";
-		};
-		FF35328AF85F89317D22491F4076BE99 /* Loader */ = {
-			isa = PBXGroup;
-			children = (
-				E14F5AF59FA120473EF05F2B3DC9507D /* PaginationController.Loader.swift */,
-				7D960522457B011E6B6D1F348B4EF887 /* PaginationController.Loader.DefaultAnimator.swift */,
-				4B1EC416183F0E83D825215DA4B54B00 /* PaginationController.Loader.State.swift */,
-				E26AB0C290E224B3CC57978BD287E699 /* PaginationControllerLoaderAnimator.swift */,
-			);
-			path = Loader;
+			name = "iOS 13";
+			path = "iOS 13";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		76A8054270DC5A884D15FAEC7A468C4C /* Headers */ = {
+		3852AE1808DA740A595C9CBD516A4AD1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9636771F9DC991034A4BEE6B809D9E8F /* Pods-TableDirector_Example-umbrella.h in Headers */,
+				815FF9CF99217E94E3F171308E883AC3 /* Pods-DiffTableDirector_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7BB147128DEA762AB179CA6A0137F6D2 /* Headers */ = {
+		57C1875A76D96805F37CE0417CB208C3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEF88BDE52F4E264B636574D891ABFA3 /* TableDirector-umbrella.h in Headers */,
+				2F4F89C3857875DA4498D71278D746AC /* DiffTableDirector-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +640,47 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0B18682BBD8F943FA42D7DFA8B3664B5 /* Pods-DiffTableDirector_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF61694C4FEECAED8493B5822EE282B1 /* Build configuration list for PBXNativeTarget "Pods-DiffTableDirector_Example" */;
+			buildPhases = (
+				3852AE1808DA740A595C9CBD516A4AD1 /* Headers */,
+				DCEAF9246F75FFAA0FB90FB6CC6BCF26 /* Sources */,
+				E4628387D58A939D475C94CD71681D4D /* Frameworks */,
+				3AA10DE1BE3F9B60BC3FB0A46F82C84D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B70F722997C7D5E23D2D512B4A7A2BF /* PBXTargetDependency */,
+				223D701FB96495F4B0D4D22EB4B59F9B /* PBXTargetDependency */,
+				3402188A30C0FD8199E32550566BCC24 /* PBXTargetDependency */,
+			);
+			name = "Pods-DiffTableDirector_Example";
+			productName = "Pods-DiffTableDirector_Example";
+			productReference = D7C2281BDC18EE757B5C5F1D3163EF63 /* Pods_DiffTableDirector_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		94E88A69D48031B86C95FADC7B3B237F /* DiffTableDirector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EA6F7398CFDC62E1FC246690669CDE6 /* Build configuration list for PBXNativeTarget "DiffTableDirector" */;
+			buildPhases = (
+				57C1875A76D96805F37CE0417CB208C3 /* Headers */,
+				1F7A63F2D116D93671C91FACCF4890DE /* Sources */,
+				D165B840E18023E3C8B5A75F621157A4 /* Frameworks */,
+				4DE1DE6E510347D9B5F1776B2943DF7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B44E97451168252FE291239017AE7006 /* PBXTargetDependency */,
+				55CF47C033CB7913869B7B4CB460AD6A /* PBXTargetDependency */,
+			);
+			name = DiffTableDirector;
+			productName = DiffTableDirector;
+			productReference = BD540347D5CCAF7AEADE4F36CEDA7059 /* DiffTableDirector.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		B798275031D11315684486DC2E2B6FCA /* DeepDiff */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B4560EC105E413E187F77A1E3CFEEFF /* Build configuration list for PBXNativeTarget "DeepDiff" */;
@@ -654,47 +699,6 @@
 			productReference = 45A3EC98311F8B1478AC57244B4570CC /* DeepDiff.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BE2ACE677D926D652DC740D8738BDFBF /* TableDirector */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6428BD8D1134D74DED6067548333FA00 /* Build configuration list for PBXNativeTarget "TableDirector" */;
-			buildPhases = (
-				7BB147128DEA762AB179CA6A0137F6D2 /* Headers */,
-				4D428E0DA8F679C681811B4396D00DB7 /* Sources */,
-				ACACB56C1A41134D0648B67CBB496C07 /* Frameworks */,
-				EA0A41BECA462992543DDE4CFA78A455 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				996EA42D3359723B957FAC4AB80CC504 /* PBXTargetDependency */,
-				716F5C107CCC9AB7CB54D671E199D057 /* PBXTargetDependency */,
-			);
-			name = TableDirector;
-			productName = TableDirector;
-			productReference = 97E56830FBB6F4C4159559AE16B0ACFD /* TableDirector.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E7F086E9933796FD283BEFD4337BCF91 /* Pods-TableDirector_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B98FD263F3B49952AC38EC31E199D6B4 /* Build configuration list for PBXNativeTarget "Pods-TableDirector_Example" */;
-			buildPhases = (
-				76A8054270DC5A884D15FAEC7A468C4C /* Headers */,
-				F931B3755340A1EBAE2B856E8BF8E30C /* Sources */,
-				8FD727258D94AA5CBE409D6D0B619364 /* Frameworks */,
-				2E3924F87E89AE8E4E49D7A4C403C6BF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F6ACA1FFD293BD48F0757D5FF20000EE /* PBXTargetDependency */,
-				0E497330E9A50D02F2CD50B83E4A6E89 /* PBXTargetDependency */,
-				FB5492A5004ACCEC43CEEA6FA89466D7 /* PBXTargetDependency */,
-			);
-			name = "Pods-TableDirector_Example";
-			productName = "Pods-TableDirector_Example";
-			productReference = 9909EB8CE09BA05445CC51DDF21A0C64 /* Pods_TableDirector_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -705,7 +709,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -713,20 +717,27 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = A8B432A729726DC486973ECF9E9CC7EC /* Products */;
+			productRefGroup = DD03D6B8385957B4441583E982F6CF9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B798275031D11315684486DC2E2B6FCA /* DeepDiff */,
-				E7F086E9933796FD283BEFD4337BCF91 /* Pods-TableDirector_Example */,
+				94E88A69D48031B86C95FADC7B3B237F /* DiffTableDirector */,
+				0B18682BBD8F943FA42D7DFA8B3664B5 /* Pods-DiffTableDirector_Example */,
 				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
-				BE2ACE677D926D652DC740D8738BDFBF /* TableDirector */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2E3924F87E89AE8E4E49D7A4C403C6BF /* Resources */ = {
+		3AA10DE1BE3F9B60BC3FB0A46F82C84D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DE1DE6E510347D9B5F1776B2943DF7B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -740,82 +751,75 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA0A41BECA462992543DDE4CFA78A455 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4D428E0DA8F679C681811B4396D00DB7 /* Sources */ = {
+		1F7A63F2D116D93671C91FACCF4890DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6621116B3102F9217AE9D777F0FA012 /* ActionCell.swift in Sources */,
-				F376CF7A649E5FE5784548EC697E7E87 /* ActionHeader.swift in Sources */,
-				9E49F1D1877F740D78B86D97227A3D59 /* AnyCellConfigurator.swift in Sources */,
-				9C3FAEC5B0813A3F12AF8418CDB60217 /* BaseThresholdCalculator.swift in Sources */,
-				83A41DFFCB6C5B9F047D6250B0376A7B /* CellConfigurator.swift in Sources */,
-				07D7072BDF8CAB3190E05FEB3AFBF1C0 /* Collection+Extensions.swift in Sources */,
-				43F714E7C352B04137C5773C6614F7D0 /* CollectionUpdate.swift in Sources */,
-				1B52A5B59778A0C83D0AD14C28CF7D0E /* CollectionUpdate.Update.swift in Sources */,
-				4D128DA2641C4A9A43C53F162A9C4298 /* ConfigurableCell.swift in Sources */,
-				826E2D9E3599FB0655DAD5BB856ADF0F /* ConfigurableHeaderFooter.swift in Sources */,
-				45270D9898BFA0DA0D4FF9841039B8D4 /* CrossObserver.swift in Sources */,
-				E25DFDC8249A14AB0039A096 /* DispatchQueue+Extensions.swift in Sources */,
-				CD87F5266401374D0259BAB1F6B76DF9 /* DiffableCollection.swift in Sources */,
-				E93B310CB83D6EE495A443B27C00B107 /* DiffableDataSource.swift in Sources */,
-				3ED3A1EC2FFF12C9BF192B2CDFB18907 /* DiffableTableViewDataSource.swift in Sources */,
-				2662B9B8E5E972E24991161BCA88ECB3 /* DiffableViewModel.swift in Sources */,
-				E2BEA383EE86AE7793D2D938096EBD3E /* FromNibLoadable.swift in Sources */,
-				571ADDA925077601076645B30D4BBB0F /* HeaderConfigurator.swift in Sources */,
-				553ACC1A94C3707688478B933D1324A9 /* LoadOperationHandable.swift in Sources */,
-				F4C2C80489F7CB8E37535DFF9A02EC72 /* PaginationController.Availability.swift in Sources */,
-				188BB71BA95EB60BF6EDEE5F0F423929 /* PaginationController.Direction.swift in Sources */,
-				769BDD230946E08C69422FFCACEF105E /* PaginationController.ErrorBehavior.swift in Sources */,
-				4F82C554FE038046FA61D1475F5776C2 /* PaginationController.Loader.DefaultAnimator.swift in Sources */,
-				75E19AF94DD57009161ABF85C26902F5 /* PaginationController.Loader.State.swift in Sources */,
-				90A8634BE8143AF0069AAD501A14B190 /* PaginationController.Loader.swift in Sources */,
-				254153FB64E790294E2186BB3D6BB7AA /* PaginationController.LoadResult.swift in Sources */,
-				E637035288DF3B969841E629E1DEE601 /* PaginationController.PrefetchStraregy.swift in Sources */,
-				60CFD63EC831E293F354134ADCCDFB33 /* PaginationController.ScrollPosition.swift in Sources */,
-				4941A033EB677F8A25CF062CAC155783 /* PaginationController.Settings.swift in Sources */,
-				441038F29AECE789EEBB9C3CAAA9B645 /* PaginationController.swift in Sources */,
-				A4023EB02C3045390B4071A8E8F69EF2 /* PaginationControllerLoaderAnimator.swift in Sources */,
-				E25DFDC9249A14AB0039A096 /* UITableView.RowAnimation+Extensions.swift in Sources */,
-				9356FB9F900CCE2F05009EC61185BE7E /* ReusableView.swift in Sources */,
-				F476E19AA407D07806157F7105788B6A /* RowsComparator.swift in Sources */,
-				1491A7B288B88A2A1C1CC4F3B64F87A0 /* ScrollViewBoundsCrossObserver.swift in Sources */,
-				F5886AE2F3CA0999FE9278359B35D111 /* ScrollViewCrossObservable.swift in Sources */,
-				F0E35802EE7C72A4861F1E329308632B /* SectionsComporator.swift in Sources */,
-				29806E3464147DF740EEB08024E86363 /* Snapshot.swift in Sources */,
-				E25DFDCB249A178B0039A096 /* DiffInfo.swift in Sources */,
-				E12F36599D0C7897AAF0E008EF045D80 /* TableActionHeader.swift in Sources */,
-				26EE1C46ED1D345BDC7A34A1652471C5 /* TableActionRow.swift in Sources */,
-				A799F46DD3959348B05B405D208A16D5 /* TableDirector-dummy.m in Sources */,
-				6AAE8FAFC31CEF788E3260F4D236A3F4 /* TableDirector.CoverView.Controller.swift in Sources */,
-				B555F102299C7F5B8E70060050BA550C /* TableDirector.CoverView.Position.swift in Sources */,
-				50D905E899540485699ECFB2E93D8A33 /* TableDirector.CoverView.ShowParams.swift in Sources */,
-				15FB13DECBF7BF36E474AD37CE48A185 /* TableDirector.CoverView.swift in Sources */,
-				E25DFDCF249A17AB0039A096 /* ScrollObserverable.swift in Sources */,
-				B2898314A14B127B89E0A0BF8B8586BF /* TableDirector.Pagination.swift in Sources */,
-				571AD6BF710C93741F096D7716331BA8 /* TableDirector.Registrator.swift in Sources */,
-				D83771186FB9AC5FCB6C11DE9205C503 /* TableDirector.ReloadRule.swift in Sources */,
-				23B6C66BE8503D219EEC85B166BFE95C /* TableDirector.swift in Sources */,
-				92FA00CA0566317C327F3FD87F804D3A /* TableDirectorCoverViewSizeDelegate.swift in Sources */,
-				47C530D0C849EEF6C96CE121835FEE84 /* TableDirectorInput.swift in Sources */,
-				E25DFDCD249A179F0039A096 /* HeightCalculatable.swift in Sources */,
-				1561AA3FFF06B4A0CEC3618A4DBF040B /* TableHeader.swift in Sources */,
-				262E5FB0F74135A64522F3328CE60F67 /* TableItemActionable.swift in Sources */,
-				38F9381E78BF3A4AD7DF7B12FE470826 /* TableRow.swift in Sources */,
-				115E350DFACEC087301EDF7081AABBBA /* TableSection.swift in Sources */,
-				02649B367F3FB6CFB999929A8D4C8629 /* ThresholdCrossObserver.swift in Sources */,
-				3C2500F5EC49E4281BE98029F5E8DECD /* UITableView+Extensions.swift in Sources */,
-				664D00CEC2E6ACBD207EF0AFA31A70B9 /* UITableViewCell+Extension.swift in Sources */,
-				B5C057DBC1167BDE864898502E418FE4 /* UITableViewHeaderFooterView+Extensions.swift in Sources */,
+				334C291191A3689CEFC45768526A293E /* ActionCell.swift in Sources */,
+				3A87C4795E223B92654CD92CD9D70B6D /* ActionHeader.swift in Sources */,
+				6B24D31D986F01400E0FBECD989719BC /* AnyCellConfigurator.swift in Sources */,
+				89458AA07CE8B7F4434CA9F35D96B2F5 /* BaseThresholdCalculator.swift in Sources */,
+				BE484F060FE926470948E8FA05C351A2 /* CellConfigurator.swift in Sources */,
+				F4B768B16DD112E9B709B27243DF4136 /* Collection+Extensions.swift in Sources */,
+				3D05C74886B890E7761C3D0D5F8BF145 /* CollectionUpdate.swift in Sources */,
+				7803D9470BE98ECE1DE0FA5FC645B6CA /* CollectionUpdate.Update.swift in Sources */,
+				9FFF74CBC8E4C64FA5957DEFCC94BA3A /* ConfigurableCell.swift in Sources */,
+				1C42A942D1B54251F2CD79916E32652E /* ConfigurableHeaderFooter.swift in Sources */,
+				D9C61705B2C50887D042539DD9CD0CF6 /* CrossObserver.swift in Sources */,
+				C48A4BA41032F3B037BD1001E04DC3EA /* DiffableCollection.swift in Sources */,
+				147681A192CE13A658A0FA84C65E262F /* DiffableDataSource.swift in Sources */,
+				C1B82DF67CFD94B63BF737AC08CF9DC2 /* DiffableTableViewDataSource.swift in Sources */,
+				E2BD152BE0DD02629E8F4EE888058D48 /* DiffableViewModel.swift in Sources */,
+				6580799B26DF368604A5F3537F9FF244 /* DiffInfo.swift in Sources */,
+				6D63D69C3BF1F47C6F4A2362C413AC86 /* DiffTableDirector-dummy.m in Sources */,
+				DA859008C00E1487A17DBE71EB144AB4 /* DispatchQueue+Extensions.swift in Sources */,
+				24C1397C6E80C648E2CE3F88FF786AA6 /* FromNibLoadable.swift in Sources */,
+				A5F9A97BC6AA92CC697E0B6EA5E9AB9E /* HeaderConfigurator.swift in Sources */,
+				65C965B1DFFE39A22419611CC42953A0 /* HeightCalculatable.swift in Sources */,
+				1AE02D2184021DAAD80732574D10A076 /* LoadOperationHandable.swift in Sources */,
+				810F1BED5B3434205C4023DF46668BB2 /* PaginationController.Availability.swift in Sources */,
+				FADF0CD238D06CD2A65981151A9E49B3 /* PaginationController.Direction.swift in Sources */,
+				4B26242E0EDF1128A23C6B06EBE1DFFC /* PaginationController.ErrorBehavior.swift in Sources */,
+				A3A9F7CCA7BC6955A1DC440E56B4BB59 /* PaginationController.Loader.DefaultAnimator.swift in Sources */,
+				70B59FEEB81C33177F762A8EA9CCEFA8 /* PaginationController.Loader.State.swift in Sources */,
+				B43728F975ABC0FE84CB943891320D04 /* PaginationController.Loader.swift in Sources */,
+				965127D8911D5526847D1E879ACF3826 /* PaginationController.LoadResult.swift in Sources */,
+				D1439473DCC1709B392B68A62BDC678E /* PaginationController.PrefetchStraregy.swift in Sources */,
+				DBBA114436617DAE5872CEA2EB36DBAB /* PaginationController.ScrollPosition.swift in Sources */,
+				233AEACE7A7ADAFF6949E01776FB19EB /* PaginationController.Settings.swift in Sources */,
+				3DB2D8C024393EABEA76B9DB3964942C /* PaginationController.swift in Sources */,
+				9DEC5AE37AEA31D214A462C3B0B2829D /* PaginationControllerLoaderAnimator.swift in Sources */,
+				7ABBEBC2E4854832EF2E3229D281380B /* ReusableView.swift in Sources */,
+				1BA7F24F07312DCDA9004F9DD4DC8020 /* RowsComparator.swift in Sources */,
+				E0C939A057CC19FC43F07799F5F24FBD /* ScrollObserverable.swift in Sources */,
+				FE92C3279CF23ACF16847B797DC685F1 /* ScrollViewBoundsCrossObserver.swift in Sources */,
+				FCE97B2FACCA53E760E16B345C4E6B3F /* ScrollViewCrossObservable.swift in Sources */,
+				3FAB88E3E5810F04A11C0FA3026B57FB /* SectionsComporator.swift in Sources */,
+				74FFF0824C95489544CD2C7EF47BA2F5 /* Snapshot.swift in Sources */,
+				7A4F2FA42256BDB1904BB490C5EDA432 /* TableActionHeader.swift in Sources */,
+				11A0CD624606CD941C8CA3715D09DD8E /* TableActionRow.swift in Sources */,
+				F5620B5FDC84645A9D6F511982785BB6 /* TableDirector.CoverView.Controller.swift in Sources */,
+				C13E9DDC82B38663649563442F90609E /* TableDirector.CoverView.Position.swift in Sources */,
+				BAE307CA563D4D09AA35BE6AC3CEB85B /* TableDirector.CoverView.ShowParams.swift in Sources */,
+				1DD4DF54E39BBE4A8D2A6284C5941F1E /* TableDirector.CoverView.swift in Sources */,
+				EA762013013B60BD55E37348E94F96C2 /* TableDirector.Pagination.swift in Sources */,
+				5180DEB2815C16AD19A659EB56417C6D /* TableDirector.Registrator.swift in Sources */,
+				92950C6E23204E31B2CD949041BEC8D6 /* TableDirector.ReloadRule.swift in Sources */,
+				36F0835164CED81D10E0B67BA7E0DF65 /* TableDirector.swift in Sources */,
+				DE29B393BAC747D74C5AD30F58384EC0 /* TableDirectorCoverViewSizeDelegate.swift in Sources */,
+				8C5EB266BDD48D8BBF595CEA0715D633 /* TableDirectorInput.swift in Sources */,
+				0D578D8488BD5DC3E2C213714895E8EB /* TableHeader.swift in Sources */,
+				62719BB6ECBFD750A93F36C62091BC25 /* TableItemActionable.swift in Sources */,
+				8CB00CF3DFDE52BA18A249D56E56A3A8 /* TableRow.swift in Sources */,
+				1E0AE249BD35578709695471B6FE61A2 /* TableSection.swift in Sources */,
+				51BB8A3857D6C4B0AADDEBD91E63D759 /* ThresholdCrossObserver.swift in Sources */,
+				23811A49A0740FEC8103FFCF2E43999C /* UITableView+Extensions.swift in Sources */,
+				AA1D40B7CF66A1E774FF52044DBDC9F5 /* UITableView.RowAnimation+Extensions.swift in Sources */,
+				F4F4DB2F97C8EDDCA73E96A61EE7A59F /* UITableViewCell+Extension.swift in Sources */,
+				6EC3CED0FAF58C9898460D63CD81A2A0 /* UITableViewHeaderFooterView+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,46 +841,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F931B3755340A1EBAE2B856E8BF8E30C /* Sources */ = {
+		DCEAF9246F75FFAA0FB90FB6CC6BCF26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6388AADB04CAA63F073790A4AFC5817E /* Pods-TableDirector_Example-dummy.m in Sources */,
+				676845733808D4B744A69D570C98728C /* Pods-DiffTableDirector_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0E497330E9A50D02F2CD50B83E4A6E89 /* PBXTargetDependency */ = {
+		223D701FB96495F4B0D4D22EB4B59F9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftLint;
-			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 98612C10AD60EF383276514E9D21EC80 /* PBXContainerItemProxy */;
+			name = DiffTableDirector;
+			target = 94E88A69D48031B86C95FADC7B3B237F /* DiffTableDirector */;
+			targetProxy = EE0CBC6DAECB3FB4C99AD141A0910FF6 /* PBXContainerItemProxy */;
 		};
-		716F5C107CCC9AB7CB54D671E199D057 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftLint;
-			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = D58EAE8F744664D7930CE5E79BB9304F /* PBXContainerItemProxy */;
-		};
-		996EA42D3359723B957FAC4AB80CC504 /* PBXTargetDependency */ = {
+		2B70F722997C7D5E23D2D512B4A7A2BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DeepDiff;
 			target = B798275031D11315684486DC2E2B6FCA /* DeepDiff */;
-			targetProxy = 26B37D8719097DDB9E725D00E4353340 /* PBXContainerItemProxy */;
+			targetProxy = 1F5A375701F7273F57EF3DD5833F99A9 /* PBXContainerItemProxy */;
 		};
-		F6ACA1FFD293BD48F0757D5FF20000EE /* PBXTargetDependency */ = {
+		3402188A30C0FD8199E32550566BCC24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = B6BB4E22466629EE083280FA39991AB8 /* PBXContainerItemProxy */;
+		};
+		55CF47C033CB7913869B7B4CB460AD6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 02F92D15E5D2124B59B1C0F0205EBD39 /* PBXContainerItemProxy */;
+		};
+		B44E97451168252FE291239017AE7006 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DeepDiff;
 			target = B798275031D11315684486DC2E2B6FCA /* DeepDiff */;
-			targetProxy = 74C3C09AB2BEA1C2094B532083453E33 /* PBXContainerItemProxy */;
-		};
-		FB5492A5004ACCEC43CEEA6FA89466D7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TableDirector;
-			target = BE2ACE677D926D652DC740D8738BDFBF /* TableDirector */;
-			targetProxy = DC5299193C1640B5F3374B74E24DADC0 /* PBXContainerItemProxy */;
+			targetProxy = B2F4E7F52A11A997C77030D2E5E51C6D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -962,7 +966,11 @@
 				INFOPLIST_FILE = "Target Support Files/DeepDiff/DeepDiff-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DeepDiff/DeepDiff.modulemap";
 				PRODUCT_MODULE_NAME = DeepDiff;
 				PRODUCT_NAME = DeepDiff;
@@ -976,132 +984,132 @@
 			};
 			name = Debug;
 		};
-		46EECD2DED30D7C5FE141C0B267C2D3F /* Debug */ = {
+		42C22A7E4DB24516E003DCB528E8A30F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDB98CE5136CB37ACFE65DC510A97E91 /* Pods-DiffTableDirector_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DiffTableDirector_Example/Pods-DiffTableDirector_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DiffTableDirector_Example/Pods-DiffTableDirector_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56C7F085AD8EA28AA418E85168BAE0FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B27FD5826261898835848B01008E9E22 /* Pods-DiffTableDirector_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DiffTableDirector_Example/Pods-DiffTableDirector_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DiffTableDirector_Example/Pods-DiffTableDirector_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		62959AC59FBFA3C5B5B8D2F2FF2CF4C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C75E66C434D420E9DCEB006EABBF2DB9 /* DiffTableDirector.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DiffTableDirector/DiffTableDirector-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DiffTableDirector/DiffTableDirector-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DiffTableDirector/DiffTableDirector.modulemap";
+				PRODUCT_MODULE_NAME = DiffTableDirector;
+				PRODUCT_NAME = DiffTableDirector;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8D0840DDCEBDBD524C2975AB15094EB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F663689BDA70AF90D5B75E1B759F8A4 /* SwiftLint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		55DD740115BE746C8DBB7753806D85D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D43FEAB488B85DF9B9E5FB6A740C32A /* SwiftLint.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		81DA7D917D4F544653A7AF94EC1BCC52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A2993ADB234DC36D6B52DF6509D3637 /* TableDirector.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TableDirector/TableDirector-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TableDirector/TableDirector-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TableDirector/TableDirector.modulemap";
-				PRODUCT_MODULE_NAME = TableDirector;
-				PRODUCT_NAME = TableDirector;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		88FFB4641927952DD409678EF6237DB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3B4E99446AF61D37E65294FBE1C4FBB /* Pods-TableDirector_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TableDirector_Example/Pods-TableDirector_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TableDirector_Example/Pods-TableDirector_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9A754E1523EE9987ECC3A8ACB248AC77 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 599D3FAA655F0C2DCDD589FCD0384CBA /* Pods-TableDirector_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TableDirector_Example/Pods-TableDirector_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TableDirector_Example/Pods-TableDirector_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -1122,7 +1130,11 @@
 				INFOPLIST_FILE = "Target Support Files/DeepDiff/DeepDiff-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DeepDiff/DeepDiff.modulemap";
 				PRODUCT_MODULE_NAME = DeepDiff;
 				PRODUCT_NAME = DeepDiff;
@@ -1190,15 +1202,33 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		FDD74E574D7471015A330E186C8EF698 /* Debug */ = {
+		ECAAA202737EC2B2C77F4B1DBA316144 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7AD859ED8AA79E66E80E4A074681DED /* TableDirector.debug.xcconfig */;
+			baseConfigurationReference = 3D43FEAB488B85DF9B9E5FB6A740C32A /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2981CC62645ABE1690228B3641ED99D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C22D74D05EB1AFD044EDD0E76EE3523 /* DiffTableDirector.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1210,27 +1240,41 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TableDirector/TableDirector-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TableDirector/TableDirector-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/DiffTableDirector/DiffTableDirector-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DiffTableDirector/DiffTableDirector-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TableDirector/TableDirector.modulemap";
-				PRODUCT_MODULE_NAME = TableDirector;
-				PRODUCT_NAME = TableDirector;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DiffTableDirector/DiffTableDirector.modulemap";
+				PRODUCT_MODULE_NAME = DiffTableDirector;
+				PRODUCT_NAME = DiffTableDirector;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		086FB2AD522D3E0E645A467F7806F2FD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D0840DDCEBDBD524C2975AB15094EB2 /* Debug */,
+				ECAAA202737EC2B2C77F4B1DBA316144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1B4560EC105E413E187F77A1E3CFEEFF /* Build configuration list for PBXNativeTarget "DeepDiff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1249,29 +1293,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6428BD8D1134D74DED6067548333FA00 /* Build configuration list for PBXNativeTarget "TableDirector" */ = {
+		5EA6F7398CFDC62E1FC246690669CDE6 /* Build configuration list for PBXNativeTarget "DiffTableDirector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FDD74E574D7471015A330E186C8EF698 /* Debug */,
-				81DA7D917D4F544653A7AF94EC1BCC52 /* Release */,
+				62959AC59FBFA3C5B5B8D2F2FF2CF4C5 /* Debug */,
+				F2981CC62645ABE1690228B3641ED99D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+		AF61694C4FEECAED8493B5822EE282B1 /* Build configuration list for PBXNativeTarget "Pods-DiffTableDirector_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46EECD2DED30D7C5FE141C0B267C2D3F /* Debug */,
-				55DD740115BE746C8DBB7753806D85D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B98FD263F3B49952AC38EC31E199D6B4 /* Build configuration list for PBXNativeTarget "Pods-TableDirector_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9A754E1523EE9987ECC3A8ACB248AC77 /* Debug */,
-				88FFB4641927952DD409678EF6237DB5 /* Release */,
+				56C7F085AD8EA28AA418E85168BAE0FD /* Debug */,
+				42C22A7E4DB24516E003DCB528E8A30F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

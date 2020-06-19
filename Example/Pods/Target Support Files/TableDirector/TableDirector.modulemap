@@ -1,6 +1,0 @@
-framework module TableDirector {
-  umbrella header "TableDirector-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -8,19 +8,20 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DiffTableDirector'
-  s.version          = '1.0.0'
-  s.summary          = 'Work with table view via view models. Diff, paginate, show special view when table is empty.'
+  s.version          = '0.9.0'
+  s.summary          = 'Framework to work with table view safe and easy. Support diff, pagination, placeholder view  '
 
   s.description      = <<-DESC
 'Easy work with table view via view models. Self regestration, pagination, difference between old and new states. Empty state view support.'
                        DESC
 
-  s.homepage         = 'https://github.com/aleksiosdev/DiffTableDirector'
-  s.license          = { :type => 'Appache 2.0', :file => 'LICENSE' }
+  s.homepage         = 'https://github.com/manychat/DiffTableDirector'
+  s.license          = { :type => 'Apache 2.0', :file => 'LICENSE.txt' }
   s.author           = { 'aleksiosdev' => 'aleksios@manychat.com' }
-  s.source           = { :git => 'https://github.com/aleksiosdev/DiffTableDirector.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/manychat/DiffTableDirector', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
+  s.swift_version    = '5.0'
 
   s.source_files = 'DiffTableDirector/Classes/**/*'
 

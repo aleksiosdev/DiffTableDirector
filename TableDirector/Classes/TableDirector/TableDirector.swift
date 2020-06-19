@@ -88,8 +88,9 @@ open class TableDirector: NSObject {
 		tableView.estimatedSectionFooterHeight = 1
 		tableView.estimatedSectionHeaderHeight = 1
 
-		// Providing base extimate height for rows remove lags in scroll indicator and increase performance
-		tableView.estimatedRowHeight = 1
+		if #available(iOS 11.0, *) {
+			tableView.separatorInsetReference = .fromAutomaticInsets
+		}
 	}
 
 	private func createBoundsCroseObserver(for tableView: UITableView) -> ScrollViewBoundsCrossObservable {

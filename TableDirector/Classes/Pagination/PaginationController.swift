@@ -95,7 +95,7 @@ public final class PaginationController {
 		guard let indexPath = _edgeIndexPath(from: indexPaths, direction: direction) else { return }
 		let edgeLinearIndex = _lastRowLiniarIndex(in: Array(sections[0..<indexPath.section])) + indexPath.row
 		let lastRowLineatIndex = _lastRowLiniarIndex(in: sections)
-		guard abs(edgeLinearIndex - lastRowLineatIndex) < 1 else { return }
+		guard abs(edgeLinearIndex - lastRowLineatIndex) < 3 else { return }
 		_startLoading()
 	}
 

@@ -10,7 +10,5 @@ import DeepDiff
 
 /// Object must confirm protocol to be diffable
 public protocol DiffableCollection: DiffAware {
-	var id: String { get }
-
 	static func compareContent(_ left: Self, _ right: Self) -> Bool
 }

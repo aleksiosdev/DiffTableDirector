@@ -13,10 +13,9 @@ struct FeedViewModel {
 	let title: String
 	let content: String
 	let image: UIImage?
+	let diffID: String = UUID().uuidString
 }
 
-extension FeedViewModel: ViewModelDiffable {
-	var diffId: String {
-		return UUID().uuidString
-	}
-}
+extension FeedViewModel: ViewModelDiffable { }
+
+extension FeedViewModel: Hashable { }

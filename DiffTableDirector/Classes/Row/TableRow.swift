@@ -19,7 +19,7 @@ public final class TableRow<CellType: ConfigurableCell>: CellConfigurator where 
 	public init(viewModel: CellType.ViewModel) {
 		self.viewModel = viewModel
 		if let viewModel = viewModel as? ViewModelDiffable {
-			diffInfo = DiffInfo(id: viewModel.diffId, properties: viewModel.diffProperties)
+			diffInfo = DiffInfo(properties: viewModel.diffProperties)
 		}
 	}
 

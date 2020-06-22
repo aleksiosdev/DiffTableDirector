@@ -9,7 +9,6 @@ import Foundation
 
 /// View model that can be difference with others
 public protocol ViewModelDiffable {
-	var diffId: String { get }
 	var diffProperties: [AnyHashable] { get }
 }
 
@@ -18,10 +17,16 @@ public extension ViewModelDiffable {
 	var diffProperties: [AnyHashable] {
 		let mirrow = Mirror(reflecting: self)
 		return mirrow.children.reduce([], { result, property in
-			guard let label = property.label else { return result }
 			guard let value = property.value as? AnyHashable else { return result }
 			guard !((value is UIImage) || (value is UIColor) || (value is UIFont)) else { return result }
 			return result + [value]
 		})
+	}
+}
+
+// MARK: - Default implementation for hashable view model
+public extension ViewModelDiffable where Self: Hashable {
+	var diffProperties: [AnyHashable] {
+		return [self]
 	}
 }

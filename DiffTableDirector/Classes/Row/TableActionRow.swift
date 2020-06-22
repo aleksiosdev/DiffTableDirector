@@ -23,7 +23,7 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 		self.viewModel = viewModel
 		self.delegate = delegate as AnyObject
 		if let viewModel = viewModel as? ViewModelDiffable {
-			diffInfo = DiffInfo(id: viewModel.diffId, properties: viewModel.diffProperties)
+			diffInfo = DiffInfo(properties: viewModel.diffProperties)
 		}
 	}
 

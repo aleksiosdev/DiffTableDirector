@@ -5,6 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/DiffTableDirector.svg?style=flat)](https://cocoapods.org/pods/DiffTableDirector)
 [![Platform](https://img.shields.io/cocoapods/p/DiffTableDirector.svg?style=flat)](https://cocoapods.org/pods/DiffTableDirector)
 
+DiffTableDirector - light abstraction above UITableViewDataSource & Delegate complexity with additional features like diffing and empty screen. 
+It allows you to work with table in declarative type-safe manner.  No more crashes, just clean code.
+Under the hood library use native Diff API for iOS 13 and DeppDiff for iOS 11 & 12.
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

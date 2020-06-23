@@ -83,19 +83,19 @@ public final class PaginationController {
 			if prefetchChecker(tableView) {
 				_startLoading()
 			}
-		case .base:
-			_systemPrefetchIfNeeded(indexPaths: indexPaths, sections: sections)
+		case .base(let offset):
+			_systemPrefetchIfNeeded(indexPaths: indexPaths, sections: sections, offset: offset)
 		case .none:
 			break
 		}
 	}
 
-	private func _systemPrefetchIfNeeded(indexPaths: [IndexPath], sections: [TableSection]) {
+	private func _systemPrefetchIfNeeded(indexPaths: [IndexPath], sections: [TableSection], offset: Int) {
 		guard _canStartLoading else { return }
 		guard let indexPath = _edgeIndexPath(from: indexPaths, direction: direction) else { return }
 		let edgeLinearIndex = _lastRowLiniarIndex(in: Array(sections[0..<indexPath.section])) + indexPath.row
 		let lastRowLineatIndex = _lastRowLiniarIndex(in: sections)
-		guard abs(edgeLinearIndex - lastRowLineatIndex) < 3 else { return }
+		guard abs(edgeLinearIndex - lastRowLineatIndex) < offset else { return }
 		_startLoading()
 	}
 

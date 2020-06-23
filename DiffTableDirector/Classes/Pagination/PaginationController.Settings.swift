@@ -40,7 +40,7 @@ extension PaginationController {
 		}
 
 		/// Default setting for bottom pagination
-		public static let bottom: Settings = .init(direction: .down, prefetch: .base)
+		public static let bottom: Settings = .init(direction: .down, prefetch: .base(offsetFromLast: 0))
 
 		/// Default settings for top pull to refresh
 		public static let top: Settings = .init(direction: .up, prefetch: .none)

@@ -8,7 +8,9 @@
 import Foundation
 import DeepDiff
 
-struct RowsComparator<T: DiffableCollection> {
+extension AnyHashable: DiffAware { }
+
+struct RowsComparator<T: DiffAware> {
 	let deleted: [IndexPath]
 	let inserted: [IndexPath]
 	let moved: [(from: IndexPath, to: IndexPath)]

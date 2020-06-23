@@ -11,11 +11,8 @@ import DiffTableDirector
 
 struct InfoViewModel {
 	let title: String
-	let content: String	
+	let content: String
+	let diffId: String = UUID().uuidString
 }
 
-extension InfoViewModel: ViewModelDiffable {
-	var diffId: String {
-		return UUID().uuidString
-	}
-}
+extension InfoViewModel: Hashable { }

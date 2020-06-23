@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -50,7 +51,6 @@
 		538E580370D30E53387433B2FB4791BD /* Heckel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C54B8929593B298933587EFC99F05 /* Heckel.swift */; };
 		54A85D8BA74A26EB8ECD1046CF74BA39 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A13E92A938E9B80F3E6503988115F4 /* DeepDiff.swift */; };
 		62719BB6ECBFD750A93F36C62091BC25 /* TableItemActionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85EBCF1649DB3BE9BC080130DEDDC0E /* TableItemActionable.swift */; };
-		6580799B26DF368604A5F3537F9FF244 /* DiffInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279EF32C83C3B4DF644F1726651ED190 /* DiffInfo.swift */; };
 		65C965B1DFFE39A22419611CC42953A0 /* HeightCalculatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08331685A5F632F88E02291DF7AE229A /* HeightCalculatable.swift */; };
 		676845733808D4B744A69D570C98728C /* Pods-DiffTableDirector_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8064C2386B1B08A150DF20E17E1762BD /* Pods-DiffTableDirector_Example-dummy.m */; };
 		6B24D31D986F01400E0FBECD989719BC /* AnyCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DC7AED2DD5B21B9DCE1AF13D312524 /* AnyCellConfigurator.swift */; };
@@ -83,7 +83,6 @@
 		BE484F060FE926470948E8FA05C351A2 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8CC6145028274C3095A247E0EEA45 /* CellConfigurator.swift */; };
 		C13E9DDC82B38663649563442F90609E /* TableDirector.CoverView.Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7842C9505B2104F174A4E118C8791CCD /* TableDirector.CoverView.Position.swift */; };
 		C1B82DF67CFD94B63BF737AC08CF9DC2 /* DiffableTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF783521A70FAC0D3C6568D18D5B03F /* DiffableTableViewDataSource.swift */; };
-		C48A4BA41032F3B037BD1001E04DC3EA /* DiffableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE23555F4A2D63AC3A23003F67A1FD2 /* DiffableCollection.swift */; };
 		C6B4EB3968533FF053710C18700EC1D2 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6925BD0B2CF252448CF1FA378A916 /* WagnerFischer.swift */; };
 		D1439473DCC1709B392B68A62BDC678E /* PaginationController.PrefetchStraregy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0976F494DBAD7C585B5C00C73FF67D3 /* PaginationController.PrefetchStraregy.swift */; };
 		D9C61705B2C50887D042539DD9CD0CF6 /* CrossObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59A9C58CEC2785009B61CC64FE755CF /* CrossObserver.swift */; };
@@ -93,7 +92,6 @@
 		DBBA114436617DAE5872CEA2EB36DBAB /* PaginationController.ScrollPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAAB39551D05C8835B17502C1814DC5 /* PaginationController.ScrollPosition.swift */; };
 		DE29B393BAC747D74C5AD30F58384EC0 /* TableDirectorCoverViewSizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD7AE7A53DA197BD9761ADF48E49B0 /* TableDirectorCoverViewSizeDelegate.swift */; };
 		E0C939A057CC19FC43F07799F5F24FBD /* ScrollObserverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B9A2EF2FBE61516680FB1871F782B /* ScrollObserverable.swift */; };
-		E2BD152BE0DD02629E8F4EE888058D48 /* DiffableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F80BDE690542449520837B4B9F26B2 /* DiffableViewModel.swift */; };
 		EA762013013B60BD55E37348E94F96C2 /* TableDirector.Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4285C9B642CBD5E38A0DAEFEE0EA107E /* TableDirector.Pagination.swift */; };
 		F4B768B16DD112E9B709B27243DF4136 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9809F479515D674590D47AEF93E5E80F /* Collection+Extensions.swift */; };
 		F4F4DB2F97C8EDDCA73E96A61EE7A59F /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28085A9370EEF76832591A514E13D3 /* UITableViewCell+Extension.swift */; };
@@ -145,12 +143,11 @@
 		00D3EE89B2B7F4AAFCB3A91C36DC5C3E /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		02ACB2829BE204FB7B72B9E6BEBB1FD3 /* PaginationController.ErrorBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.ErrorBehavior.swift; sourceTree = "<group>"; };
 		047DA9C0B483A598BAA9BE760DA1B426 /* Pods-DiffTableDirector_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DiffTableDirector_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		04B9800B51D15D20EDCE18E4EDE54650 /* DiffTableDirector.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DiffTableDirector.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		04B9800B51D15D20EDCE18E4EDE54650 /* DiffTableDirector.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DiffTableDirector.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		057B46CC0FCE67726AD2D7609C654C74 /* ScrollViewCrossObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollViewCrossObservable.swift; sourceTree = "<group>"; };
 		08331685A5F632F88E02291DF7AE229A /* HeightCalculatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeightCalculatable.swift; path = DiffTableDirector/Classes/HeightCalculatable.swift; sourceTree = "<group>"; };
 		0A28085A9370EEF76832591A514E13D3 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
-		0C648DE83D344A7010023C9D9061A5E0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		0DE23555F4A2D63AC3A23003F67A1FD2 /* DiffableCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableCollection.swift; sourceTree = "<group>"; };
+		0C648DE83D344A7010023C9D9061A5E0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		108023DE64108CF756C066425E820A3D /* Pods-DiffTableDirector_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DiffTableDirector_Example.modulemap"; sourceTree = "<group>"; };
 		12E6925BD0B2CF252448CF1FA378A916 /* WagnerFischer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WagnerFischer.swift; path = Sources/Shared/Algorithms/WagnerFischer.swift; sourceTree = "<group>"; };
 		16A1D75B020516581428D52C2C0460CF /* ActionHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionHeader.swift; path = DiffTableDirector/Classes/ActionHeader.swift; sourceTree = "<group>"; };
@@ -161,13 +158,11 @@
 		1FF4284DB6E68345A99D8AABD791BC3B /* DiffTableDirector-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DiffTableDirector-prefix.pch"; sourceTree = "<group>"; };
 		20E035472F593E2B7E9DC8AA8EB9696D /* ThresholdCrossObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThresholdCrossObserver.swift; sourceTree = "<group>"; };
 		27719DEEE49BEFDAA66C8FCF7EE9C234 /* TableActionRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableActionRow.swift; sourceTree = "<group>"; };
-		279EF32C83C3B4DF644F1726651ED190 /* DiffInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffInfo.swift; sourceTree = "<group>"; };
 		2A80E9A1126D97CBB0721C326F2E2066 /* DiffAware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiffAware.swift; path = Sources/Shared/DiffAware.swift; sourceTree = "<group>"; };
 		30A13E92A938E9B80F3E6503988115F4 /* DeepDiff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeepDiff.swift; path = Sources/Shared/DeepDiff.swift; sourceTree = "<group>"; };
 		310C0F3D673AFC56D8F00330280F0C12 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
-		32F80BDE690542449520837B4B9F26B2 /* DiffableViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffableViewModel.swift; sourceTree = "<group>"; };
 		3458EBA3A9392D5AFABE50B8CEDA5B6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		350A845CAC40C7F32637CED6D88EFDDD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		350A845CAC40C7F32637CED6D88EFDDD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		37BD7CF4E38FC3272E5F84ADF955DF47 /* DiffTableDirector.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DiffTableDirector.modulemap; sourceTree = "<group>"; };
 		392D1028F208C4CE640FB5BB2CE47327 /* UITableViewHeaderFooterView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Extensions.swift"; sourceTree = "<group>"; };
 		3D43FEAB488B85DF9B9E5FB6A740C32A /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
@@ -176,7 +171,7 @@
 		40F20E4393217573F0B5297A88FA49B1 /* CollectionUpdate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionUpdate.swift; sourceTree = "<group>"; };
 		4285C9B642CBD5E38A0DAEFEE0EA107E /* TableDirector.Pagination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.Pagination.swift; sourceTree = "<group>"; };
 		42AD051282EFFA9291366881CACC8BB6 /* PaginationControllerLoaderAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationControllerLoaderAnimator.swift; sourceTree = "<group>"; };
-		45A3EC98311F8B1478AC57244B4570CC /* DeepDiff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DeepDiff.framework; path = DeepDiff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45A3EC98311F8B1478AC57244B4570CC /* DeepDiff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46CB6CCC1C87A883FA1113DE24905CF3 /* Change.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Change.swift; path = Sources/Shared/Change.swift; sourceTree = "<group>"; };
 		498D7D9590AC47A707CCB2539C18E6B7 /* Pods-DiffTableDirector_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DiffTableDirector_Example-Info.plist"; sourceTree = "<group>"; };
 		4B58B034FE09BBC28F4DA8038D4130AC /* ActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
@@ -206,7 +201,7 @@
 		9809F479515D674590D47AEF93E5E80F /* Collection+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		998B08C1A2ADC8557DDDEFD2C15161C3 /* TableRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
 		9B05D2C289D8CCA9F59C116E44493450 /* ReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = DiffTableDirector/Classes/ReusableView.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F663689BDA70AF90D5B75E1B759F8A4 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
 		9FEDBBBD6CA0084E5022DA9D78A6BB38 /* DeepDiff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DeepDiff.debug.xcconfig; sourceTree = "<group>"; };
 		A647FCA53DB1FF484D86FEF4FE116DD6 /* DeepDiff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,7 +214,7 @@
 		B5FE7785E2F86BADF0F5C8F15A37E71B /* TableActionHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableActionHeader.swift; sourceTree = "<group>"; };
 		B7D62A84FF235262163BA8FC1A3252D7 /* DeepDiff.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DeepDiff.modulemap; sourceTree = "<group>"; };
 		BBE7D23612151F3F97C849F5D1BEC1BB /* DeepDiff-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DeepDiff-umbrella.h"; sourceTree = "<group>"; };
-		BD540347D5CCAF7AEADE4F36CEDA7059 /* DiffTableDirector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DiffTableDirector.framework; path = DiffTableDirector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD540347D5CCAF7AEADE4F36CEDA7059 /* DiffTableDirector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DiffTableDirector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7F9EADF4388C160F8BE5661FC867B8 /* ConfigurableHeaderFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfigurableHeaderFooter.swift; sourceTree = "<group>"; };
 		C0DC7AED2DD5B21B9DCE1AF13D312524 /* AnyCellConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnyCellConfigurator.swift; sourceTree = "<group>"; };
 		C47FBEEC9FA76D9F710355EC5C359790 /* PaginationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationController.swift; sourceTree = "<group>"; };
@@ -231,7 +226,7 @@
 		D1E8CC6145028274C3095A247E0EEA45 /* CellConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		D6FE536D64041D2FE246EEAF82F88140 /* Pods-DiffTableDirector_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DiffTableDirector_Example-frameworks.sh"; sourceTree = "<group>"; };
 		D76EFE61A3CEAB52164D73C628E7F4DC /* LoadOperationHandable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoadOperationHandable.swift; sourceTree = "<group>"; };
-		D7C2281BDC18EE757B5C5F1D3163EF63 /* Pods_DiffTableDirector_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DiffTableDirector_Example.framework; path = "Pods-DiffTableDirector_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C2281BDC18EE757B5C5F1D3163EF63 /* Pods_DiffTableDirector_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiffTableDirector_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96AEF7C0E81FB17EC2F32C17CDDD5BD /* TableDirector.Registrator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.Registrator.swift; sourceTree = "<group>"; };
 		DA1E3B179240D74148347EBE41F3D0B3 /* TableDirector.CoverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableDirector.CoverView.swift; sourceTree = "<group>"; };
 		DD49773AD950736244B0FA7893235F3D /* Pods-DiffTableDirector_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DiffTableDirector_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -304,7 +299,6 @@
 			children = (
 				466018504D6400CDB9284C59478D66FF /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -331,7 +325,6 @@
 				12E6925BD0B2CF252448CF1FA378A916 /* WagnerFischer.swift */,
 				68409B18D3C003C4B0E7D40BF982F816 /* Support Files */,
 			);
-			name = DeepDiff;
 			path = DeepDiff;
 			sourceTree = "<group>";
 		};
@@ -343,7 +336,6 @@
 				F81A64EF8DDA32265F6A0EAFF0A449A7 /* PaginationController.Loader.State.swift */,
 				42AD051282EFFA9291366881CACC8BB6 /* PaginationControllerLoaderAnimator.swift */,
 			);
-			name = Loader;
 			path = Loader;
 			sourceTree = "<group>";
 		};
@@ -450,9 +442,6 @@
 			children = (
 				40F20E4393217573F0B5297A88FA49B1 /* CollectionUpdate.swift */,
 				40371F04B94BB51AC65A4BEBC9CB95DD /* CollectionUpdate.Update.swift */,
-				0DE23555F4A2D63AC3A23003F67A1FD2 /* DiffableCollection.swift */,
-				32F80BDE690542449520837B4B9F26B2 /* DiffableViewModel.swift */,
-				279EF32C83C3B4DF644F1726651ED190 /* DiffInfo.swift */,
 				C1E48A92090EF2BF37BA177DFDC07989 /* Comporator */,
 				F73BA6D11CEF1CF3F7DAFDCB025FFBDD /* iOS 13 */,
 			);
@@ -507,7 +496,6 @@
 				699D5AFC478C90E671BFD5B38339D7AD /* RowsComparator.swift */,
 				CD654083DE23B2D8C5FDDD64DC4F9D52 /* SectionsComporator.swift */,
 			);
-			name = Comporator;
 			path = Comporator;
 			sourceTree = "<group>";
 		};
@@ -606,7 +594,6 @@
 				EBF783521A70FAC0D3C6568D18D5B03F /* DiffableTableViewDataSource.swift */,
 				F99B4E3FDBF2E8E0089580A80E9AEA07 /* Snapshot.swift */,
 			);
-			name = "iOS 13";
 			path = "iOS 13";
 			sourceTree = "<group>";
 		};
@@ -769,11 +756,8 @@
 				9FFF74CBC8E4C64FA5957DEFCC94BA3A /* ConfigurableCell.swift in Sources */,
 				1C42A942D1B54251F2CD79916E32652E /* ConfigurableHeaderFooter.swift in Sources */,
 				D9C61705B2C50887D042539DD9CD0CF6 /* CrossObserver.swift in Sources */,
-				C48A4BA41032F3B037BD1001E04DC3EA /* DiffableCollection.swift in Sources */,
 				147681A192CE13A658A0FA84C65E262F /* DiffableDataSource.swift in Sources */,
 				C1B82DF67CFD94B63BF737AC08CF9DC2 /* DiffableTableViewDataSource.swift in Sources */,
-				E2BD152BE0DD02629E8F4EE888058D48 /* DiffableViewModel.swift in Sources */,
-				6580799B26DF368604A5F3537F9FF244 /* DiffInfo.swift in Sources */,
 				6D63D69C3BF1F47C6F4A2362C413AC86 /* DiffTableDirector-dummy.m in Sources */,
 				DA859008C00E1487A17DBE71EB144AB4 /* DispatchQueue+Extensions.swift in Sources */,
 				24C1397C6E80C648E2CE3F88FF786AA6 /* FromNibLoadable.swift in Sources */,

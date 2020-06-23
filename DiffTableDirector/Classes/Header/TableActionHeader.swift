@@ -10,7 +10,9 @@ import Foundation
 /// Configure header with view model and action delegate
 public final class TableActionHeader<HeaderType: ActionHeader>: HeaderConfigurator
 where HeaderType: UITableViewHeaderFooterView {
-	public private(set) var diffInfo: DiffInfo = .randomItem
+	public private(set) lazy var hashableViewModel: AnyHashable = {
+		return (viewModel as? AnyHashable) ?? UUID().uuidString as AnyHashable
+	}()
 	public private(set) var viewHeight: CGFloat?
 
 	public var viewClass: UITableViewHeaderFooterView.Type { return HeaderType.self }

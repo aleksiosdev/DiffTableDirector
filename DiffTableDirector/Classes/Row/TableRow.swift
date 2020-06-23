@@ -12,15 +12,14 @@ public final class TableRow<CellType: ConfigurableCell>: CellConfigurator where 
 	public var cellClass: UITableViewCell.Type { return CellType.self }
 
 	public let viewModel: CellType.ViewModel
+	public private(set) lazy var hashableViewModel: AnyHashable = {
+		return (viewModel as? AnyHashable) ?? UUID().uuidString as AnyHashable
+	}()
 
 	public private(set) var viewHeight: CGFloat?
-	public private(set) var diffInfo: DiffInfo = .randomItem
 
 	public init(viewModel: CellType.ViewModel) {
 		self.viewModel = viewModel
-		if let viewModel = viewModel as? ViewModelDiffable {
-			diffInfo = DiffInfo(id: viewModel.diffId, properties: viewModel.diffProperties)
-		}
 	}
 
 	public convenience init(viewModel: CellType.ViewModel, height: CGFloat) {

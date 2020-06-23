@@ -12,7 +12,7 @@ public protocol HeaderConfigurator {
 	var viewClass: UITableViewHeaderFooterView.Type { get }
 	var viewHeight: CGFloat? { get }
 	
-	var diffInfo: DiffInfo { get }
+	var hashableViewModel: AnyHashable { get }
 
 	func configure(view: UITableViewHeaderFooterView)
 }

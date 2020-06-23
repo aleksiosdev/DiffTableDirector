@@ -11,8 +11,9 @@ import Foundation
 public class TableHeader<HeaderType: ConfigurableHeaderFooter>: HeaderConfigurator
 where HeaderType: UITableViewHeaderFooterView {
 	public var viewClass: UITableViewHeaderFooterView.Type { return HeaderType.self }
-
-	public private(set) var diffInfo: DiffInfo = .randomItem
+	public private(set) lazy var hashableViewModel: AnyHashable = {
+		return (viewModel as? AnyHashable) ?? UUID().uuidString as AnyHashable
+	}()
 	public private(set) var viewHeight: CGFloat?
 
 	public let viewModel: HeaderType.ViewModel

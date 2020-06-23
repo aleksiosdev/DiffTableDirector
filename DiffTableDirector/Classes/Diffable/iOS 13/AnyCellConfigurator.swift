@@ -9,21 +9,17 @@ import Foundation
 
 struct AnyCellConfigurator: Hashable {
 	static func == (lhs: AnyCellConfigurator, rhs: AnyCellConfigurator) -> Bool {
-		let lhsDict = lhs.cellConfigurator.diffInfo.properties
-		let rhsDict = rhs.cellConfigurator.diffInfo.properties
-		let lhsDiffId = lhs.cellConfigurator.diffInfo.diffId
-		let rhsDiffId = rhs.cellConfigurator.diffInfo.diffId
-		return lhsDiffId == rhsDiffId && lhsDict == rhsDict
+		return rhs.cellConfigurator.hashableViewModel ==  lhs.cellConfigurator.hashableViewModel
 	}
 
 	let cellConfigurator: CellConfigurator
+	
 	init(cellConfigurator: CellConfigurator) {
 		self.cellConfigurator = cellConfigurator
 	}
 
 	func hash(into hasher: inout Hasher) {
-		hasher.combine(cellConfigurator.diffInfo.properties)
-		hasher.combine(cellConfigurator.diffInfo.diffId)
+		hasher.combine(cellConfigurator.hashableViewModel)
 	}
 }
 

@@ -12,6 +12,7 @@ public protocol CellConfigurator {
 	var cellClass: UITableViewCell.Type { get }
 	var hashableViewModel: AnyHashable { get }
 	var viewHeight: CGFloat? { get }
+	var estimatedViewHeight: CGFloat? { get }
 
 	func configure(cell: UITableViewCell)
 }

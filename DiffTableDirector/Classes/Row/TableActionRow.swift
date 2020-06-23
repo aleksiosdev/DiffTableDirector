@@ -16,6 +16,7 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 		return (viewModel as? AnyHashable) ?? UUID().uuidString as AnyHashable
 	}()
 	public private(set) var viewHeight: CGFloat?
+	public private(set) var estimatedViewHeight: CGFloat?
 
 	weak var delegate: AnyObject?
 
@@ -25,14 +26,23 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 		self.delegate = delegate as AnyObject
 	}
 
-	public convenience init(viewModel: CellType.ViewModel, delegate: CellType.Delegate, height: CGFloat) {
+	public convenience init(
+		viewModel: CellType.ViewModel,
+		delegate: CellType.Delegate,
+		height: CGFloat?,
+		estimatedHeight: CGFloat?) {
 		self.init(viewModel: viewModel, delegate: delegate)
 		self.viewHeight = height
+		self.estimatedViewHeight = height ?? estimatedHeight
 	}
 
-	public convenience init(viewModel: CellType.ViewModel, delegate: CellType.Delegate, heightCalculatable: HeightCalculatable) {
+	public convenience init(
+		viewModel: CellType.ViewModel,
+		delegate: CellType.Delegate,
+		heightCalculatable: HeightCalculatable) {
 		self.init(viewModel: viewModel, delegate: delegate)
-		viewHeight = heightCalculatable.viewHeight
+		self.viewHeight = heightCalculatable.viewHeight
+		self.estimatedViewHeight = self.viewHeight
 	}
 
 	public func configure(cell: UITableViewCell) {

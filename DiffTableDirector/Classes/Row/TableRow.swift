@@ -17,19 +17,22 @@ public final class TableRow<CellType: ConfigurableCell>: CellConfigurator where 
 	}()
 
 	public private(set) var viewHeight: CGFloat?
+	public private(set) var estimatedViewHeight: CGFloat?
 
 	public init(viewModel: CellType.ViewModel) {
 		self.viewModel = viewModel
 	}
 
-	public convenience init(viewModel: CellType.ViewModel, height: CGFloat) {
+	public convenience init(viewModel: CellType.ViewModel, height: CGFloat?, estimatedHeight: CGFloat?) {
 		self.init(viewModel: viewModel)
 		self.viewHeight = height
+		self.estimatedViewHeight = height ?? estimatedHeight
 	}
 
 	public convenience init(viewModel: CellType.ViewModel, heightCalculatable: HeightCalculatable) {
 		self.init(viewModel: viewModel)
 		self.viewHeight = heightCalculatable.viewHeight
+		self.estimatedViewHeight = self.viewHeight
 	}
 
 	/// Сonfigure cell with view model

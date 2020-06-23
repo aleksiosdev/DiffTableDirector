@@ -12,9 +12,10 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 	public var cellClass: UITableViewCell.Type { return CellType.self }
 
 	public let viewModel: CellType.ViewModel
-
+	public private(set) lazy var hashableViewModel: AnyHashable = {
+		return (viewModel as? AnyHashable) ?? UUID().uuidString as AnyHashable
+	}()
 	public private(set) var viewHeight: CGFloat?
-	public private(set) var diffInfo: DiffInfo = .randomItem
 
 	weak var delegate: AnyObject?
 
@@ -22,9 +23,6 @@ public final class TableActionRow<CellType: ActionCell>: CellConfigurator where 
 	public init(viewModel: CellType.ViewModel, delegate: CellType.Delegate) {
 		self.viewModel = viewModel
 		self.delegate = delegate as AnyObject
-		if let viewModel = viewModel as? ViewModelDiffable {
-			diffInfo = DiffInfo(properties: viewModel.diffProperties)
-		}
 	}
 
 	public convenience init(viewModel: CellType.ViewModel, delegate: CellType.Delegate, height: CGFloat) {

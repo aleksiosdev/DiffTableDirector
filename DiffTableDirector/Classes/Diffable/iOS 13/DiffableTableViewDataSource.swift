@@ -19,6 +19,14 @@ final class DiffableTableViewDataSource: UITableViewDiffableDataSource<String, A
 		guard let snapshot = snapshot as? NSDiffableDataSourceSnapshot<String, AnyCellConfigurator> else {
 			return
 		}
+		print("NEW")
+		print(snapshot.itemIdentifiers)
+		snapshot.itemIdentifiers.forEach({ print("\($0.hashValue) \n") })
+
+		print("OLD")
+		print(self.snapshot().itemIdentifiers)
+		self.snapshot().itemIdentifiers.forEach({ print("\($0.hashValue) \n") })
+		
 		defaultRowAnimation = animation
 		apply(snapshot, animatingDifferences: animation.enabled, completion: completion)
 	}

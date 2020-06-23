@@ -16,6 +16,4 @@ struct FeedViewModel {
 	let diffID: String = UUID().uuidString
 }
 
-extension FeedViewModel: ViewModelDiffable { }
-
 extension FeedViewModel: Hashable { }

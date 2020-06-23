@@ -15,4 +15,4 @@ struct InfoViewModel {
 	let diffId: String = UUID().uuidString
 }
 
-extension InfoViewModel: ViewModelDiffable { }
+extension InfoViewModel: Hashable { }

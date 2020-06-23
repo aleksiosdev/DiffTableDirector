@@ -10,7 +10,7 @@ import Foundation
 /// Configure cell 
 public protocol CellConfigurator {
 	var cellClass: UITableViewCell.Type { get }
-	var diffInfo: DiffInfo { get }
+	var hashableViewModel: AnyHashable { get }
 	var viewHeight: CGFloat? { get }
 
 	func configure(cell: UITableViewCell)

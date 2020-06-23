@@ -189,6 +189,16 @@ open class TableDirector: NSObject {
 		return cell
 	}
 
+	private func _showView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position) {
+		_canShowEmptyView = false
+		DispatchQueue.asyncOnMainIfNeeded {
+			let view = viewFactory()
+			guard let tableView = self._tableView else { return }
+			self._coverController.add(view: view, to: tableView, position: position)
+			self._canShowEmptyView = true
+		}
+	}
+
 	// MARK: - Overridable methods
 	open func reload(with sections: [TableSection]) {
 		reload(with: sections, reloadRule: .fullReload)
@@ -241,8 +251,8 @@ extension TableDirector: TableDirectorInput {
 		let sections = sections.filter({ !$0.isEmpty })
 
 		let internalCompletion = { [weak self] in
-			completion()
-
+			defer { completion() }
+			
 			guard let self = self else { return }
 			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
 			_ = self._updateQueue.removeFirst()
@@ -303,12 +313,9 @@ extension TableDirector: TableDirectorInput {
 
 	public func clearAndShowView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position) {
 		DispatchQueue.asyncOnMainIfNeeded {
-			defer { self._canShowEmptyView = true }
 			self._canShowEmptyView = false
 			self._fullReload(with: [], animation: .automatic, completion: { [weak self] in
-				let view = viewFactory()
-				guard let tableView = self?._tableView else { return }
-				self?._coverController.add(view: view, to: tableView, position: position)
+				self?._showView(viewFactory: viewFactory, position: position)
 			})
 		}
 	}
@@ -368,7 +375,7 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 	}
 
 	public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-		if let viewHeight = _sections[indexPath.section].rows[indexPath.row].viewHeight {
+		if let viewHeight = _sections[indexPath.section].rows[indexPath.row].estimatedViewHeight {
 			return viewHeight
 		}
 		return UITableView.automaticDimension

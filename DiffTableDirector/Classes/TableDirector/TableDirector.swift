@@ -251,7 +251,7 @@ extension TableDirector: TableDirectorInput {
 		let sections = sections.filter({ !$0.isEmpty })
 
 		let internalCompletion = { [weak self] in
-			completion()
+			defer { completion() }
 			
 			guard let self = self else { return }
 			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
@@ -312,11 +312,9 @@ extension TableDirector: TableDirectorInput {
 	}
 
 	public func clearAndShowView(viewFactory: @escaping () -> UIView, position: TableDirector.CoverView.Position) {
-		DispatchQueue.asyncOnMainIfNeeded {
-			self._canShowEmptyView = false
-			self._fullReload(with: [], animation: .automatic, completion: { [weak self] in
-				self?._showView(viewFactory: viewFactory, position: position)
-			})
+		self._canShowEmptyView = false
+		self.reload(with: [CellConfigurator](), reloadRule: .fullReload, animation: .none) { [weak self] in
+			self?._showView(viewFactory: viewFactory, position: position)
 		}
 	}
 }

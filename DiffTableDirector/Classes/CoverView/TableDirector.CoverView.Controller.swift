@@ -15,6 +15,12 @@ extension TableDirector.CoverView {
 		private var _boundsObserver: NSKeyValueObservation?
 
 		func add(view: UIView, to tableView: UITableView, position: TableDirector.CoverView.Position) {
+			DispatchQueue.asyncOnMainIfNeeded {
+				self._add(view: view, to: tableView, position: position)
+			}
+		}
+
+		func _add(view: UIView, to tableView: UITableView, position: TableDirector.CoverView.Position) {
 			_activeView?.removeFromSuperview()
 			_activeView = view
 

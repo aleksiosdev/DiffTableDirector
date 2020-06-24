@@ -37,10 +37,9 @@ struct SectionsComporator {
 			guard let oldSection = oldSections[safe: index] else {
 				continue
 			}
-			let comparator = RowsComparator<AnyHashable>(
-				old: oldSection.rows.map({ $0.hashableViewModel }),
-				new: section.rows.map({ $0.hashableViewModel }),
-				section: index)
+			let oldHashModel = oldSection.rows.map({ $0.hashableModel ?? UUID().uuidString as AnyHashable })
+			let newHashModel = section.rows.map({ $0.hashableModel ?? UUID().uuidString as AnyHashable })
+			let comparator = RowsComparator<AnyHashable>(old: oldHashModel, new: newHashModel, section: index)
 			insertedIndexes += comparator.inserted
 			deletedIndexes += comparator.deleted
 			reloadedIndexes += comparator.replaced

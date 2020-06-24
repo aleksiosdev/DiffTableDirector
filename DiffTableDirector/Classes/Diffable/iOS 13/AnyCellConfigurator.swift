@@ -8,18 +8,21 @@
 import Foundation
 
 struct AnyCellConfigurator: Hashable {
+	let hashableModel: AnyHashable
+
 	static func == (lhs: AnyCellConfigurator, rhs: AnyCellConfigurator) -> Bool {
-		return rhs.cellConfigurator.hashableViewModel ==  lhs.cellConfigurator.hashableViewModel
+		return rhs.hashableModel ==  lhs.hashableModel
 	}
 
 	let cellConfigurator: CellConfigurator
 	
 	init(cellConfigurator: CellConfigurator) {
 		self.cellConfigurator = cellConfigurator
+		self.hashableModel = cellConfigurator.hashableModel ?? UUID().uuidString as AnyHashable
 	}
 
 	func hash(into hasher: inout Hasher) {
-		hasher.combine(cellConfigurator.hashableViewModel)
+		hasher.combine(hashableModel)
 	}
 }
 

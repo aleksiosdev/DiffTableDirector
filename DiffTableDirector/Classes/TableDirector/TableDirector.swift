@@ -251,12 +251,12 @@ extension TableDirector: TableDirectorInput {
 		let sections = sections.filter({ !$0.isEmpty })
 
 		let internalCompletion = { [weak self] in
-			defer { completion() }
+			completion()
 			
 			guard let self = self else { return }
 			self._changeCoverViewVisability(isSectionsEmpty: self._sections.isEmpty)
-			_ = self._updateQueue.removeFirst()
 			guard !self._updateQueue.isEmpty else { return }
+			_ = self._updateQueue.removeFirst()
 			self._updateQueue.first?()
 		}
 

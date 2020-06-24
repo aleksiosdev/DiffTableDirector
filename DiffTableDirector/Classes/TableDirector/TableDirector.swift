@@ -279,7 +279,7 @@ extension TableDirector: TableDirectorInput {
 		animation: UITableView.RowAnimation,
 		completion: @escaping () -> Void) {
 		let sections = [TableSection(rows: rows)]
-		reload(with: sections, reloadRule: reloadRule, animation: animation)
+		reload(with: sections, reloadRule: reloadRule, animation: animation, completion: completion)
 	}
 
 	public func indexPath(for cell: UITableViewCell) -> IndexPath? {

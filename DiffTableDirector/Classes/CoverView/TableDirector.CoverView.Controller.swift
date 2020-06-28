@@ -46,7 +46,7 @@ extension TableDirector.CoverView {
 		}
 
 		func hide() {
-			DispatchQueue.main.async {
+			DispatchQueue.asyncOnMainIfNeeded {
 				self._activeView?.removeFromSuperview()
 			}
 		}

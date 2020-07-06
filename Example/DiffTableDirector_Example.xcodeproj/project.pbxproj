@@ -21,9 +21,7 @@
 		E223CA35249CD78600463256 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA32249CD78600463256 /* InfoModel.swift */; };
 		E223CA36249CD78600463256 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA33249CD78600463256 /* InfoViewModel.swift */; };
 		E223CA37249CD78600463256 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA34249CD78600463256 /* InfoCell.swift */; };
-		E223CA3D249CD78D00463256 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA38249CD78C00463256 /* ErrorView.swift */; };
 		E223CA3E249CD78D00463256 /* ButtonCornerRadiusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA39249CD78D00463256 /* ButtonCornerRadiusable.swift */; };
-		E223CA3F249CD78D00463256 /* DiffableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA3A249CD78D00463256 /* DiffableViewController.swift */; };
 		E223CA40249CD78D00463256 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA3B249CD78D00463256 /* CodeViewController.swift */; };
 		E223CA41249CD78D00463256 /* CellPressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA3C249CD78D00463256 /* CellPressable.swift */; };
 		E223CA43249CD79100463256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA42249CD79100463256 /* AppDelegate.swift */; };
@@ -50,9 +48,7 @@
 		E223CA32249CD78600463256 /* InfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		E223CA33249CD78600463256 /* InfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		E223CA34249CD78600463256 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
-		E223CA38249CD78C00463256 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		E223CA39249CD78D00463256 /* ButtonCornerRadiusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCornerRadiusable.swift; sourceTree = "<group>"; };
-		E223CA3A249CD78D00463256 /* DiffableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffableViewController.swift; sourceTree = "<group>"; };
 		E223CA3B249CD78D00463256 /* CodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		E223CA3C249CD78D00463256 /* CellPressable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPressable.swift; sourceTree = "<group>"; };
 		E223CA42249CD79100463256 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,30 +106,116 @@
 		E223CA07249CD70C00463256 /* DiffTableDirector_Example */ = {
 			isa = PBXGroup;
 			children = (
-				E223CA39249CD78D00463256 /* ButtonCornerRadiusable.swift */,
-				E223CA3C249CD78D00463256 /* CellPressable.swift */,
-				E223CA3B249CD78D00463256 /* CodeViewController.swift */,
-				E223CA44249CD79700463256 /* LaunchScreen.xib */,
-				E223CA42249CD79100463256 /* AppDelegate.swift */,
-				E223CA3A249CD78D00463256 /* DiffableViewController.swift */,
-				E223CA26249CD77700463256 /* ErrorView.swift */,
-				E223CA25249CD77700463256 /* FeedCell.swift */,
-				E223CA1D249CD77700463256 /* FeedCell.xib */,
-				E223CA38249CD78C00463256 /* ErrorView.swift */,
-				E223CA24249CD77700463256 /* FeedModel.swift */,
-				E223CA23249CD77700463256 /* FeedViewModel.swift */,
-				E223CA21249CD77700463256 /* Images.xcassets */,
-				E223CA1F249CD77700463256 /* RecoverableButton.swift */,
-				E223CA4A249CD91B00463256 /* Main.storyboard */,
-				E223CA1C249CD77700463256 /* StoryboardViewController.swift */,
-				E223CA34249CD78600463256 /* InfoCell.swift */,
-				E223CA32249CD78600463256 /* InfoModel.swift */,
-				E223CA33249CD78600463256 /* InfoViewModel.swift */,
-				E223CA20249CD77700463256 /* TitleHeaderFooterView.swift */,
-				E223CA22249CD77700463256 /* TouchUpButton.swift */,
 				E223CA16249CD70F00463256 /* Info.plist */,
+				E23F9CC424B3C0FE00B7F885 /* Model */,
+				E23F9CBF24B3C0C400B7F885 /* App Layer */,
+				E23F9CBE24B3C0BA00B7F885 /* UI Layer */,
 			);
 			path = DiffTableDirector_Example;
+			sourceTree = "<group>";
+		};
+		E23F9CBB24B3C08B00B7F885 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E23F9CBD24B3C0AB00B7F885 /* Info */,
+				E23F9CBC24B3C0A100B7F885 /* Feed */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E23F9CBC24B3C0A100B7F885 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA23249CD77700463256 /* FeedViewModel.swift */,
+				E223CA25249CD77700463256 /* FeedCell.swift */,
+				E223CA1D249CD77700463256 /* FeedCell.xib */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		E23F9CBD24B3C0AB00B7F885 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA34249CD78600463256 /* InfoCell.swift */,
+				E223CA33249CD78600463256 /* InfoViewModel.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		E23F9CBE24B3C0BA00B7F885 /* UI Layer */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA4A249CD91B00463256 /* Main.storyboard */,
+				E23F9CC524B3C11A00B7F885 /* Elements */,
+				E23F9CBB24B3C08B00B7F885 /* Cells */,
+				E23F9CC324B3C0EF00B7F885 /* Launch */,
+				E23F9CC224B3C0E200B7F885 /* Error */,
+				E23F9CC124B3C0D900B7F885 /* Code */,
+				E23F9CC024B3C0CE00B7F885 /* Soryboard */,
+			);
+			path = "UI Layer";
+			sourceTree = "<group>";
+		};
+		E23F9CBF24B3C0C400B7F885 /* App Layer */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA21249CD77700463256 /* Images.xcassets */,
+				E223CA42249CD79100463256 /* AppDelegate.swift */,
+			);
+			path = "App Layer";
+			sourceTree = "<group>";
+		};
+		E23F9CC024B3C0CE00B7F885 /* Soryboard */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA1C249CD77700463256 /* StoryboardViewController.swift */,
+			);
+			path = Soryboard;
+			sourceTree = "<group>";
+		};
+		E23F9CC124B3C0D900B7F885 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA3B249CD78D00463256 /* CodeViewController.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		E23F9CC224B3C0E200B7F885 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA26249CD77700463256 /* ErrorView.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		E23F9CC324B3C0EF00B7F885 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA44249CD79700463256 /* LaunchScreen.xib */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		E23F9CC424B3C0FE00B7F885 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA24249CD77700463256 /* FeedModel.swift */,
+				E223CA32249CD78600463256 /* InfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E23F9CC524B3C11A00B7F885 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				E223CA39249CD78D00463256 /* ButtonCornerRadiusable.swift */,
+				E223CA3C249CD78D00463256 /* CellPressable.swift */,
+				E223CA1F249CD77700463256 /* RecoverableButton.swift */,
+				E223CA20249CD77700463256 /* TitleHeaderFooterView.swift */,
+				E223CA22249CD77700463256 /* TouchUpButton.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +344,6 @@
 				E223CA2A249CD77700463256 /* RecoverableButton.swift in Sources */,
 				E223CA27249CD77700463256 /* StoryboardViewController.swift in Sources */,
 				E223CA2D249CD77700463256 /* TouchUpButton.swift in Sources */,
-				E223CA3D249CD78D00463256 /* ErrorView.swift in Sources */,
-				E223CA3F249CD78D00463256 /* DiffableViewController.swift in Sources */,
 				E223CA2B249CD77700463256 /* TitleHeaderFooterView.swift in Sources */,
 				E223CA31249CD77700463256 /* ErrorView.swift in Sources */,
 				E223CA35249CD78600463256 /* InfoModel.swift in Sources */,

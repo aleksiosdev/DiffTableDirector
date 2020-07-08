@@ -140,7 +140,7 @@ open class TableDirector: NSObject {
 	private func _reload(with sections: [TableSection], animation: UITableView.RowAnimation, completion: @escaping () -> Void) {
 		if #available(iOS 13.0, *) {
 			let snapshot = _sectionsComporator.calculateUpdate(newSections: sections)
-			self._sections = sections
+			_sections = sections
 			_diffableDataSourcce?.apply(snapshot: snapshot, animation: animation, completion: completion)
 			return
 		}
@@ -335,7 +335,7 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 	}
 
 	public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if let viewHeight = _sections[indexPath.section].rows[indexPath.row].viewHeight {
+		if let viewHeight = _sections[safe: indexPath.section]?.rows[safe: indexPath.row]?.viewHeight {
 			return viewHeight
 		}
 		return UITableView.automaticDimension
@@ -343,17 +343,17 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 
 	public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		// Take configurator if threre is any
-		guard let configurator = _sections[section].headerConfigurator else { return nil }
+		guard let configurator = _sections[safe: section]?.headerConfigurator else { return nil }
 		return _createHeaderFooterView(with: configurator, tableView: tableView)
 	}
 
 	public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-		guard let configurator = _sections[section].footerConfigurator else { return nil }
+		guard let configurator = _sections[safe: section]?.footerConfigurator else { return nil }
 		return _createHeaderFooterView(with: configurator, tableView: tableView)
 	}
 
 	public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		guard let headerConfigurator = _sections[section].headerConfigurator else { return 0 }
+		guard let headerConfigurator = _sections[safe: section]?.headerConfigurator else { return 0 }
 		if let viewHeight = headerConfigurator.viewHeight {
 			return viewHeight
 		}
@@ -361,7 +361,7 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 	}
 
 	public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		guard let footerConfigurator = _sections[section].footerConfigurator else { return 0 }
+		guard let footerConfigurator = _sections[safe: section]?.footerConfigurator else { return 0 }
 		if let viewHeight = footerConfigurator.viewHeight {
 			return viewHeight
 		}
@@ -373,7 +373,7 @@ extension TableDirector: UITableViewDelegate & UITableViewDataSource {
 	}
 
 	public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-		if let viewHeight = _sections[indexPath.section].rows[indexPath.row].estimatedViewHeight {
+		if let viewHeight = _sections[safe: indexPath.section]?.rows[safe: indexPath.row]?.estimatedViewHeight {
 			return viewHeight
 		}
 		return UITableView.automaticDimension

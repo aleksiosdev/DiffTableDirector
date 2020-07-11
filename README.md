@@ -30,7 +30,8 @@ Create TableDirector
 import DiffTableKit
 
 let tableDirector = TableDirector(tableView: awesomeTableView)
-    or
+    
+// or
 
 let tableDirector = TableDirector()
 // Later 
@@ -78,8 +79,40 @@ tableDirector.reload(with: [section])
 
 ```
 
-And you are best. Code work, table filled. Easy, safe and all items autoregistred. But wait... what about other features? 
+And you are best. Code work, table filled. Easy, safe and all items autoregistred. But wait... what about other pressing on cell and ect? 
 
+
+## Actions
+
+Actions made by delegates. You can achive same effect with callbacks if you wish
+
+```
+extension SuperCell: ActionCell {
+	typealias ViewModel = InfoViewModel
+	typealias Delegate = CellPressableDelegate
+
+	func configure(_ item: InfoViewModel) {
+		// Fill your cell with data here
+		_titleLabel.text = item.title
+		
+		contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didPressedCell)))
+	}
+
+	@objc func didPressedCell() {
+		delegate?.didPressedCell(self)
+	}
+	
+}
+```
+
+And creation of cell will change a little
+
+```
+let actionRow = TableActionRow<SuperCell>(viewModel: .init(ID: "uniqIdentifier", title: "Ttile", icon: UIImage(named: "icon"), delegate: self)
+tableDirector.reload(with: [actionRow])
+```
+
+Same for header) 	
 
 ## Placeholder View
 
@@ -88,6 +121,7 @@ Sometimes table is empty and it looks ugly. One of solutions is to add fancy pic
 ```swift
 import DiffTableKit
 tableDirector.addEmptyStateView(viewFactory: { [unowned self] in
+			// Called on main thread
 			return PlaceholderView()
 			}, position: .center)
 ```
@@ -96,8 +130,97 @@ And now you can see your placeholder view align to center when table is empty. W
 
 ## Diff
 
-Table can show a lot of different information. It can come separetly. It's better update table with animation than reload it for several times. 
-Apple already provide us UIDiffableDataSource for iOS 13. 
+Table can show a lot of different information. It can come separetly. Иetter update table with animation than reload it for several times. 
+Apple already provide us UIDiffableDataSource but only for iOS 13. We inspired by it and provide same solution with declarative approach. For iOS 11+)
+
+So we need to do 2 steps:
+
+Step 1: Comnform Hashable protocol for all your ViewModels. Better to provide some uniq id like UUID().uuidString. 
+
+```
+struct ViewModel: Hashable {
+      let id: String
+	... 
+}
+```
+
+TableDirector will diff model if it's not hashable. But the same model will be different for him. Keep it in mind and better use nonhashable ViewModels for nondiffalbe tables.
+
+For iOS13 each reload will be diffable. You will see animation if you provide animtion true. For false case it will looks like oldschool reloadData.
+
+Also you can manualy trigger diffable reload (for lower iOS for example). On main queue and on your queue. 
+
+```
+	func reload(with sections: sections, reloadRule: .calculateSync) // Will calculate diff on main thread. 
+
+	func reload(with sections: sections, reloadRule: .calculateAsync(queue: yourQueue) // Will calculate on queue your provider. Can prevent freeze for big collections
+	
+```
+
+Keep in mind: Apple recommend reload table only on main or only on backgroun queue. Missing with queues can lead to undefined behaviour.
+
+## Cross bounds
+
+Remember that case when you need to draw shadow on upper view when table if scrolled? Or maybe separator? And hide it in unscrolled state. 
+
+```swift
+_tableDirector?.topCrossObserver = CrossObserver(didCross: {
+	// Draw your shadow/separator here
+}, didReturn: {
+	// Hide shadow/separator here
+})
+```
+
+Same can be done for bottom border. We use it along other project and it's really easy
+
+## Pagination and pull to refresh
+
+By the way. This aproach looks good for pagination! Pagination is always pain in bussness logic. But if you want some custom behaviour or animation - UI can be tricky too. 
+So we provide component. It can be configurater. Can controll your view and animate it lifecycle. Like this
+
+```swift
+let loader = Loader(view: viewForPagination, animator: yourAnimator)
+let bottomPaginationController = PaginationController(
+	settings: .bottom,
+	loader: yourLoader) { (handler) in
+		network.request(...) {
+			// Change state of pagination. Also your can call same method on pagination controller
+			handler.finished(isSuccessfull: true, canLoadNext: true)
+		}
+	}
+self._tableDirector?.add(paginationController: bottomPaginationController)
+```
+
+Loader is simple struct 
+
+```
+public struct Loader {
+	let view: UIView
+	let animator: PaginationControllerLoaderAnimator
+}
+
+```
+
+Class that animate your loader should conform PaginationControllerLoaderAnimator.
+
+```
+public protocol PaginationControllerLoaderAnimator {
+	/// Animate loader base on state
+	/// - Parameter state: loader state
+	func animate(state: PaginationController.Loader.State)
+}
+
+/// Loader states
+public enum State {
+	case initial
+	case loading
+	case error
+	case success
+}
+```
+
+Enought to deal with most of cases. The same can be applied for pull to refresh. Just provide up direction for PaginationController
+
 
 ## Requirements
 

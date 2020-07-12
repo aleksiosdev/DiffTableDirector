@@ -27,6 +27,11 @@
 		E223CA43249CD79100463256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA42249CD79100463256 /* AppDelegate.swift */; };
 		E223CA46249CD79700463256 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E223CA44249CD79700463256 /* LaunchScreen.xib */; };
 		E223CA4C249CD91B00463256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E223CA4A249CD91B00463256 /* Main.storyboard */; };
+		E2FFDF8E24BB005200CF021F /* PaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF8D24BB005200CF021F /* PaginationController.swift */; };
+		E2FFDF9024BB026100CF021F /* PullToRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF8F24BB026100CF021F /* PullToRefreshController.swift */; };
+		E2FFDF9224BB02C200CF021F /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF9124BB02C200CF021F /* CoverViewController.swift */; };
+		E2FFDF9424BB03CD00CF021F /* DiffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF9324BB03CD00CF021F /* DiffViewController.swift */; };
+		E2FFDF9724BB06E000CF021F /* SelectFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF9624BB06E000CF021F /* SelectFeatureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,11 @@
 		E223CA42249CD79100463256 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E223CA45249CD79700463256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E223CA4B249CD91B00463256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2FFDF8D24BB005200CF021F /* PaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationController.swift; sourceTree = "<group>"; };
+		E2FFDF8F24BB026100CF021F /* PullToRefreshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshController.swift; sourceTree = "<group>"; };
+		E2FFDF9124BB02C200CF021F /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
+		E2FFDF9324BB03CD00CF021F /* DiffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffViewController.swift; sourceTree = "<group>"; };
+		E2FFDF9624BB06E000CF021F /* SelectFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeatureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				E223CA16249CD70F00463256 /* Info.plist */,
-				E23F9CC424B3C0FE00B7F885 /* Model */,
+				E23F9CC424B3C0FE00B7F885 /* Model Layer */,
 				E23F9CBF24B3C0C400B7F885 /* App Layer */,
 				E23F9CBE24B3C0BA00B7F885 /* UI Layer */,
 			);
@@ -145,13 +155,11 @@
 		E23F9CBE24B3C0BA00B7F885 /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
+				E2FFDF8724BAFD8B00CF021F /* Screens */,
 				E223CA4A249CD91B00463256 /* Main.storyboard */,
 				E23F9CC524B3C11A00B7F885 /* Elements */,
 				E23F9CBB24B3C08B00B7F885 /* Cells */,
-				E23F9CC324B3C0EF00B7F885 /* Launch */,
 				E23F9CC224B3C0E200B7F885 /* Error */,
-				E23F9CC124B3C0D900B7F885 /* Code */,
-				E23F9CC024B3C0CE00B7F885 /* Soryboard */,
 			);
 			path = "UI Layer";
 			sourceTree = "<group>";
@@ -165,20 +173,20 @@
 			path = "App Layer";
 			sourceTree = "<group>";
 		};
-		E23F9CC024B3C0CE00B7F885 /* Soryboard */ = {
+		E23F9CC024B3C0CE00B7F885 /* BaseSoryboard */ = {
 			isa = PBXGroup;
 			children = (
 				E223CA1C249CD77700463256 /* StoryboardViewController.swift */,
 			);
-			path = Soryboard;
+			path = BaseSoryboard;
 			sourceTree = "<group>";
 		};
-		E23F9CC124B3C0D900B7F885 /* Code */ = {
+		E23F9CC124B3C0D900B7F885 /* BaseCode */ = {
 			isa = PBXGroup;
 			children = (
 				E223CA3B249CD78D00463256 /* CodeViewController.swift */,
 			);
-			path = Code;
+			path = BaseCode;
 			sourceTree = "<group>";
 		};
 		E23F9CC224B3C0E200B7F885 /* Error */ = {
@@ -197,13 +205,13 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
-		E23F9CC424B3C0FE00B7F885 /* Model */ = {
+		E23F9CC424B3C0FE00B7F885 /* Model Layer */ = {
 			isa = PBXGroup;
 			children = (
 				E223CA24249CD77700463256 /* FeedModel.swift */,
 				E223CA32249CD78600463256 /* InfoModel.swift */,
 			);
-			path = Model;
+			path = "Model Layer";
 			sourceTree = "<group>";
 		};
 		E23F9CC524B3C11A00B7F885 /* Elements */ = {
@@ -216,6 +224,69 @@
 				E223CA22249CD77700463256 /* TouchUpButton.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		E2FFDF8724BAFD8B00CF021F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E2FFDF9524BB06CC00CF021F /* SelectFeatureViewController */,
+				E2FFDF8C24BB003100CF021F /* Diff */,
+				E2FFDF8B24BAFEB800CF021F /* Dropw shadow on bounds Cross */,
+				E2FFDF8A24BAFEAA00CF021F /* CoverView */,
+				E2FFDF8924BAFDC200CF021F /* Pull to refresh */,
+				E2FFDF8824BAFDBC00CF021F /* Pagination */,
+				E23F9CC324B3C0EF00B7F885 /* Launch */,
+				E23F9CC024B3C0CE00B7F885 /* BaseSoryboard */,
+				E23F9CC124B3C0D900B7F885 /* BaseCode */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E2FFDF8824BAFDBC00CF021F /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				E2FFDF8D24BB005200CF021F /* PaginationController.swift */,
+			);
+			path = Pagination;
+			sourceTree = "<group>";
+		};
+		E2FFDF8924BAFDC200CF021F /* Pull to refresh */ = {
+			isa = PBXGroup;
+			children = (
+				E2FFDF8F24BB026100CF021F /* PullToRefreshController.swift */,
+			);
+			path = "Pull to refresh";
+			sourceTree = "<group>";
+		};
+		E2FFDF8A24BAFEAA00CF021F /* CoverView */ = {
+			isa = PBXGroup;
+			children = (
+				E2FFDF9124BB02C200CF021F /* CoverViewController.swift */,
+			);
+			path = CoverView;
+			sourceTree = "<group>";
+		};
+		E2FFDF8B24BAFEB800CF021F /* Dropw shadow on bounds Cross */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Dropw shadow on bounds Cross";
+			sourceTree = "<group>";
+		};
+		E2FFDF8C24BB003100CF021F /* Diff */ = {
+			isa = PBXGroup;
+			children = (
+				E2FFDF9324BB03CD00CF021F /* DiffViewController.swift */,
+			);
+			path = Diff;
+			sourceTree = "<group>";
+		};
+		E2FFDF9524BB06CC00CF021F /* SelectFeatureViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2FFDF9624BB06E000CF021F /* SelectFeatureViewController.swift */,
+			);
+			path = SelectFeatureViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,13 +409,18 @@
 				E223CA36249CD78600463256 /* InfoViewModel.swift in Sources */,
 				E223CA30249CD77700463256 /* FeedCell.swift in Sources */,
 				E223CA3E249CD78D00463256 /* ButtonCornerRadiusable.swift in Sources */,
+				E2FFDF8E24BB005200CF021F /* PaginationController.swift in Sources */,
 				E223CA40249CD78D00463256 /* CodeViewController.swift in Sources */,
 				E223CA2E249CD77700463256 /* FeedViewModel.swift in Sources */,
+				E2FFDF9424BB03CD00CF021F /* DiffViewController.swift in Sources */,
 				E223CA2F249CD77700463256 /* FeedModel.swift in Sources */,
 				E223CA2A249CD77700463256 /* RecoverableButton.swift in Sources */,
+				E2FFDF9724BB06E000CF021F /* SelectFeatureViewController.swift in Sources */,
 				E223CA27249CD77700463256 /* StoryboardViewController.swift in Sources */,
 				E223CA2D249CD77700463256 /* TouchUpButton.swift in Sources */,
+				E2FFDF9024BB026100CF021F /* PullToRefreshController.swift in Sources */,
 				E223CA2B249CD77700463256 /* TitleHeaderFooterView.swift in Sources */,
+				E2FFDF9224BB02C200CF021F /* CoverViewController.swift in Sources */,
 				E223CA31249CD77700463256 /* ErrorView.swift in Sources */,
 				E223CA35249CD78600463256 /* InfoModel.swift in Sources */,
 				E223CA37249CD78600463256 /* InfoCell.swift in Sources */,

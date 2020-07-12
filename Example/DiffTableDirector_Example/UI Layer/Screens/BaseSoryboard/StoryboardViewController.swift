@@ -68,11 +68,11 @@ class StoryboardViewController: UIViewController {
 	// MARK: - Fetch data
 	private func _loadFeed() -> [FeedModel] {
 		return (0..<100).map { (index)  in
-			let randomNumber = Double.random(in: Range(uncheckedBounds: (lower: 1, upper: 2)))
+			let randomNumber = Double.random(in: Range(uncheckedBounds: (lower: 1, upper: 1000)))
 			return FeedModel(
 				id: "\(index) \(randomNumber)",
-				title: "Title \(index)",
-				content: "Description",
+				title: "Hi! I'm readonly cell №\(index)",
+				content: "Some description",
 				isMine: true)
 		}
 	}
@@ -80,29 +80,29 @@ class StoryboardViewController: UIViewController {
 	private func _loadInfo() -> [InfoModel] {
 		return [
 			.init(title: "Info Title", content: "Pressabe info cell"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 3", content: "Info content"),
-			.init(title: "Info Title 4", content: "Info content"),
-			.init(title: "Info Title 5", content: "Info content"),
-			.init(title: "Info Title 6", content: "Info content"),
-			.init(title: "Info Title 7", content: "Info content"),
-			.init(title: "Info Title 8", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
-			.init(title: "Info Title 2", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №2", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №3", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №4", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №5", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №6", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №7", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №8", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №9", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №10", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №11", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №12", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №13", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №14", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №15", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №16", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №17", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №18", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №19", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №20", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №21", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №22", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №23", content: "Info content"),
+			.init(title: "Hi! I'm readonly cell №24", content: "Info content"),
 		]
 	}
 
@@ -118,7 +118,11 @@ class StoryboardViewController: UIViewController {
 		
 		let feedRows = feedModels.map { (feedModel: FeedModel) -> TableRow<FeedCell> in
 			return TableRow<FeedCell>(
-				viewModel: .init(title: feedModel.title, content: feedModel.content, image: placeholderImage))
+				viewModel: .init(
+					diffID: feedModel.id,
+					title: feedModel.title,
+					content: feedModel.content,
+					image: placeholderImage))
 		}
 
 		return [TableSection(

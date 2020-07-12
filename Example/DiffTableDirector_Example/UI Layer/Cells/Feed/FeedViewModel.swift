@@ -10,10 +10,16 @@ import UIKit
 import DiffTableDirector
 
 struct FeedViewModel {
+	let diffID: String
 	let title: String
 	let content: String
 	let image: UIImage?
-	let diffID: String = UUID().uuidString
 }
 
 extension FeedViewModel: Hashable { }
+
+extension FeedViewModel: HeightCalculatable {
+	var viewHeight: CGFloat {
+		return 200
+	}
+}

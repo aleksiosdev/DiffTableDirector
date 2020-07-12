@@ -17,17 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		_ application: UIApplication,
 		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
 		-> Bool {
-			let tabBarController = UITabBarController()
-			let storyboardViewController = createStoryboardViewController()
-			storyboardViewController.tabBarItem = UITabBarItem(title: "Storyboard", image: nil, selectedImage: nil)
-			let codeViewController = CodeViewController()
-			codeViewController.tabBarItem = UITabBarItem(title: "Code", image: nil, selectedImage: nil)
-			tabBarController.setViewControllers([storyboardViewController, codeViewController], animated: false)
-
 			let window = UIWindow(frame: UIScreen.main.bounds)
-			window.rootViewController = tabBarController
 			window.makeKeyAndVisible()
 			self.window = window
+
+			window.rootViewController = UINavigationController(rootViewController: SelectFeatureViewController())
 			return true
 	}
 

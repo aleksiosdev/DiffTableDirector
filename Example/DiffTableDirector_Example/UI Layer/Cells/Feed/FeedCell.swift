@@ -22,6 +22,8 @@ extension FeedCell: ConfigurableCell {
 	typealias ViewModel = FeedViewModel
 
 	func configure(_ item: FeedViewModel) {
+		selectedBackgroundView = UIView()
+		
 		contentImageView.image = item.image
 		titleLabel.text = item.title
 		contentLabel.text = item.content

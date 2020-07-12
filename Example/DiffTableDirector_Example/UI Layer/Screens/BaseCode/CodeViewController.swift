@@ -64,14 +64,14 @@ class CodeViewController: UIViewController {
 
 	private func _loadFeed() -> [FeedModel] {
 		return [
-			.init(id: "1", title: "Title", content: "Description", isMine: true)
+			.init(id: "1", title: "Hi! I'm readonly cell", content: "Some description", isMine: true)
 		]
 	}
 
 	private func _loadInfo() -> [InfoModel] {
 		return [
-			.init(title: "Info Title", content: "Pressabe info cell"),
-			.init(title: "Info Title 2", content: "Info content")
+			.init(title: "Hi! I'm action cell №1", content: "Press me to get alert with my title"),
+			.init(title: "Hi! I'm action cell №2", content: "Press me to get alert with my title")
 		]
 	}
 
@@ -80,10 +80,14 @@ class CodeViewController: UIViewController {
 		let infoRows = infoModels.map { (infoModel) in
 			return TableActionRow<InfoCell>(viewModel: .init(title: infoModel.title, content: infoModel.content), delegate: self)
 		}
-		let infoHeader = TableHeader<TitleHeaderFooterView>(viewModel: "Info")
+		let infoHeader = TableHeader<TitleHeaderFooterView>(viewModel: "Action cell section")
 
 		let feedRows = feedModels.map { (feedModel: FeedModel) -> TableRow<FeedCell> in
-			let viewModel = FeedViewModel(title: feedModel.title, content: feedModel.content, image: placeholderImage)
+			let viewModel = FeedViewModel(
+				diffID: feedModel.id,
+				title: feedModel.title,
+				content: feedModel.content,
+				image: placeholderImage)
 			return TableRow<FeedCell>(viewModel: viewModel)
 		}
 		return [TableSection(rows: infoRows, headerConfigurator: infoHeader), TableSection(rows: feedRows)]

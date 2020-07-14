@@ -22,6 +22,8 @@ final class SelectFeatureViewController: UIViewController {
 		let titleLabel = UILabel()
 		titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
 		titleLabel.text = "Select feature from list to check it out!"
+		titleLabel.numberOfLines = 0
+		titleLabel.textAlignment = .center
 		return titleLabel
 	}()
 
@@ -37,13 +39,21 @@ final class SelectFeatureViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		navigationItem.title = "Features"
+
+		view.backgroundColor = .white
 		view.addSubview(_stackView)
+
 		_stackView.addArrangedSubview(_titleLabel)
+		_stackView.translatesAutoresizingMaskIntoConstraints = false
+
+		_stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 96).isActive = true
+		_stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+		_stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+		_stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -32).isActive = true
+
 		_createFeatureButtons(_createFeatureButtonViewModels(), navigationController: navigationController)
 			.forEach({ _stackView.addArrangedSubview($0) })
-
-		_stackView.translatesAutoresizingMaskIntoConstraints = false
-		view.backgroundColor = .white
 	}
 
 	// MARK: - Helper
@@ -52,11 +62,18 @@ final class SelectFeatureViewController: UIViewController {
 			ButtonViewModel(title: "Base usage (code)", actionBlock: {
 				return CodeViewController()
 			}),
+			ButtonViewModel(title: "Base usage (storyboard)", actionBlock: {
+				let storyboard = UIStoryboard(name: "Main", bundle: nil)
+				return storyboard.instantiateViewController(identifier: "StoryboardViewController")
+			}),
 			ButtonViewModel(title: "Pagination", actionBlock: {
 				return BottomPaginationController()
 			}),
 			ButtonViewModel(title: "Pull to refresh", actionBlock: {
 				return PullTotRefreshController()
+			}),
+			ButtonViewModel(title: "Cross bounds observing", actionBlock: {
+				return DropShadowViewController()
 			}),
 			ButtonViewModel(title: "Error View", actionBlock: {
 				return CoverViewController()

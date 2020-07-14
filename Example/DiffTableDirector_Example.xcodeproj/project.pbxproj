@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE726B2CC4D9993B7BA7C76F /* Pods_DiffTableDirector_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5594A3BB2CF0AFB2EFB897C3 /* Pods_DiffTableDirector_Example.framework */; };
+		E222486824BE59E50025BA12 /* DropShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222486724BE59E50025BA12 /* DropShadowViewController.swift */; };
 		E223CA27249CD77700463256 /* StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA1C249CD77700463256 /* StoryboardViewController.swift */; };
 		E223CA28249CD77700463256 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E223CA1D249CD77700463256 /* FeedCell.xib */; };
 		E223CA2A249CD77700463256 /* RecoverableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA1F249CD77700463256 /* RecoverableButton.swift */; };
@@ -38,6 +39,7 @@
 		5594A3BB2CF0AFB2EFB897C3 /* Pods_DiffTableDirector_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiffTableDirector_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B637C752C9DDEE745B261F48 /* Pods-DiffTableDirector_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiffTableDirector_Example.release.xcconfig"; path = "Target Support Files/Pods-DiffTableDirector_Example/Pods-DiffTableDirector_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DADC30F3EEDB105DAD3C1171 /* Pods-DiffTableDirector_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiffTableDirector_Example.debug.xcconfig"; path = "Target Support Files/Pods-DiffTableDirector_Example/Pods-DiffTableDirector_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E222486724BE59E50025BA12 /* DropShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropShadowViewController.swift; sourceTree = "<group>"; };
 		E223CA05249CD70C00463256 /* DiffTableDirector_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiffTableDirector_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E223CA16249CD70F00463256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E223CA1C249CD77700463256 /* StoryboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		E2FFDF8B24BAFEB800CF021F /* Dropw shadow on bounds Cross */ = {
 			isa = PBXGroup;
 			children = (
+				E222486724BE59E50025BA12 /* DropShadowViewController.swift */,
 			);
 			path = "Dropw shadow on bounds Cross";
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				E223CA37249CD78600463256 /* InfoCell.swift in Sources */,
 				E223CA43249CD79100463256 /* AppDelegate.swift in Sources */,
 				E223CA41249CD78D00463256 /* CellPressable.swift in Sources */,
+				E222486824BE59E50025BA12 /* DropShadowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

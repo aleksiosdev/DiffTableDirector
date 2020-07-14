@@ -46,19 +46,11 @@ class CodeViewController: UIViewController {
 			_tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
 			].forEach { $0.isActive = true }
 
-		self._tableDirector.addEmptyStateView(viewFactory: {
-			ErrorView(
-				title: "Error loading data",
-				description: "You can try one more time, sometimes it helps",
-				actions: [ErrorView.Action(title: "Reload data", action: { [weak self] in
-					guard let self = self else { return }
-					self.feedModels = self._loadFeed()
-					self.infoModels = self._loadInfo()
+		feedModels = self._loadFeed()
+		infoModels = self._loadInfo()
 
-					let sections = self._createSections(feedModels: self.feedModels, infoModels: self.infoModels)
-					self._tableDirector.reload(with: sections)
-				})])
-		}, position: .default)
+		let sections = self._createSections(feedModels: self.feedModels, infoModels: self.infoModels)
+		_tableDirector.reload(with: sections, reloadRule: .fullReload, animation: .fade)
 	}
 
 

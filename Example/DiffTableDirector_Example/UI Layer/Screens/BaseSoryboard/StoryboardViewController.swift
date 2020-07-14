@@ -39,21 +39,9 @@ class StoryboardViewController: UIViewController {
 		feedModels = _loadFeed()
 		infoModels = _loadInfo()
 
-		let sections = self._createSections(
-			feedModels: self.feedModels,
-			infoModels: self.infoModels)
-		self._tableDirector?.reload(
-			with: sections,
-			reloadRule: .calculateReloadAsync(queue: DispatchQueue.global()))
-		
-		let bottomPaginationController = PaginationController(
-			settings: .bottom,
-			loader: .deafult) { (handler) in
-				DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
-					handler.finished(isSuccessfull: false, canLoadNext: true)
-				}
-		}
-		self._tableDirector?.add(paginationController: bottomPaginationController)
+		let sections = _createSections(feedModels: feedModels, infoModels: infoModels)
+		self._tableDirector?.reload(with: sections, reloadRule: .calculateReloadAsync(queue: DispatchQueue.global()))
+
 
 		let topPaginationController = PaginationController(
 			settings: .top,
@@ -70,7 +58,7 @@ class StoryboardViewController: UIViewController {
 		return (0..<100).map { (index)  in
 			let randomNumber = Double.random(in: Range(uncheckedBounds: (lower: 1, upper: 1000)))
 			return FeedModel(
-				id: "\(index) \(randomNumber)",
+				id: "\(randomNumber)",
 				title: "Hi! I'm readonly cell №\(index)",
 				content: "Some description",
 				isMine: true)
@@ -80,29 +68,29 @@ class StoryboardViewController: UIViewController {
 	private func _loadInfo() -> [InfoModel] {
 		return [
 			.init(title: "Info Title", content: "Pressabe info cell"),
-			.init(title: "Hi! I'm readonly cell №2", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №3", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №4", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №5", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №6", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №7", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №8", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №9", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №10", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №11", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №12", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №13", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №14", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №15", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №16", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №17", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №18", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №19", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №20", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №21", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №22", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №23", content: "Info content"),
-			.init(title: "Hi! I'm readonly cell №24", content: "Info content"),
+			.init(title: "Hi! I'm action cell №2", content: "Info content"),
+			.init(title: "Hi! I'm action cell №3", content: "Info content"),
+			.init(title: "Hi! I'm action cell №4", content: "Info content"),
+			.init(title: "Hi! I'm action cell №5", content: "Info content"),
+			.init(title: "Hi! I'm action cell №6", content: "Info content"),
+			.init(title: "Hi! I'm action cell №7", content: "Info content"),
+			.init(title: "Hi! I'm action cell №8", content: "Info content"),
+			.init(title: "Hi! I'm action cell №9", content: "Info content"),
+			.init(title: "Hi! I'm action cell №10", content: "Info content"),
+			.init(title: "Hi! I'm action cell №11", content: "Info content"),
+			.init(title: "Hi! I'm action cell №12", content: "Info content"),
+			.init(title: "Hi! I'm action cell №13", content: "Info content"),
+			.init(title: "Hi! I'm action cell №14", content: "Info content"),
+			.init(title: "Hi! I'm action cell №15", content: "Info content"),
+			.init(title: "Hi! I'm action cell №16", content: "Info content"),
+			.init(title: "Hi! I'm action cell №17", content: "Info content"),
+			.init(title: "Hi! I'm action cell №18", content: "Info content"),
+			.init(title: "Hi! I'm action cell №19", content: "Info content"),
+			.init(title: "Hi! I'm action cell №20", content: "Info content"),
+			.init(title: "Hi! I'm action cell №21", content: "Info content"),
+			.init(title: "Hi! I'm action cell №22", content: "Info content"),
+			.init(title: "Hi! I'm action cell №23", content: "Info content"),
+			.init(title: "Hi! I'm action cell №24", content: "Info content"),
 		]
 	}
 
@@ -125,10 +113,8 @@ class StoryboardViewController: UIViewController {
 					image: placeholderImage))
 		}
 
-		return [TableSection(
-			rows: (infoRows as [CellConfigurator] + feedRows as [CellConfigurator]).shuffled(), headerConfigurator: infoHeader),
-				TableSection(
-					rows: (infoRows as [CellConfigurator] + feedRows as [CellConfigurator]).shuffled())]
+		return [TableSection(rows: infoRows, headerConfigurator: infoHeader),
+				TableSection(rows: feedRows.shuffled())]
 	}
 }
 

@@ -1,15 +1,15 @@
 //
-//  DiffViewController.swift
+//  DropShadowViewController.swift
 //  DiffTableDirector_Example
 //
-//  Created by Aleksandr Lavrinenko on 12.07.2020.
+//  Created by Aleksandr Lavrinenko on 15.07.2020.
 //  Copyright © 2020 Aleksandr Lavrinenko. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import DiffTableDirector
 
-final class DiffViewController: UIViewController {
+final class DropShadowViewController: UIViewController {
 	// MARK: - UI
 	private let _tableView: UITableView = {
 		let tableView = UITableView()
@@ -22,9 +22,8 @@ final class DiffViewController: UIViewController {
 		return TableDirector(tableView: _tableView)
 	}()
 
-	private var _feedModels: [FeedModel] = []
-
-	private var _timer: Timer?
+	var feedModels: [FeedModel] = []
+	var infoModels: [InfoModel] = []
 
 	// MARK: - Init
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -41,10 +40,13 @@ final class DiffViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+		navigationController?.navigationBar.shadowImage = UIImage()
+
 		view.addSubview(_tableView)
 		_tableView.translatesAutoresizingMaskIntoConstraints = false
 
-		[_tableView.topAnchor.constraint(equalTo: view.topAnchor),
+		[_tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
 		 _tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 		 _tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 		 _tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -52,25 +54,29 @@ final class DiffViewController: UIViewController {
 
 		_tableDirector = TableDirector(tableView: _tableView)
 
-		_feedModels = _loadFeed()
+		feedModels = _loadFeed()
 
-		let rows = _createRows(feedModels: _feedModels)
+		let rows = _createRows(feedModels: self.feedModels)
 		let reloadRule = TableDirector.ReloadRule.calculateReloadAsync(queue: DispatchQueue.global())
-		_tableDirector.reload(with: rows, reloadRule: reloadRule, animation: .fade)
+		self._tableDirector.reload(with: rows, reloadRule: reloadRule)
 
-		_timer = Timer(fire: Date(), interval: 1.0, repeats: true, block: { [weak self] _ in
-			guard let self = self else { return }
-			let rows = self._createRows(feedModels: self._mix(feedModels: self._feedModels))
-			let reloadRule = TableDirector.ReloadRule.calculateReloadAsync(queue: DispatchQueue.global())
-			self._tableDirector.reload(with: rows, reloadRule: reloadRule)
-		})
+		_tableDirector.topCrossObserver = CrossObserver(didCross: { [weak self] in
+			print("did cross top bound")
+			self?.navigationController?.navigationBar.layer.shadowOpacity = 0
+		}, didReturn: { [weak self] in
+			if let navigationBar = self?.navigationController?.navigationBar {
+				navigationBar.applyRasterizeShadow(
+					offset: CGSize(width: 0, height: 1),
+					radius: 1,
+					opacity: 0.05)
+			}
+			}, offset: .value(offset: 1))
 
-		RunLoop.main.add(_timer!, forMode: .common)
-	}
-
-	func reload(tableDirector: TableDirectorInput, rows: [CellConfigurator]) {
-		let reloadRule = TableDirector.ReloadRule.calculateReloadAsync(queue: DispatchQueue.global())
-		tableDirector.reload(with: rows, reloadRule: reloadRule, animation: .fade)
+		_tableDirector.bottomCrossObserver = CrossObserver(didCross: {
+			print("did cross bottom bound")
+		}, didReturn: {
+			print("did return in bound from bottom")
+		}, offset: .value(offset: 83))
 	}
 
 	// MARK: - Fetch data
@@ -78,7 +84,7 @@ final class DiffViewController: UIViewController {
 		return (0..<80).map { (index)  in
 			let randomNumber = Double.random(in: Range(uncheckedBounds: (lower: 1, upper: 1000)))
 			return FeedModel(
-				id: "\(randomNumber)",
+				id: "\(index) \(randomNumber)",
 				title: "Hi! I'm readonly cell №\(index)",
 				content: "Some description",
 				isMine: true)
@@ -99,26 +105,23 @@ final class DiffViewController: UIViewController {
 
 		return feedRows
 	}
+}
 
-	private func _mix(feedModels: [FeedModel]) -> [FeedModel] {
-		var feedModels = feedModels
-		(0..<2).forEach { randomIndex in
-			let upperBound = feedModels.count
-			let firstRandomNumber = Int.random(in: Range(uncheckedBounds: (lower: 0, upper: upperBound)))
-			let secondRandomNumber = Int.random(in: Range(uncheckedBounds: (lower: 0, upper: upperBound)))
-			feedModels.swapAt(firstRandomNumber, secondRandomNumber)
+extension UIView {
+	func applyShadow(to layer: CALayer, rect: CGRect?, offset: CGSize, radius: CGFloat, opacity: Float) {
+		if let rect = rect {
+			layer.shadowPath =  UIBezierPath(ovalIn: rect).cgPath
 		}
+		layer.shadowOffset = offset
+		layer.shadowRadius = radius
+		layer.shadowOpacity = opacity
+		layer.shadowColor = UIColor.black.cgColor
+		layer.masksToBounds = false
+	}
 
-		(0..<10).forEach { randomIndex in
-			let upperBound = feedModels.count
-			let randomNumber = Int.random(in: Range(uncheckedBounds: (lower: 0, upper: upperBound)))
-			feedModels[randomNumber] = FeedModel(
-				id: "\(randomNumber)",
-				title: "Hi! I'm readonly cell №\(randomNumber)",
-				content: "Some description",
-				isMine: true)
-		}
-
-		return feedModels
+	func applyRasterizeShadow(offset: CGSize, radius: CGFloat, opacity: Float) {
+		applyShadow(to: layer, rect: frame, offset: offset, radius: radius, opacity: opacity)
+		layer.shouldRasterize = true
+		layer.rasterizationScale = UIScreen.main.scale
 	}
 }

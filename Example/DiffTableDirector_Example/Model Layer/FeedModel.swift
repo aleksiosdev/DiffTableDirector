@@ -13,6 +13,6 @@ struct FeedModel {
 	let title: String
 	let content: String
 
-	// Model can store a lot of additional properties that don't need view model
+	// Model can store a lot of additional properties that view model don't need 
 	let isMine: Bool
 }

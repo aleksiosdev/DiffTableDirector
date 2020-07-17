@@ -26,7 +26,7 @@ open class TableDirector: NSObject {
 	// We need access to table view to perform some task. Object responsible for UI will retain table view
 	public weak var _tableView: UITableView? {
 		didSet {
-			guard let tableView = _tableView else {
+			guard _tableView != nil else {
 				_registrator = nil
 				return
 			}

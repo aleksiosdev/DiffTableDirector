@@ -28,7 +28,7 @@
 		E223CA43249CD79100463256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223CA42249CD79100463256 /* AppDelegate.swift */; };
 		E223CA46249CD79700463256 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E223CA44249CD79700463256 /* LaunchScreen.xib */; };
 		E223CA4C249CD91B00463256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E223CA4A249CD91B00463256 /* Main.storyboard */; };
-		E2FFDF8E24BB005200CF021F /* PaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF8D24BB005200CF021F /* PaginationController.swift */; };
+		E2FFDF8E24BB005200CF021F /* BottomPaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF8D24BB005200CF021F /* BottomPaginationController.swift */; };
 		E2FFDF9024BB026100CF021F /* PullToRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF8F24BB026100CF021F /* PullToRefreshController.swift */; };
 		E2FFDF9224BB02C200CF021F /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF9124BB02C200CF021F /* CoverViewController.swift */; };
 		E2FFDF9424BB03CD00CF021F /* DiffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFDF9324BB03CD00CF021F /* DiffViewController.swift */; };
@@ -61,7 +61,7 @@
 		E223CA42249CD79100463256 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E223CA45249CD79700463256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E223CA4B249CD91B00463256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E2FFDF8D24BB005200CF021F /* PaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationController.swift; sourceTree = "<group>"; };
+		E2FFDF8D24BB005200CF021F /* BottomPaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPaginationController.swift; sourceTree = "<group>"; };
 		E2FFDF8F24BB026100CF021F /* PullToRefreshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshController.swift; sourceTree = "<group>"; };
 		E2FFDF9124BB02C200CF021F /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
 		E2FFDF9324BB03CD00CF021F /* DiffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffViewController.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		E2FFDF8824BAFDBC00CF021F /* Pagination */ = {
 			isa = PBXGroup;
 			children = (
-				E2FFDF8D24BB005200CF021F /* PaginationController.swift */,
+				E2FFDF8D24BB005200CF021F /* BottomPaginationController.swift */,
 			);
 			path = Pagination;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 				E223CA36249CD78600463256 /* InfoViewModel.swift in Sources */,
 				E223CA30249CD77700463256 /* FeedCell.swift in Sources */,
 				E223CA3E249CD78D00463256 /* ButtonCornerRadiusable.swift in Sources */,
-				E2FFDF8E24BB005200CF021F /* PaginationController.swift in Sources */,
+				E2FFDF8E24BB005200CF021F /* BottomPaginationController.swift in Sources */,
 				E223CA40249CD78D00463256 /* CodeViewController.swift in Sources */,
 				E223CA2E249CD77700463256 /* FeedViewModel.swift in Sources */,
 				E2FFDF9424BB03CD00CF021F /* DiffViewController.swift in Sources */,

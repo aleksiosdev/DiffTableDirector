@@ -25,6 +25,8 @@ final class BottomPaginationController: UIViewController {
 	var feedModels: [FeedModel] = []
 	var infoModels: [InfoModel] = []
 
+	private var _firstPageLoaded: Bool = false
+
 	// MARK: - Init
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 		super.init(nibName: nil, bundle: nil)
@@ -43,7 +45,7 @@ final class BottomPaginationController: UIViewController {
 		view.addSubview(_tableView)
 		_tableView.translatesAutoresizingMaskIntoConstraints = false
 
-		[_tableView.topAnchor.constraint(equalTo: view.topAnchor),
+		[_tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
 		 _tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 		 _tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 		 _tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -62,7 +64,12 @@ final class BottomPaginationController: UIViewController {
 			loader: .deafult) { (handler) in
 				// Fake delay
 				DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
-					handler.finished(isSuccessfull: true, canLoadNext: true)
+					handler.finished(isSuccessfull: !self._firstPageLoaded, canLoadNext: true)
+					if !self._firstPageLoaded {
+						self.feedModels = self.feedModels + self._loadFeed()
+						self._tableDirector.reload(with: self._createRows(feedModels: self.feedModels))
+						self._firstPageLoaded = true
+					}
 				}
 		}
 		_tableDirector.add(paginationController: bottomPaginationController)
@@ -70,7 +77,7 @@ final class BottomPaginationController: UIViewController {
 
 	// MARK: - Fetch data
 	private func _loadFeed() -> [FeedModel] {
-		return (0..<80).map { (index)  in
+		return (0..<40).map { (index)  in
 			let randomNumber = Double.random(in: Range(uncheckedBounds: (lower: 1, upper: 1000)))
 			return FeedModel(
 				id: "\(index) \(randomNumber)",

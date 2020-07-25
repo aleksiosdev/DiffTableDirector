@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ScrollViewBoundsCrossObservable: class {
 	var scrollView: UIScrollView { get }

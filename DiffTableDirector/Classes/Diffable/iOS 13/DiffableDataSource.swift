@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DiffableDataSource {
 	func apply(snapshot: Snapshot, animation: UITableView.RowAnimation, completion: @escaping () -> Void)

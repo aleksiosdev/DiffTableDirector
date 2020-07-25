@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Can calculate height for view
 public protocol HeightCalculatable {

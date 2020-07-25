@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Configure cell with view model
 public final class TableRow<CellType: ConfigurableCell>: CellConfigurator where CellType: UITableViewCell {

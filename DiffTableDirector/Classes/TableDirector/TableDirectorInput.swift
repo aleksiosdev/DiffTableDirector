@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Interface for TableDirector. Provides all nessasry operation for users
 public protocol TableDirectorInput: class {

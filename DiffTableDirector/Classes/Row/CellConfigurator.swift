@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Configure cell 
 public protocol CellConfigurator {

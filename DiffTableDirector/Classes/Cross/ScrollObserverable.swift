@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Notify about scroll view content offset changes
 public protocol ScrollObserverable {

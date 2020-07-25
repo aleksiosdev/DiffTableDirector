@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct SectionsComporator {
 	@available(iOS 13.0, *)

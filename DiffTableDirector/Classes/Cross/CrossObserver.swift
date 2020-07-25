@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Observe bount of scroll view with provided offset
 public struct CrossObserver {

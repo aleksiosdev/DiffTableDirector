@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension TableDirector {
 	final class Pagination {

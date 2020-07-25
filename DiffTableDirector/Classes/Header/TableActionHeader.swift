@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Configure header with view model and action delegate
 public final class TableActionHeader<HeaderType: ActionHeader>: HeaderConfigurator

@@ -22,7 +22,9 @@ DerivedData
 # Bundler
 .bundle
 
- Carthage/Checkouts
+Carthage/Checkouts
 
 Carthage/Build
 Pods/
+Package.resolved
+.swiftpm

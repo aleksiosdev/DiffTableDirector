@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Handle cross events in scroll view
 public protocol ThresholdCrossObserver {

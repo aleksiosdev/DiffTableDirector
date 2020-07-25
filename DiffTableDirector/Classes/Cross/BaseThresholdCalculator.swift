@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct BaseThresholdCalculator {
 	func calculateBaseTopThreshold(for scrollView: UIScrollView) -> CGFloat {

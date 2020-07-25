@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Configure cell with view model and action delegate
 public final class TableActionRow<CellType: ActionCell>: CellConfigurator where CellType: UITableViewCell {

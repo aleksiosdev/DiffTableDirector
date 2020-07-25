@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Configure provided header with view model
 public class TableHeader<HeaderType: ConfigurableHeaderFooter>: HeaderConfigurator

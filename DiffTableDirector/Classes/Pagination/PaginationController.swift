@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol PaginationControllerOutput: class {
 	func scrollToThreshold(direction: PaginationController.Direction, offset: CGFloat)

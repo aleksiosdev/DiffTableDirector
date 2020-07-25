@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Provide frame for cover view from talbe view bound size
 public protocol TableDirectorCoverViewSizeDelegate: class {

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DiffTableDirector'
-  s.version          = '0.9.1'
+  s.version          = '0.9.2'
   s.summary          = 'Framework to work with table view safe and easy. Support diff, pagination, placeholder view  '
 
   s.description      = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/manychat/DiffTableDirector'
-  s.license          = { :type => 'Apache 2.0', :file => 'LICENSE.txt' }
+  s.license          = { :type => 'Apache 2.0', :file => 'LICENSE.md' }
   s.author           = { 'aleksiosdev' => 'aleksios@manychat.com' }
   s.source           = { :git => 'https://github.com/manychat/DiffTableDirector.git', :tag => "release/#{s.version.to_s}" }
 
